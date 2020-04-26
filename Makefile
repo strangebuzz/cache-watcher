@@ -1,7 +1,6 @@
 # Setup ————————————————————————————————————————————————————————————————————————
-SHELL         = bash
-PROJECT       = cc
-#.PHONY       = # Not needed for now
+SHELL   = bash
+PROJECT = cc
 
 ## —— 🐝 The Strangebuzz cc Makefile 🐝 ————————————————————————————————————————
 help: ## Outputs this help screen
@@ -9,21 +8,31 @@ help: ## Outputs this help screen
 
 ## —— Project 🐝 ———————————————————————————————————————————————————————————————
 run: ## Run the main go file
-	go run hello-world.go
+	go run cc.go
 
 build: ## Build the cc executable
-	go build hello-world.go
+	go build cc.go
 
-clean: hello-world ## Clean the current executable
-	rm ./hello-world
+exec: ## Run cc with a Symfony 5 directory as the first argument
+	./cc ../strangebuzz.com
+
+clean: cc ## Clean the current executable
+	rm ./cc
+
+deps: clean ## Clean deps
+	go get -d -v ./...
+
+update-deps: ## Update all deps
+	go get -u; \
+	go mod tidy; \
 
 ## —— Tests ✅ —————————————————————————————————————————————————————————————————
-#test: ## Launch main functional and unit tests
-	#./vendor/bin/phpunit --testsuite=main --stop-on-failure
+test: ## Run all tests
+	go test
 
 ## —— Coding standards ✨ ——————————————————————————————————————————————————————
-cs: ## Launch check style
-	gofmt *.go
+lint: ## Run gofmt simplify and lint
+	gofmt -s -l -w .
 
 ## —— Stats 📜 —————————————————————————————————————————————————————————————————
 stats: ## Commits by the hour for the main author of this project
