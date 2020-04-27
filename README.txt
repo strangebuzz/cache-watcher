@@ -1,22 +1,40 @@
 
-————————————————————————————————————————————————————————————————————————
+————————————————————————————————————————————————————————————————————————————————
  cc : The Symfony Cache Watcher
-————————————————————————————————————————————————————————————————————————
+————————————————————————————————————————————————————————————————————————————————
+
+@Tmp
+————————————————————————————————————————————————————————————————————————————————
 
 
 @Todo
-————————————————————————————————————————————————————————————————————————
+————————————————————————————————————————————————————————————————————————————————
 
+* Introduce a version constant
+* Get the full path of the working directory
 * Tester si le répertoire passé en argument existe (faire une sous-fonction)
-* Tester si le répertoire semble bien contenir un projet Symfony
+* Tester si le répertoire semble bien contenir un projet Symfony (bin/console)
 * Lister l'ensemble des fichiers yaml situés dans le répertoire config
 * Retourner une erreur si aucun fichier YAML n'est trouvé
 * Sotocker l'ensemble des fichiers YAML dans un tableau
 * Afficher le contenu d'une fichier
-* Rendre le répretoire à analyser configurable (.cc.dist)
+* Add the .env files to the watched files
+* Rendre le répertoire à analyser configurable (.cc.dist)
+* Initialiser des tests
+
+
+@Ideas
+————————————————————————————————————————————————————————————————————————————————
+
+
+@Naming
+————————————————————————————————————————————————————————————————————————————————
+
+* cc
+* sfcw
 
 
 @Resources
-————————————————————————————————————————————————————————————————————————
+————————————————————————————————————————————————————————————————————————————————
 
 * https://blog.golang.org/go1.13-errors
