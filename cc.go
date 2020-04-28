@@ -14,7 +14,7 @@ import (
 
 const version = "0.1.0"
 const welcomeStr = "[green]Symfony CC [white]version [yellow]v%s[white] by [blue]COil - https://www.strangebuzz.com 🐝"
-const aboutStr = "Symfony CC watches your config files (.env, yaml) and automatically refresh your application cache."
+const aboutStr = "Symfony CC watches your config files (.env, yaml) and automatically refresh your application cache (CTRL+C to stop the process)."
 
 // —— Now comes the constants we will be able to transform into parameters later
 const consoleRelativePath = "bin/console"
@@ -25,7 +25,7 @@ func main() {
 	// —— 1. Test arguments ————————————————————————————————————————————————————
 	argsWithProg := os.Args
 	if len(argsWithProg) < 2 {
-		tools.PrintError(fmt.Errorf("yo u must provide the directory of the Symfony project to use"))
+		tools.PrintError(fmt.Errorf("you must provide the directory of the Symfony project to use as the first argument"))
 		os.Exit(-1)
 	}
 
@@ -65,10 +65,10 @@ func main() {
 		if !reflect.DeepEqual(filesToWatch, updatedFiles) {
 			_, _ = colorstring.Println(" [yellow] ! Update detected[white] => refreshing cache...")
 			_, _ = symfony.CacheWarmup(consolePath)
-			_, _ = colorstring.Println("    > [green]Done!")
+			_, _ = colorstring.Println("    > [green]Done!") // todo, diplay the time it took to refresh the cache
 			filesToWatch = updatedFiles
 		} else {
-			time.Sleep(50 * time.Millisecond)
+			time.Sleep(50 * time.Millisecond) // What time to use tp avoid overusing CPU?
 		}
 	}
 }

@@ -10,9 +10,7 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Lister l'ensemble des fichiers yaml situés dans le répertoire config
 * Retourner une erreur si aucun fichier YAML n'est trouvé
-* Grab all YAML files in an array
 * Add the .env files to the watched files
 * Initialize tests
 * Help argument
@@ -41,6 +39,8 @@
 @Resources
 ————————————————————————————————————————————————————————————————————————————————
 
+* https://yourbasic.org/golang/for-loop/
+* https://golangcode.com/sleeping-with-go/
 * https://github.com/spiral/roadrunner Roadrunner contains a file watcher
 * https://mrwaggel.be/post/generate-md5-hash-of-a-file-in-golang/
 * https://blog.golang.org/go1.13-errors
@@ -49,6 +49,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Gather all the yaml files in config (on three levels)
 * Build a simple map with the c en clé le chemin et en valeur le timestamp
 * Get the update timestamp of a file
 * Compute the checksum of a file
