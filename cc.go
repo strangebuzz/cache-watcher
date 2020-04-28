@@ -5,6 +5,7 @@ import (
 	"github.com/mitchellh/colorstring"
 	"github.com/strangebuzz/cc/tools"
 	"os"
+	"os/exec"
 	"path/filepath"
 )
 
@@ -29,13 +30,28 @@ func main() {
 		tools.PrintError(err)
 		os.Exit(-1)
 	}
-
 	_, _ = colorstring.Println(" > Project Directory: [green]" + symfonyProjectDir)
-}
 
-func welcome() {
-	_, _ = colorstring.Println(fmt.Sprintf(welcomeStr, version))
-	fmt.Println(aboutStr)
+	// —— Test if it's a Symfony project ———————————————————————————————————————
+	console := symfonyProjectDir + "/bin/console"
+	_, err = os.Stat(console)
+	if err != nil {
+		tools.PrintError(err)
+		os.Exit(-1)
+	}
+	if os.IsNotExist(err) {
+		tools.PrintError(err)
+		os.Exit(-1)
+	}
+	_, _ = colorstring.Println(" > Symfony console: [green]" + console)
+
+	getVersionCommand := console
+	out, err := exec.Command(getVersionCommand, "--version").CombinedOutput()
+	if err != nil {
+		tools.PrintError(err)
+		os.Exit(-1)
+	}
+	_, _ = colorstring.Println(" > Symfony version: [green]" + fmt.Sprintf("%s", out))
 }
 
 func getSymfonyProjectDir() (string, error) {
@@ -60,4 +76,9 @@ func getExecDir() string {
 		panic(err)
 	}
 	return path
+}
+
+func welcome() {
+	_, _ = colorstring.Println(fmt.Sprintf(welcomeStr, version))
+	fmt.Println(aboutStr)
 }

@@ -10,9 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Test if the directory contains bin/console
-* Run the Symfony console and display the output
-* Display the Symfony version
 * Lister l'ensemble des fichiers yaml situés dans le répertoire config
 * Retourner une erreur si aucun fichier YAML n'est trouvé
 * Grab all YAML files in an array
@@ -37,6 +34,7 @@
 @Naming
 ————————————————————————————————————————————————————————————————————————————————
 
+* Sous domaine cc.strangebuzz.com ou meme strangebuzz.com/cc
 * symfony.cc -> déjà pris.
 * sfcw
 
@@ -50,6 +48,8 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Test if the directory contains bin/console
+* Run the Symfony console version command and display the output
 * Helper for ansi output
 * Tested if directory exists
 * Get the full path of the working directory
