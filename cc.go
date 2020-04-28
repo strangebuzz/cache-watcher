@@ -50,7 +50,7 @@ func main() {
 		tools.PrintError(err)
 		os.Exit(-1)
 	}
-	_, _ = colorstring.Println(" > Symfony version: [green]" + strings.Trim(fmt.Sprintf("%s", out), ""))
+	_, _ = colorstring.Println(" > Symfony version: [green]" + strings.Trim(fmt.Sprintf("%s", out), "\n"))
 
 	// OK everything seems, ok now lets grab the files to watch
 	md5, err := tools.HashFileMd5(console)
