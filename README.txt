@@ -10,12 +10,13 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
+* Compute the checksum of a file
 * Lister l'ensemble des fichiers yaml situés dans le répertoire config
 * Retourner une erreur si aucun fichier YAML n'est trouvé
 * Grab all YAML files in an array
-* Compute the checksum of a file
 * Add the .env files to the watched files
 * Initialize tests
+* Help argument
 
 
 @Refactoring

@@ -10,21 +10,24 @@ import (
 )
 
 const version = "0.1.0"
-const welcomeStr = "[green]Symfony CC [white]version [yellow]v%s[white] by [blue]COil/Strangebuzz.com"
+const welcomeStr = "[green]Symfony CC [white]version [yellow]v%s[white] by [blue]COil - https://www.strangebuzz.com 🐝"
 const aboutStr = "Symfony CC watches your config files (.env, yaml) and automatically refresh your application cache."
 
+// —— Now comes the constants we will be able to transform into parameters later
+const consolePath = "bin/console"
+const versionArgument = "--version"
+
 func main() {
-	// —— Welcome users ————————————————————————————————————————————————————————
 	welcome()
 
-	// —— Test arguments ———————————————————————————————————————————————————————
+	// —— 1. Test arguments ————————————————————————————————————————————————————
 	argsWithProg := os.Args
 	if len(argsWithProg) < 2 {
 		tools.PrintError(fmt.Errorf("you must provide the directory of the Symfony project to use"))
 		os.Exit(-1)
 	}
 
-	// —— Test if project directory exists —————————————————————————————————————
+	// —— 2. Test if project directory exists ——————————————————————————————————
 	symfonyProjectDir, err := getSymfonyProjectDir()
 	if err != nil {
 		tools.PrintError(err)
@@ -32,26 +35,36 @@ func main() {
 	}
 	_, _ = colorstring.Println(" > Project Directory: [green]" + symfonyProjectDir)
 
-	// —— Test if it's a Symfony project ———————————————————————————————————————
-	console := symfonyProjectDir + "/bin/console"
-	_, err = os.Stat(console)
+	// —— 3. Test if it is a Symfony project ———————————————————————————————————
+	console, err := checkSymfonyConsole(symfonyProjectDir)
 	if err != nil {
-		tools.PrintError(err)
-		os.Exit(-1)
-	}
-	if os.IsNotExist(err) {
 		tools.PrintError(err)
 		os.Exit(-1)
 	}
 	_, _ = colorstring.Println(" > Symfony console: [green]" + console)
 
-	getVersionCommand := console
-	out, err := exec.Command(getVersionCommand, "--version").CombinedOutput()
+	// —— 4. Test the Symfony console with the version command —————————————————
+	out, err := exec.Command(console, versionArgument).CombinedOutput()
 	if err != nil {
 		tools.PrintError(err)
 		os.Exit(-1)
 	}
 	_, _ = colorstring.Println(" > Symfony version: [green]" + fmt.Sprintf("%s", out))
+
+	// OK everything seems, ok now lets grab the files to watch
+}
+
+func checkSymfonyConsole(symfonyProjectDir string) (string, error) {
+	console := symfonyProjectDir + "/" + consolePath
+	_, err := os.Stat(console)
+	if err != nil {
+		return "", err
+	}
+	if os.IsNotExist(err) {
+		return "", err
+	}
+
+	return console, nil
 }
 
 func getSymfonyProjectDir() (string, error) {
