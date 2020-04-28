@@ -10,7 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Compute the checksum of a file
 * Lister l'ensemble des fichiers yaml situés dans le répertoire config
 * Retourner une erreur si aucun fichier YAML n'est trouvé
 * Grab all YAML files in an array
@@ -21,7 +20,6 @@
 
 @Refactoring
 ————————————————————————————————————————————————————————————————————————————————
-
 
 
 @Ideas
@@ -43,12 +41,14 @@
 @Resources
 ————————————————————————————————————————————————————————————————————————————————
 
+* https://mrwaggel.be/post/generate-md5-hash-of-a-file-in-golang/
 * https://blog.golang.org/go1.13-errors
 
 
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Compute the checksum of a file
 * Test if the directory contains bin/console
 * Run the Symfony console version command and display the output
 * Helper for ansi output

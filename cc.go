@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strings"
 )
 
 const version = "0.1.0"
@@ -49,9 +50,11 @@ func main() {
 		tools.PrintError(err)
 		os.Exit(-1)
 	}
-	_, _ = colorstring.Println(" > Symfony version: [green]" + fmt.Sprintf("%s", out))
+	_, _ = colorstring.Println(" > Symfony version: [green]" + strings.Trim(fmt.Sprintf("%s", out), ""))
 
 	// OK everything seems, ok now lets grab the files to watch
+	md5, err := tools.HashFileMd5(console)
+	_, _ = colorstring.Println(" > Symfony console md5: [green]" + md5)
 }
 
 func checkSymfonyConsole(symfonyProjectDir string) (string, error) {
