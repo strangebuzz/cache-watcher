@@ -7,7 +7,9 @@ import (
 	"github.com/strangebuzz/cc/tools"
 	"os"
 	"path/filepath"
+	"reflect"
 	"strings"
+	"time"
 )
 
 const version = "0.1.0"
@@ -51,7 +53,24 @@ func main() {
 	}
 	_, _ = colorstring.Println(" > Symfony version: [green]" + strings.Trim(fmt.Sprintf("%s", out), "\n"))
 
-	// OK everything seems, ok now lets grab the files to watch
+	// —— 5. Watch files ———————————————————————————————————————————————————————
+	filesToWatch, err := symfony.GetWatchMap(symfonyProjectDir)
+	if err != nil {
+		tools.PrintError(err)
+		os.Exit(-1)
+	}
+
+	for {
+		updatedFiles, _ := symfony.GetWatchMap(symfonyProjectDir)
+		if !reflect.DeepEqual(filesToWatch, updatedFiles) {
+			_, _ = colorstring.Println(" [yellow] ! Update detected[white] => refreshing cache...")
+			_, _ = symfony.CacheWarmup(consolePath)
+			_, _ = colorstring.Println("    > [green]Done!")
+			filesToWatch = updatedFiles
+		} else {
+			time.Sleep(50 * time.Millisecond)
+		}
+	}
 }
 
 func checkSymfonyConsole(symfonyProjectDir string) (string, error) {

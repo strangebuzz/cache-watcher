@@ -10,8 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Récupérer le timestamp d'un fichier yaml
-* Construire un tableau simple avec en clé le chemin et en valeur le timestamp
 * Lister l'ensemble des fichiers yaml situés dans le répertoire config
 * Retourner une erreur si aucun fichier YAML n'est trouvé
 * Grab all YAML files in an array
@@ -26,10 +24,6 @@
 
 @Ideas
 ————————————————————————————————————————————————————————————————————————————————
-
-* idée d'algo:
-  - Contruire un tableau avec en clé le chemin du fichier et en valeur la date de modification
-  - Si la date de modification est différente alors on lance le cache warmuo
 
 * Take the current directoty by default?
 * Handling of XML files?
@@ -55,6 +49,8 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Build a simple map with the c en clé le chemin et en valeur le timestamp
+* Get the update timestamp of a file
 * Compute the checksum of a file
 * Test if the directory contains bin/console
 * Run the Symfony console version command and display the output
