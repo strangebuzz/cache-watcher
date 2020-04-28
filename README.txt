@@ -10,7 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Introduce a version constant
 * Get the full path of the working directory
 * Tester si le répertoire passé en argument existe (faire une sous-fonction)
 * Tester si le répertoire semble bien contenir un projet Symfony (bin/console)
@@ -38,3 +37,10 @@
 ————————————————————————————————————————————————————————————————————————————————
 
 * https://blog.golang.org/go1.13-errors
+
+
+@Done
+————————————————————————————————————————————————————————————————————————————————
+
+* Nice ansi output for the welcom message
+* Introduced a version constant
