@@ -10,8 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Get the full path of the working directory
-* Tester si le répertoire passé en argument existe (faire une sous-fonction)
 * Tester si le répertoire semble bien contenir un projet Symfony (bin/console)
 * Lister l'ensemble des fichiers yaml situés dans le répertoire config
 * Retourner une erreur si aucun fichier YAML n'est trouvé
@@ -20,6 +18,12 @@
 * Add the .env files to the watched files
 * Rendre le répertoire à analyser configurable (.cc.dist)
 * Initialiser des tests
+
+
+@Refactoring
+————————————————————————————————————————————————————————————————————————————————
+
+* getSymfonyProjectDir must return an error
 
 
 @Ideas
@@ -42,5 +46,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Tested if directory exists
+* Get the full path of the working directory
 * Nice ansi output for the welcom message
 * Introduced a version constant

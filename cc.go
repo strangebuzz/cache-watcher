@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/mitchellh/colorstring"
 	"os"
+	"path/filepath"
 )
 
 const version = "0.1.0"
@@ -16,14 +17,36 @@ func main() {
 	if len(argsWithProg) < 2 {
 		panic(fmt.Errorf("you must provide the directory of the Symfony project to use"))
 	}
-
-	fmt.Println("> Directory: " + argsWithProg[1])
+	_, _ = colorstring.Println(" > Project Directory: [green]" + getSymfonyProjectDir())
 }
 
 func welcome() {
-	_, err := colorstring.Println(fmt.Sprintf(welcomeStr, version))
+	_, _ = colorstring.Println(fmt.Sprintf(welcomeStr, version))
+	fmt.Println(aboutStr)
+}
+
+func getSymfonyProjectDir() string {
+	argsWithProg := os.Args
+	path := filepath.Clean(getExecDir() + "/" + argsWithProg[1])
+
+	_, err := os.Stat(path)
+	if err != nil {
+		_, _ = colorstring.Println(fmt.Sprintf("[red]/!\\ %s.", path))
+		os.Exit(-1)
+	}
+
+	if os.IsNotExist(err) {
+		_, _ = colorstring.Println(fmt.Sprintf("[red]/!\\ %s.", err))
+		os.Exit(-1)
+	}
+
+	return path
+}
+
+func getExecDir() string {
+	path, err := os.Getwd()
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(aboutStr)
+	return path
 }
