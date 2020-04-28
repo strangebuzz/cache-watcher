@@ -39,3 +39,6 @@ func HashFileMd5(filePath string) (string, error) {
 
 	return returnMD5String, nil
 }
+
+//md5, err := tools.HashFileMd5(console)
+//_, _ = colorstring.Println(" > Symfony console md5: [green]" + md5)

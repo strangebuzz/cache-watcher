@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"github.com/mitchellh/colorstring"
+	"github.com/strangebuzz/cc/symfony"
 	"github.com/strangebuzz/cc/tools"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"strings"
 )
@@ -15,8 +15,7 @@ const welcomeStr = "[green]Symfony CC [white]version [yellow]v%s[white] by [blue
 const aboutStr = "Symfony CC watches your config files (.env, yaml) and automatically refresh your application cache."
 
 // —— Now comes the constants we will be able to transform into parameters later
-const consolePath = "bin/console"
-const versionArgument = "--version"
+const consoleRelativePath = "bin/console"
 
 func main() {
 	welcome()
@@ -24,7 +23,7 @@ func main() {
 	// —— 1. Test arguments ————————————————————————————————————————————————————
 	argsWithProg := os.Args
 	if len(argsWithProg) < 2 {
-		tools.PrintError(fmt.Errorf("you must provide the directory of the Symfony project to use"))
+		tools.PrintError(fmt.Errorf("yo u must provide the directory of the Symfony project to use"))
 		os.Exit(-1)
 	}
 
@@ -37,15 +36,15 @@ func main() {
 	_, _ = colorstring.Println(" > Project Directory: [green]" + symfonyProjectDir)
 
 	// —— 3. Test if it is a Symfony project ———————————————————————————————————
-	console, err := checkSymfonyConsole(symfonyProjectDir)
+	consolePath, err := checkSymfonyConsole(symfonyProjectDir)
 	if err != nil {
 		tools.PrintError(err)
 		os.Exit(-1)
 	}
-	_, _ = colorstring.Println(" > Symfony console: [green]" + console)
+	_, _ = colorstring.Println(" > Symfony console path: [green]" + consolePath)
 
 	// —— 4. Test the Symfony console with the version command —————————————————
-	out, err := exec.Command(console, versionArgument).CombinedOutput()
+	out, err := symfony.Version(consolePath)
 	if err != nil {
 		tools.PrintError(err)
 		os.Exit(-1)
@@ -53,12 +52,10 @@ func main() {
 	_, _ = colorstring.Println(" > Symfony version: [green]" + strings.Trim(fmt.Sprintf("%s", out), "\n"))
 
 	// OK everything seems, ok now lets grab the files to watch
-	md5, err := tools.HashFileMd5(console)
-	_, _ = colorstring.Println(" > Symfony console md5: [green]" + md5)
 }
 
 func checkSymfonyConsole(symfonyProjectDir string) (string, error) {
-	console := symfonyProjectDir + "/" + consolePath
+	console := symfonyProjectDir + "/" + consoleRelativePath
 	_, err := os.Stat(console)
 	if err != nil {
 		return "", err
