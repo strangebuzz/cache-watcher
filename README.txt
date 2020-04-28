@@ -41,6 +41,7 @@
 @Resources
 ————————————————————————————————————————————————————————————————————————————————
 
+* https://github.com/spiral/roadrunner Roadrunner contains a file watcher
 * https://mrwaggel.be/post/generate-md5-hash-of-a-file-in-golang/
 * https://blog.golang.org/go1.13-errors
 
