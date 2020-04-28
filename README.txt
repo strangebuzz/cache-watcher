@@ -10,24 +10,29 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Tester si le répertoire semble bien contenir un projet Symfony (bin/console)
+* Test if the directory contains bin/console
+* Run the Symfony console and display the output
+* Display the Symfony version
 * Lister l'ensemble des fichiers yaml situés dans le répertoire config
 * Retourner une erreur si aucun fichier YAML n'est trouvé
-* Sotocker l'ensemble des fichiers YAML dans un tableau
-* Afficher le contenu d'une fichier
+* Grab all YAML files in an array
+* Compute the checksum of a file
 * Add the .env files to the watched files
-* Rendre le répertoire à analyser configurable (.cc.dist)
-* Initialiser des tests
+* Initialize tests
 
 
 @Refactoring
 ————————————————————————————————————————————————————————————————————————————————
 
-* getSymfonyProjectDir must return an error
+* Faire un helper pour le joli affichage des erreurs avec coloration ansi
 
 
 @Ideas
 ————————————————————————————————————————————————————————————————————————————————
+
+* Take the current directoty by default?
+* Handling of XML files?
+* Handling of the old app/console?
 
 
 @Naming
