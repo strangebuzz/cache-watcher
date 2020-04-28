@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 )
 
-const configDirectory = "config"
+const ConfigDirectory = "config"
 
 /**
  * Get all the files who has to be watch.
@@ -18,15 +18,23 @@ const configDirectory = "config"
 func getFilesToWatch(symfonyProjectDir string) ([]string, error) {
 	var fileToWatch []string
 
-	// Level 1
-	fileToWatch, err := filepath.Glob(fmt.Sprintf("%s/%s/*.yaml", symfonyProjectDir, configDirectory))
+	// Level 0 : .env files
+	fileToWatch, err := filepath.Glob(fmt.Sprintf("%s/.env*", symfonyProjectDir))
 	if err != nil {
 		fmt.Print(err)
 		os.Exit(1)
 	}
 
+	// Level 1
+	level1, err := filepath.Glob(fmt.Sprintf("%s/%s/*.yaml", symfonyProjectDir, ConfigDirectory))
+	if err != nil {
+		fmt.Print(err)
+		os.Exit(1)
+	}
+	fileToWatch = append(fileToWatch, level1...)
+
 	// Level 2
-	level2, err := filepath.Glob(fmt.Sprintf("%s/%s/*/*.yaml", symfonyProjectDir, configDirectory))
+	level2, err := filepath.Glob(fmt.Sprintf("%s/%s/*/*.yaml", symfonyProjectDir, ConfigDirectory))
 	if err != nil {
 		fmt.Print(err)
 		os.Exit(1)
@@ -34,7 +42,7 @@ func getFilesToWatch(symfonyProjectDir string) ([]string, error) {
 	fileToWatch = append(fileToWatch, level2...)
 
 	// Level 3
-	level3, err := filepath.Glob(fmt.Sprintf("%s/%s/*/*/*.yaml", symfonyProjectDir, configDirectory))
+	level3, err := filepath.Glob(fmt.Sprintf("%s/%s/*/*/*.yaml", symfonyProjectDir, ConfigDirectory))
 	if err != nil {
 		fmt.Print(err)
 		os.Exit(1)

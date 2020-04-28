@@ -13,7 +13,8 @@ import (
 )
 
 const version = "0.1.0"
-const welcomeStr = "[green]Symfony CC [white]version [yellow]v%s[white] by [blue]COil - https://www.strangebuzz.com 🐝"
+const separator = "——————————————————————————————————————————————————————————————————————"
+const welcomeStr = "  [green]Symfony CC [white]version [yellow]v%s[white] by [blue]COil - https://www.strangebuzz.com 🐝 [white]"
 const aboutStr = "Symfony CC watches your config files (.env, yaml) and automatically refresh your application cache (CTRL+C to stop the process)."
 
 // —— Now comes the constants we will be able to transform into parameters later
@@ -59,7 +60,9 @@ func main() {
 		tools.PrintError(err)
 		os.Exit(-1)
 	}
+	_, _ = colorstring.Println(fmt.Sprintf(" > [yellow]%d [white]file(s) watched in [yellow]%s[white] and ./[yellow]%s", len(filesToWatch), symfonyProjectDir, symfony.ConfigDirectory))
 
+	// —— 6. Main process ——————————————————————————————————————————————————————
 	for {
 		updatedFiles, _ := symfony.GetWatchMap(symfonyProjectDir)
 		if !reflect.DeepEqual(filesToWatch, updatedFiles) {
@@ -111,6 +114,8 @@ func getExecDir() string {
 }
 
 func welcome() {
+	_, _ = colorstring.Println(separator)
 	_, _ = colorstring.Println(fmt.Sprintf(welcomeStr, version))
+	_, _ = colorstring.Println(separator)
 	fmt.Println(aboutStr)
 }

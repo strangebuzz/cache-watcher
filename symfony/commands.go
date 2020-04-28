@@ -9,7 +9,7 @@ const versionOption = "--version"
 const cacheWarmup = "cache:warmup"
 
 /**
- * @todo permetrre de passer un environnement.
+ * @todo permetre de passer un environnement.
  */
 func RunCommand(console string, argument string) (string, error) {
 	out, err := exec.Command(console, argument).CombinedOutput()
