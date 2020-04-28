@@ -24,7 +24,6 @@
 @Refactoring
 ————————————————————————————————————————————————————————————————————————————————
 
-* Faire un helper pour le joli affichage des erreurs avec coloration ansi
 
 
 @Ideas
@@ -51,6 +50,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Helper for ansi output
 * Tested if directory exists
 * Get the full path of the working directory
 * Nice ansi output for the welcom message

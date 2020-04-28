@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/mitchellh/colorstring"
+	"github.com/strangebuzz/cc/tools"
 	"os"
 	"path/filepath"
 )
@@ -18,13 +19,14 @@ func main() {
 	// —— Test arguments ———————————————————————————————————————————————————————
 	argsWithProg := os.Args
 	if len(argsWithProg) < 2 {
-		panic(fmt.Errorf("you must provide the directory of the Symfony project to use"))
+		tools.PrintError(fmt.Errorf("you must provide the directory of the Symfony project to use"))
+		os.Exit(-1)
 	}
 
 	// —— Test if project directory exists —————————————————————————————————————
 	symfonyProjectDir, err := getSymfonyProjectDir()
 	if err != nil {
-		_, _ = colorstring.Println(fmt.Sprintf("[red]/!\\ %s.", err))
+		tools.PrintError(err)
 		os.Exit(-1)
 	}
 
