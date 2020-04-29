@@ -15,6 +15,7 @@
 * Create a system > terminal package
 * Create the help screen
 * When run without argument show the help screen
+* Add some tests
 
 
 @Nice to have
@@ -22,7 +23,9 @@
 
 * Handle the case where a Symfony command returns an error
 * Create an option to display the watched file (+ bonus:: display as a tree)
-* Add tests
+* Prevent the user from running cc for the same project more than one-time
+* Generate a pid file in case to be able to manually stop the process if something
+  goes wrong.
 
 
 @Refactoring
@@ -48,6 +51,7 @@
 @Resources
 ————————————————————————————————————————————————————————————————————————————————
 
+* https://golang.org/doc/effective_go.html
 * https://www.golangprograms.com/go-language/struct.html
 * https://golangbot.com/structs/
 * https://yourbasic.org/golang/for-loop/

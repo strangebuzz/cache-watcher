@@ -6,6 +6,7 @@ package symfony
 
 import (
 	"fmt"
+	"github.com/strangebuzz/cc/structs"
 	"github.com/strangebuzz/cc/tools"
 	"os"
 	"path/filepath"
@@ -61,9 +62,9 @@ func getFilesToWatch(symfonyProjectDir string) ([]string, error) {
  *
  * @example "/Users/coil/Sites/strangebuzz.com/config/services.yaml": "2020-04-28 16:33:44.73756727 +0200 CEST"
  */
-func GetWatchMap(symfonyProjectDir string) (map[string]string, error) {
+func GetWatchMap(config structs.Config) (map[string]string, error) {
 	watchMap := map[string]string{}
-	filesTowatch, _ := getFilesToWatch(symfonyProjectDir)
+	filesTowatch, _ := getFilesToWatch(config.SymfonyProjectDir)
 
 	for _, file := range filesTowatch {
 		stats, err := os.Stat(file)
@@ -73,11 +74,6 @@ func GetWatchMap(symfonyProjectDir string) (map[string]string, error) {
 		}
 		watchMap[file] = fmt.Sprintf("%s", stats.ModTime())
 	}
-
-	//tools.PrettyPrint(filesTowatch)
-	//tools.PrettyPrint(watchMap)
-	//tools.PrettyPrint(len(watchMap))
-	//os.Exit(1)
 
 	return watchMap, nil
 }

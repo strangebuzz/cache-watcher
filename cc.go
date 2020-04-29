@@ -12,13 +12,15 @@ import (
 	"github.com/strangebuzz/cc/tools"
 	"os"
 	"path/filepath"
+	"reflect"
 	"strings"
+	"time"
 )
 
 const version = "0.1.0"
 const separator = "——————————————————————————————————————————————————————————————————————"
 const welcomeStr = "  [green]Symfony CC [white]version [yellow]v%s[white] by [blue]COil - https://www.strangebuzz.com 🐝 [white]"
-const aboutStr = "Symfony CC watches your config files (.env, yaml) and automatically refresh your application cache (CTRL+C to stop the process)."
+const aboutStr = "Symfony CC watches your config files (.env, yaml) and automatically refreshes your application cache (CTRL+C to stop watching)."
 
 func main() {
 	var config structs.Config
@@ -56,31 +58,28 @@ func main() {
 		tools.PrintError(err)
 		os.Exit(-1)
 	}
-	_, _ = colorstring.Println(" > Symfony version: [green]" + strings.Trim(fmt.Sprintf("%s", out), "\n"))
-
-	tools.PrettyPrint(config)
-	os.Exit(0)
+	_, _ = colorstring.Println(" > Symfony version and env: [green]" + strings.Trim(fmt.Sprintf("%s", out), "\n"))
 
 	//// —— 5. Watch files ———————————————————————————————————————————————————————
-	//filesToWatch, err := symfony.GetWatchMap(symfonyProjectDir)
-	//if err != nil {
-	//	tools.PrintError(err)
-	//	os.Exit(-1)
-	//}
-	//_, _ = colorstring.Println(fmt.Sprintf(" > [yellow]%d [white]file(s) watched in [yellow]%s[white] and ./[yellow]%s", len(filesToWatch), symfonyProjectDir, symfony.ConfigDirectory))
-	//
-	//// —— 6. Main process ——————————————————————————————————————————————————————
-	//for {
-	//	updatedFiles, _ := symfony.GetWatchMap(symfonyProjectDir)
-	//	if !reflect.DeepEqual(filesToWatch, updatedFiles) {
-	//		_, _ = colorstring.Println(" [yellow] ! Update detected[white] => refreshing cache...")
-	//		_, _ = symfony.CacheWarmup(consolePath)
-	//		_, _ = colorstring.Println("    > [green]Done!") // todo, diplay the time it took to refresh the cache
-	//		filesToWatch = updatedFiles
-	//	} else {
-	//		time.Sleep(50 * time.Millisecond) // What time to use tp avoid overusing CPU?
-	//	}
-	//}
+	filesToWatch, err := symfony.GetWatchMap(config)
+	if err != nil {
+		tools.PrintError(err)
+		os.Exit(-1)
+	}
+	_, _ = colorstring.Println(fmt.Sprintf(" > [yellow]%d [white]file(s) watched in [yellow]%s[white] and ./[yellow]%s", len(filesToWatch), config.SymfonyProjectDir, symfony.ConfigDirectory))
+
+	// —— 6. Main process ——————————————————————————————————————————————————————
+	for {
+		updatedFiles, _ := symfony.GetWatchMap(config)
+		if !reflect.DeepEqual(filesToWatch, updatedFiles) {
+			_, _ = colorstring.Println(" [yellow] ⬇ Update detected[white] > refreshing cache...")
+			_, _ = symfony.CacheWarmup(config)
+			_, _ = colorstring.Println("  [green]✅  Done!") // todo, diplay the time it took to refresh the cache
+			filesToWatch = updatedFiles
+		} else {
+			time.Sleep(50 * time.Millisecond) // What time to use to avoid overusing CPU?
+		}
+	}
 }
 
 func getSymfonyProjectDir() (string, error) {
@@ -112,4 +111,5 @@ func welcome() {
 	_, _ = colorstring.Println(fmt.Sprintf(welcomeStr, version))
 	_, _ = colorstring.Println(separator)
 	fmt.Println(aboutStr)
+	_, _ = colorstring.Println(separator)
 }
