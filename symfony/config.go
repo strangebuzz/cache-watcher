@@ -1,3 +1,7 @@
+/**
+ * A renommer an files.go
+ */
+
 package symfony
 
 import (

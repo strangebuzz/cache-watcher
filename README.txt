@@ -10,10 +10,13 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Retourner une erreur si aucun fichier YAML n'est trouvé
-* Add the .env files to the watched files
+* Create a config structure
+* Run the Symfony commands on a given environment
+* Create a system > terminal package
+* Create the help screen
+* When run without argument show the help screen
+* Create an option to display the watched file (+ bonus:: display as a tree)
 * Initialize tests
-* Help argument
 
 
 @Refactoring
@@ -39,6 +42,7 @@
 @Resources
 ————————————————————————————————————————————————————————————————————————————————
 
+* https://www.golangprograms.com/go-language/struct.html
 * https://yourbasic.org/golang/for-loop/
 * https://golangcode.com/sleeping-with-go/
 * https://github.com/spiral/roadrunner Roadrunner contains a file watcher
@@ -49,6 +53,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Add the .env files to the watched files
 * Gather all the yaml files in config (on three levels)
 * Build a simple map with the c en clé le chemin et en valeur le timestamp
 * Get the update timestamp of a file
