@@ -45,7 +45,7 @@ func main() {
 		tools.PrintError(err)
 		os.Exit(1)
 	}
-	_, _ = colorstring.Println(" > Project Directory: [green]" + config.SymfonyProjectDir)
+	_, _ = colorstring.Println(" > Project directory: [green]" + config.SymfonyProjectDir)
 
 	// —— 4. Test if it is a Symfony project ———————————————————————————————————
 	config.SymfonyConsolePath, err = symfony.CheckSymfonyConsole(config)
@@ -74,7 +74,7 @@ func main() {
 	}
 	_, _ = colorstring.Println(fmt.Sprintf(" > [yellow]%d [white]file(s) watched in [yellow]%s[white] and [yellow](.)/%s", len(filesToWatch), config.SymfonyProjectDir, symfony.ConfigDirectory))
 
-	// —— 6. Main inifinite loop ———————————————————————————————————————————————
+	// —— 6. Main loop —————————————————————————————————————————————————————————
 	for {
 		updatedFiles, _ := symfony.GetWatchMap(config)
 		if !reflect.DeepEqual(filesToWatch, updatedFiles) {
@@ -98,11 +98,10 @@ func welcome() {
 	fmt.Println(aboutStr)
 	fmt.Println(aboutStr2)
 	fmt.Println(separator)
-
 }
 
 func help() {
-	fmt.Println("Call cc with the path of your Symfony project as the first argument.")
+	fmt.Println("Call sfcw with the path of your Symfony project as the first argument.")
 	_, _ = colorstring.Println("Example: \"[green]cc [yellow]../strangebuzz.com[white]\"")
 	_, _ = colorstring.Println("Or: \"[green]cc [yellow].[white]\" if you call it from the root of your Symfony project directory.")
 	_, _ = colorstring.Println("[yellow][💡][white] Add it to your $PATH if not already done.\n")

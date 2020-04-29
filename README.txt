@@ -1,28 +1,26 @@
-
 ————————————————————————————————————————————————————————————————————————————————
- sfcw : The Symfony Cache Watcher
-————————————————————————————————————————————————————————————————————————————————
-
-@Tmp
+                    sfcw : The Symfony Cache Watcher
 ————————————————————————————————————————————————————————————————————————————————
 
 
 @Bugs
 ————————————————————————————————————————————————————————————————————————————————
 
-* If we pass --help without other argument, we shoud't consider it as the directory
-  argument.
-
 
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
+* Compute the time it takes to get the files list
+* Watch translations
+* Watch Twif files
+* Create a parameter for the nesting level of the config directory
 * Make a loop for config glob patterns as they are the same
 
 -- V0.2
 
 * Allow to use custom parameters based on the .sfcw.yml file
 * Add some tests
+* Transform command arguments into the config
 
 
 @Nice to have
@@ -56,6 +54,7 @@
 @Resources
 ————————————————————————————————————————————————————————————————————————————————
 
+* https://golang.org/pkg/fmt/
 * https://golang.org/doc/effective_go.html
 * https://www.golangprograms.com/go-language/struct.html
 * https://golangbot.com/structs/
@@ -72,14 +71,14 @@
 * Renamed cc to sfcw
 * Added handling of absolute paths
 * Compute the time that takes to refresh the cache
-* When run without argument show the help screen
+* Show the help screen when no argument is provided
 * Added a sleep time parameter
 * Create a config structure
 * Run the Symfony commands on a given environment
 * Run the Symfony commands with the debug mode or not
 * Add the .env files to the watched files
 * Gather all the yaml files in config (on three levels)
-* Build a simple map with the c en clé le chemin et en valeur le timestamp
+* Build a simple map with the path as the key and the timestamp as the value
 * Get the update timestamp of a file
 * Compute the checksum of a file
 * Test if the directory contains bin/console
