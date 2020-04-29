@@ -44,23 +44,20 @@
 @Refactoring
 ————————————————————————————————————————————————————————————————————————————————
 
-* Make a loop for the three patterns in /config
 
 
 @Ideas
 ————————————————————————————————————————————————————————————————————————————————
 
-* Take the current directoty by default?
-* Handling of XML files?
+* Handling of XML files? ini files?
 * Handling of the old app/console?
 
 
 @Naming
 ————————————————————————————————————————————————————————————————————————————————
 
-* Sous domaine cc.strangebuzz.com ou meme strangebuzz.com/en/cc
-* symfony.cc -> déjà pris.
 * sfcw
+* Not "cc" because it's the C,C++ compiler.
 
 
 @Resources
