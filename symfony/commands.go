@@ -27,8 +27,8 @@ func CheckSymfonyConsole(config structs.Config) (string, error) {
 /**
  * @todo permetre de passer un environnement.
  */
-func RunCommand(console string, argument string) (string, error) {
-	out, err := exec.Command(console, argument).CombinedOutput()
+func RunCommand(config structs.Config, argument string) (string, error) {
+	out, err := exec.Command(config.SymfonyConsolePath, argument).CombinedOutput()
 	if err != nil {
 		return "", nil
 	}
@@ -37,11 +37,11 @@ func RunCommand(console string, argument string) (string, error) {
 }
 
 /* ./bin/console --version */
-func Version(consolePath string) (string, error) {
-	return RunCommand(consolePath, versionOption)
+func Version(config structs.Config) (string, error) {
+	return RunCommand(config, versionOption)
 }
 
 /* ./bin/console cache:warmup */
-func CacheWarmup(consolePath string) (string, error) {
-	return RunCommand(consolePath, cacheWarmup)
+func CacheWarmup(config structs.Config) (string, error) {
+	return RunCommand(config, cacheWarmup)
 }

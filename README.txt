@@ -15,8 +15,14 @@
 * Create a system > terminal package
 * Create the help screen
 * When run without argument show the help screen
+
+
+@Nice to have
+————————————————————————————————————————————————————————————————————————————————
+
+* Handle the case where a Symfony command returns an error
 * Create an option to display the watched file (+ bonus:: display as a tree)
-* Initialize tests
+* Add tests
 
 
 @Refactoring
@@ -34,7 +40,7 @@
 @Naming
 ————————————————————————————————————————————————————————————————————————————————
 
-* Sous domaine cc.strangebuzz.com ou meme strangebuzz.com/cc
+* Sous domaine cc.strangebuzz.com ou meme strangebuzz.com/en/cc
 * symfony.cc -> déjà pris.
 * sfcw
 

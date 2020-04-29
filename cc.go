@@ -12,6 +12,7 @@ import (
 	"github.com/strangebuzz/cc/tools"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 const version = "0.1.0"
@@ -47,17 +48,18 @@ func main() {
 		os.Exit(-1)
 	}
 	_, _ = colorstring.Println(" > Symfony console path: [green]" + config.SymfonyConsolePath)
-	tools.PrettyPrint(config)
-	//os.Exit(0)
 
 	// —— 4. Test the Symfony console with the version command —————————————————
-	//out, err := symfony.Version(consolePath)
-	//if err != nil {
-	//	tools.PrintError(err)
-	//	os.Exit(-1)
-	//}
-	//_, _ = colorstring.Println(" > Symfony version: [green]" + strings.Trim(fmt.Sprintf("%s", out), "\n"))
-	//
+	out, err := symfony.Version(config)
+	if err != nil {
+		tools.PrintError(err)
+		os.Exit(-1)
+	}
+	_, _ = colorstring.Println(" > Symfony version: [green]" + strings.Trim(fmt.Sprintf("%s", out), "\n"))
+
+	tools.PrettyPrint(config)
+	os.Exit(0)
+
 	//// —— 5. Watch files ———————————————————————————————————————————————————————
 	//filesToWatch, err := symfony.GetWatchMap(symfonyProjectDir)
 	//if err != nil {
