@@ -11,16 +11,19 @@
 ————————————————————————————————————————————————————————————————————————————————
 
 * The main directory argument doesn't handle absolute paths
+* If we pass --help without other argument, we shoud't consider it as the directory
+  argument.
 
 
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
+* Compute the time that takes the refresh
+* Renommer cc en sfcw car cc est le compileur c, c++ ! Donc ça ne va pas passer !! lol
 * Make a loop for config glob patterns as they are the same
-* When run without argument consider the current directory as the Symfony directory
-  and don't raise an error.
-* When run without argument show the help screen
-* Create the help screen
+
+-- V0.2
+
 * Allow to use custom parameters based on the .cc.yml file
 * Add some tests
 
@@ -76,6 +79,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* When run without argument show the help screen
 * Added a sleep time parameter
 * Create a config structure
 * Run the Symfony commands on a given environment

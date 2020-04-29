@@ -6,9 +6,8 @@ import (
 )
 
 func GetSymfonyProjectDir() (string, error) {
-	argsWithProg := os.Args
 	execDir, err := getExecDir()
-	path := filepath.Clean(execDir + "/" + argsWithProg[1])
+	path := filepath.Clean(execDir + "/" + os.Args[1])
 
 	_, err = os.Stat(path)
 	if err != nil {
