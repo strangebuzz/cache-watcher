@@ -8,7 +8,7 @@ import (
 )
 
 const versionOption = "--version"
-const cacheWarmup = "cache:warmup"
+const cacheWarmupArgument = "cache:warmup"
 const consoleRelativePath = "bin/console"
 
 func CheckSymfonyConsole(config structs.Config) (string, error) {
@@ -27,16 +27,16 @@ func CheckSymfonyConsole(config structs.Config) (string, error) {
 /**
  * @todo permetre de passer un environnement.
  */
-func RunCommand(config structs.Config, argument string) (string, error) {
+func RunCommand(config structs.Config, mainArgumentOrOption string) (string, error) {
 	var out []byte
 	var err error
 	envOption := "--env=" + config.SymfonyEnv
 
-	// weird: if the debugOption if empty then the debug is set to false
+	// @fixme: if the debugOption if empty then the debug is set to false
 	if config.SymfonyDebug == true {
-		out, err = exec.Command(config.SymfonyConsolePath, argument, envOption).CombinedOutput()
+		out, err = exec.Command(config.SymfonyConsolePath, mainArgumentOrOption, envOption).CombinedOutput()
 	} else {
-		out, err = exec.Command(config.SymfonyConsolePath, argument, envOption, "--no-debug").CombinedOutput()
+		out, err = exec.Command(config.SymfonyConsolePath, mainArgumentOrOption, envOption, "--no-debug").CombinedOutput()
 	}
 
 	if err != nil {
@@ -53,5 +53,5 @@ func Version(config structs.Config) (string, error) {
 
 /* ./bin/console cache:warmup */
 func CacheWarmup(config structs.Config) (string, error) {
-	return RunCommand(config, cacheWarmup)
+	return RunCommand(config, cacheWarmupArgument)
 }

@@ -13,7 +13,7 @@ type Config struct {
 	SymfonyProjectDir  string
 	SymfonyConsolePath string
 	SymfonyEnv         string
-	SymfonyDebug       bool // default  to false
+	SymfonyDebug       bool // default to false
 }
 
 func (obj *Config) Init() {

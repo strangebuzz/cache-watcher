@@ -7,29 +7,37 @@
 ————————————————————————————————————————————————————————————————————————————————
 
 
+@Bugs
+————————————————————————————————————————————————————————————————————————————————
+
+* Doesn't handle absolute paths for the diretory argument
+
+
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Create a config structure
-* Run the Symfony commands on a given environment
-* Create a system > terminal package
-* Create the help screen
 * When run without argument show the help screen
+* Create the help screen
+* Allow to use custom parameters based on the .cc.yml file
 * Add some tests
 
 
 @Nice to have
 ————————————————————————————————————————————————————————————————————————————————
 
+* Display the time it took to warmup the cache
 * Handle the case where a Symfony command returns an error
 * Create an option to display the watched file (+ bonus:: display as a tree)
 * Prevent the user from running cc for the same project more than one-time
 * Generate a pid file in case to be able to manually stop the process if something
   goes wrong.
+* Allow to have an additional custom files to watch
 
 
 @Refactoring
 ————————————————————————————————————————————————————————————————————————————————
+
+* Make a loop for the three patterns in /config
 
 
 @Ideas
@@ -64,6 +72,9 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Create a config structure
+* Run the Symfony commands on a given environment
+* Run the Symfony commands with the debug mode or not
 * Add the .env files to the watched files
 * Gather all the yaml files in config (on three levels)
 * Build a simple map with the c en clé le chemin et en valeur le timestamp
