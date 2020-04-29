@@ -58,7 +58,7 @@ func getFilesToWatch(symfonyProjectDir string) ([]string, error) {
 }
 
 /**
- * Get the watched files as a simple map path => datetime.
+ * Get the watched files as a simple map: "path" => "datetime"
  *
  * @example "/Users/coil/Sites/strangebuzz.com/config/services.yaml": "2020-04-28 16:33:44.73756727 +0200 CEST"
  */
@@ -69,7 +69,7 @@ func GetWatchMap(config structs.Config) (map[string]string, error) {
 	for _, file := range filesTowatch {
 		stats, err := os.Stat(file)
 		if err != nil {
-			tools.PrintError(fmt.Errorf("can't get stats for the \"%s\" file, check the project permissions", err))
+			tools.PrintError(fmt.Errorf("Can't get stats for the \"%s\" file, check the project permissions.", err))
 			os.Exit(1)
 		}
 		watchMap[file] = fmt.Sprintf("%s", stats.ModTime())

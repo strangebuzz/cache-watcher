@@ -46,12 +46,12 @@ func RunCommand(config structs.Config, mainArgumentOrOption string) (string, err
 	return fmt.Sprintf("%s", out), nil
 }
 
-/* ./bin/console --version */
+/* ./bin/console --version --env=dev */
 func Version(config structs.Config) (string, error) {
 	return RunCommand(config, versionOption)
 }
 
-/* ./bin/console cache:warmup */
+/* ./bin/console cache:warmup --env=dev */
 func CacheWarmup(config structs.Config) (string, error) {
 	return RunCommand(config, cacheWarmupArgument)
 }

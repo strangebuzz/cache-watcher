@@ -1,6 +1,6 @@
 
 ————————————————————————————————————————————————————————————————————————————————
- cc : The Symfony Cache Watcher
+ sfcw : The Symfony Cache Watcher
 ————————————————————————————————————————————————————————————————————————————————
 
 @Tmp
@@ -18,24 +18,21 @@
 ————————————————————————————————————————————————————————————————————————————————
 
 * Make a loop for config glob patterns as they are the same
-* Renommer cc en sfcw car cc est le compileur c, c++ ! Donc ça ne va pas passer !! lol
 
 -- V0.2
 
-* Allow to use custom parameters based on the .cc.yml file
+* Allow to use custom parameters based on the .sfcw.yml file
 * Add some tests
 
 
 @Nice to have
 ————————————————————————————————————————————————————————————————————————————————
 
-* Introduce a verbose mode
-* Handle the case where a Symfony command returns an error
 * Create an option to display the watched file (+ bonus: display as a tree)
-* Prevent the user from running cc for the same project more than one-time
-* Generate a pid file in case to be able to manually stop the process if something
-  goes wrong.
 * Allow to have an additional whitelist of custom files to watch
+* Handle the case where a Symfony command returns an error
+* Generate a pid file to be able to manually stop the process if something goes wrong.
+* Prevent the user from running sfcw for the same project more than one-time
 
 
 @Refactoring
@@ -72,6 +69,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Renamed cc to sfcw
 * Added handling of absolute paths
 * Compute the time that takes to refresh the cache
 * When run without argument show the help screen
