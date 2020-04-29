@@ -22,6 +22,7 @@ const aboutStr = "Symfony CC watches your config files (.env, yaml) and automati
 
 func main() {
 	var config structs.Config
+	config.Init()
 	var err error
 
 	welcome()

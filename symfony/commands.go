@@ -3,6 +3,7 @@ package symfony
 import (
 	"fmt"
 	"github.com/strangebuzz/cc/structs"
+	"github.com/strangebuzz/cc/tools"
 	"os"
 	"os/exec"
 )
@@ -28,7 +29,19 @@ func CheckSymfonyConsole(config structs.Config) (string, error) {
  * @todo permetre de passer un environnement.
  */
 func RunCommand(config structs.Config, argument string) (string, error) {
-	out, err := exec.Command(config.SymfonyConsolePath, argument).CombinedOutput()
+
+	envOption := "--env=" + config.SymfonyEnv
+	debugOption := ""
+	if config.SymfonyDebug == false {
+		debugOption = "--no-debug"
+	}
+	tools.PrettyPrint(config.SymfonyConsolePath)
+	tools.PrettyPrint(argument)
+	tools.PrettyPrint(envOption)
+	tools.PrettyPrint(debugOption)
+
+	out, err := exec.Command(config.SymfonyConsolePath, argument, envOption, debugOption).CombinedOutput()
+
 	if err != nil {
 		return "", nil
 	}

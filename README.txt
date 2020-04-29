@@ -49,6 +49,7 @@
 ————————————————————————————————————————————————————————————————————————————————
 
 * https://www.golangprograms.com/go-language/struct.html
+* https://golangbot.com/structs/
 * https://yourbasic.org/golang/for-loop/
 * https://golangcode.com/sleeping-with-go/
 * https://github.com/spiral/roadrunner Roadrunner contains a file watcher
