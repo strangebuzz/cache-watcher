@@ -79,7 +79,7 @@ func main() {
 			_, _ = colorstring.Println("  [green]✅  Done!")
 			filesToWatch = updatedFiles
 		} else {
-			time.Sleep(50 * time.Millisecond) // What time to use to avoid overusing CPU?
+			time.Sleep(config.SleepTime) // What time to use to avoid overusing CPU?
 		}
 	}
 }

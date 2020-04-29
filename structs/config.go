@@ -1,22 +1,26 @@
 package structs
 
-// Do we need this constants?
+import "time"
+
 const EnvDefault = "dev"
 const DebugDefault = true
+const SleepTime = 30
 
 /*
- * Main structure that contains all parameters we weed.
+ * Main application structure that contains all the parameters we weed.
  *
- * @note Do we need the Symfony prefix?
+ * @see Init()
  */
 type Config struct {
-	SymfonyProjectDir  string
-	SymfonyConsolePath string
-	SymfonyEnv         string
-	SymfonyDebug       bool // default to false
+	SymfonyProjectDir  string        // The main Symfony project directory
+	SymfonyConsolePath string        // Full path to "bin/console"
+	SymfonyEnv         string        // This is the APP_ENV parameter of the Symfony application
+	SymfonyDebug       bool          // This is the APP_DEBUG parameter of the Symfony application
+	SleepTime          time.Duration // Sleep time between two checks in milliseconds
 }
 
 func (obj *Config) Init() {
 	obj.SymfonyEnv = EnvDefault
-	obj.SymfonyDebug = DebugDefault
+	obj.SymfonyDebug = DebugDefault // false by default
+	obj.SleepTime = SleepTime * time.Millisecond
 }

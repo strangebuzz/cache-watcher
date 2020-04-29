@@ -10,12 +10,15 @@
 @Bugs
 ————————————————————————————————————————————————————————————————————————————————
 
-* Doesn't handle absolute paths for the diretory argument
+* The main directory argument doesn't handle absolute paths
 
 
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
+* Make a loop for config glob patterns as they are the same
+* When run without argument consider the current directory as the Symfony directory
+  and don't raise an error.
 * When run without argument show the help screen
 * Create the help screen
 * Allow to use custom parameters based on the .cc.yml file
@@ -26,12 +29,13 @@
 ————————————————————————————————————————————————————————————————————————————————
 
 * Display the time it took to warmup the cache
+* Introduce a verbose mode
 * Handle the case where a Symfony command returns an error
 * Create an option to display the watched file (+ bonus:: display as a tree)
 * Prevent the user from running cc for the same project more than one-time
 * Generate a pid file in case to be able to manually stop the process if something
   goes wrong.
-* Allow to have an additional custom files to watch
+* Allow to have an additional whitelist of custom files to watch
 
 
 @Refactoring
@@ -72,6 +76,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Added a sleep time parameter
 * Create a config structure
 * Run the Symfony commands on a given environment
 * Run the Symfony commands with the debug mode or not
