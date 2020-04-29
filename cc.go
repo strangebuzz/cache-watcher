@@ -78,9 +78,12 @@ func main() {
 	for {
 		updatedFiles, _ := symfony.GetWatchMap(config)
 		if !reflect.DeepEqual(filesToWatch, updatedFiles) {
+			start := time.Now()
 			_, _ = symfony.CacheWarmup(config)
+			end := time.Now()
+			elapsed := end.Sub(start)
 			_, _ = colorstring.Println(" [yellow] ⬇ Update detected[white] > refreshing cache...")
-			_, _ = colorstring.Println("  [green]✅  Done!")
+			_, _ = colorstring.Println(fmt.Sprintf("  [green]✅  Done![white] in [yellow]%.2f[white] second(s).", elapsed.Seconds()))
 			filesToWatch = updatedFiles
 		} else {
 			time.Sleep(config.SleepTime) // What time to use to avoid overusing CPU?

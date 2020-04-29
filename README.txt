@@ -18,7 +18,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Compute the time that takes the refresh
 * Renommer cc en sfcw car cc est le compileur c, c++ ! Donc ça ne va pas passer !! lol
 * Make a loop for config glob patterns as they are the same
 
@@ -43,7 +42,6 @@
 
 @Refactoring
 ————————————————————————————————————————————————————————————————————————————————
-
 
 
 @Ideas
@@ -76,6 +74,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Compute the time that takes to refresh the cache
 * When run without argument show the help screen
 * Added a sleep time parameter
 * Create a config structure
@@ -91,5 +90,5 @@
 * Helper for ansi output
 * Tested if directory exists
 * Get the full path of the working directory
-* Nice ansi output for the welcom message
+* Nice ansi output for the welcome message
 * Introduced a version constant
