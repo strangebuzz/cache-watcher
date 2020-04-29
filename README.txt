@@ -10,7 +10,6 @@
 @Bugs
 ————————————————————————————————————————————————————————————————————————————————
 
-* The main directory argument doesn't handle absolute paths
 * If we pass --help without other argument, we shoud't consider it as the directory
   argument.
 
@@ -18,8 +17,8 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Renommer cc en sfcw car cc est le compileur c, c++ ! Donc ça ne va pas passer !! lol
 * Make a loop for config glob patterns as they are the same
+* Renommer cc en sfcw car cc est le compileur c, c++ ! Donc ça ne va pas passer !! lol
 
 -- V0.2
 
@@ -30,10 +29,9 @@
 @Nice to have
 ————————————————————————————————————————————————————————————————————————————————
 
-* Display the time it took to warmup the cache
 * Introduce a verbose mode
 * Handle the case where a Symfony command returns an error
-* Create an option to display the watched file (+ bonus:: display as a tree)
+* Create an option to display the watched file (+ bonus: display as a tree)
 * Prevent the user from running cc for the same project more than one-time
 * Generate a pid file in case to be able to manually stop the process if something
   goes wrong.
@@ -74,6 +72,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Added handling of absolute paths
 * Compute the time that takes to refresh the cache
 * When run without argument show the help screen
 * Added a sleep time parameter
