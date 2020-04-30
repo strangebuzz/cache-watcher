@@ -1,7 +1,3 @@
-/**
- * A renommer an files.go
- */
-
 package symfony
 
 import (
@@ -15,46 +11,36 @@ import (
 const ConfigDirectory = "config"
 
 /**
- * Get all the files who has to be watch.
+ * Get all the files of the Symfony application which have to be watched.
  *
- * @todo Loop on a list of Glob patterns.
- * @todo Allow to set the max nesting level to handle.
+ * @todo handle nesting level? Add a parameter for that?
  */
-func getFilesToWatch(symfonyProjectDir string) ([]string, error) {
-	var fileToWatch []string
+func getFilesToWatch(config structs.Config) ([]string, error) {
+	var filesToWatch []string
 
-	// Level 0 : .env files
-	fileToWatch, err := filepath.Glob(fmt.Sprintf("%s/.env*", symfonyProjectDir))
+	// 1) ".env" files at the root of the project
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, ".env*")...)
+
+	// 2) Yaml files in "config/", "config/*/" and "config/*/*/"
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.yaml", ConfigDirectory))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*.yaml", ConfigDirectory))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*.yaml", ConfigDirectory))...)
+
+	return filesToWatch, nil
+}
+
+/**
+ * Get all files corresponding to a glob pattern. To simplify the code we don't
+ * return an error. The process will stop if an error is encountered.
+ */
+func getFilesFromPath(config structs.Config, glob string) []string {
+	files, err := filepath.Glob(fmt.Sprintf("%s/%s", config.SymfonyProjectDir, glob))
 	if err != nil {
 		fmt.Print(err)
 		os.Exit(1)
 	}
 
-	// Level 1
-	level1, err := filepath.Glob(fmt.Sprintf("%s/%s/*.yaml", symfonyProjectDir, ConfigDirectory))
-	if err != nil {
-		fmt.Print(err)
-		os.Exit(1)
-	}
-	fileToWatch = append(fileToWatch, level1...)
-
-	// Level 2
-	level2, err := filepath.Glob(fmt.Sprintf("%s/%s/*/*.yaml", symfonyProjectDir, ConfigDirectory))
-	if err != nil {
-		fmt.Print(err)
-		os.Exit(1)
-	}
-	fileToWatch = append(fileToWatch, level2...)
-
-	// Level 3
-	level3, err := filepath.Glob(fmt.Sprintf("%s/%s/*/*/*.yaml", symfonyProjectDir, ConfigDirectory))
-	if err != nil {
-		fmt.Print(err)
-		os.Exit(1)
-	}
-	fileToWatch = append(fileToWatch, level3...)
-
-	return fileToWatch, nil
+	return files
 }
 
 /**
@@ -64,7 +50,7 @@ func getFilesToWatch(symfonyProjectDir string) ([]string, error) {
  */
 func GetWatchMap(config structs.Config) (map[string]string, error) {
 	watchMap := map[string]string{}
-	filesTowatch, _ := getFilesToWatch(config.SymfonyProjectDir)
+	filesTowatch, _ := getFilesToWatch(config)
 
 	for _, file := range filesTowatch {
 		stats, err := os.Stat(file)

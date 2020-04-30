@@ -18,6 +18,8 @@ import (
 
 const version = "0.1.0"
 const separator = "——————————————————————————————————————————————————————————————————————"
+
+// pas besoin de constantes pour ça
 const welcomeStr = "  [green]Symfony CC [white]version [yellow]v%s[white] by [blue]COil - https://www.strangebuzz.com 🐝 [white]"
 const aboutStr = "Symfony CC watches your config files (.env, .yaml) and automatically refreshes your application cache."
 const aboutStr2 = "(CTRL+C to stop watching)."

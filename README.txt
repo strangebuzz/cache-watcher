@@ -10,9 +10,9 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
+* Transfert ConfigDirectory in the config structure
 * Watch translations
-* Watch Twif files
-* Create a parameter for the nesting level of the config directory
+* Create a parameter for the nesting level to apply
 * Make a loop for config glob patterns as they are the same
 
 -- V0.2
@@ -36,9 +36,10 @@
 ————————————————————————————————————————————————————————————————————————————————
 
 
-@Ideas
+@Ideas/Decision to take
 ————————————————————————————————————————————————————————————————————————————————
 
+* Watch Twig files?
 * Handling of XML files? ini files?
 * Handling of the old app/console?
 
