@@ -11,8 +11,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Add a parameter for the yaml extension
-* Add a parameter for the template extension
 * Add some tests
 * See for the sleep time between two checks
 
@@ -33,7 +31,7 @@
 * Allow to have an additional whitelist of custom files to watch
 * Handle the case where a Symfony command returns an error
   > https://stackoverflow.com/q/39508086/633864
-* Generate a pid file to be able to manually stop the process if something goes wrong.
+* Generate a pid file to be able to manually stop the process if something goes wrong
 * Prevent the user from running sfcw for the same project more than one-time
 * Create a deamon mode: --deamon
 

@@ -20,19 +20,19 @@ func getFilesToWatch(config structs.Config) ([]string, error) {
 	filesToWatch = append(filesToWatch, getFilesFromPath(config, ".env*")...)
 
 	// 2) Yaml files in "config/"...
-	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.yaml", config.SymfonyConfigDir))...)
-	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*.yaml", config.SymfonyConfigDir))...)
-	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*.yaml", config.SymfonyConfigDir))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.%s", config.SymfonyConfigDir, config.YamlExtension))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*.%s", config.SymfonyConfigDir, config.YamlExtension))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*.%s", config.SymfonyConfigDir, config.YamlExtension))...)
 
 	// 3) Yaml files in "translations/"...
-	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.yaml", config.SymfonyTranslationsDir))...)
-	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*.yaml", config.SymfonyTranslationsDir))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.%s", config.SymfonyTranslationsDir, config.YamlExtension))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*.%s", config.SymfonyTranslationsDir, config.YamlExtension))...)
 
 	// 4) Twig files in "templates/"...
-	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.twig", config.SymfonyTemplatesDir))...)
-	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*.twig", config.SymfonyTemplatesDir))...)
-	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*.twig", config.SymfonyTemplatesDir))...)
-	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*/*.twig", config.SymfonyTemplatesDir))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.%s", config.SymfonyTemplatesDir, config.TemplatesExtension))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*.%s", config.SymfonyTemplatesDir, config.TemplatesExtension))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*.%s", config.SymfonyTemplatesDir, config.TemplatesExtension))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*/*.%s", config.SymfonyTemplatesDir, config.TemplatesExtension))...)
 
 	return filesToWatch, nil
 }
