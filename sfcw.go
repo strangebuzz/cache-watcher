@@ -65,12 +65,7 @@ func main() {
 
 	// —— 6. Get the files to watch ————————————————————————————————————————————
 	start := time.Now()
-	filesToWatch, err := symfony.GetWatchMap(config)
-	if err != nil {
-		tools.PrintError(fmt.Errorf("Error while analysing the files to watch."))
-		tools.PrintError(err)
-		os.Exit(1)
-	}
+	filesToWatch, _ := symfony.GetWatchMap(config)
 	end := time.Now()
 	elapsed := end.Sub(start)
 
@@ -81,6 +76,10 @@ func main() {
 	_, _ = colorstring.Println(fmt.Sprintf(" > [yellow]%d [white]file(s) watched in [yellow]%s[white] in [yellow]%d[white] millisecond(s).", len(filesToWatch), config.SymfonyProjectDir, elapsed.Milliseconds()))
 
 	// —— 6. Main loop —————————————————————————————————————————————————————————
+	mainLoop(config, filesToWatch)
+}
+
+func mainLoop(config structs.Config, filesToWatch map[string]string) {
 	for {
 		updatedFiles, _ := symfony.GetWatchMap(config)
 		if !reflect.DeepEqual(filesToWatch, updatedFiles) {
