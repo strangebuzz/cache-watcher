@@ -16,9 +16,11 @@ import (
 	"time"
 )
 
-const accronym = "sfcw"
+const accronym = "Sfcw"
+const binary = "sfcw"
 const version = "0.2.0"
 const separator = "——————————————————————————————————————————————————————————————————————"
+const repository = "https://github.com/strangebuzz/cc"
 
 func main() {
 	var config structs.Config
@@ -98,14 +100,15 @@ func mainLoop(config structs.Config, filesToWatch map[string]string) {
 
 func errorNothingtoWatch() {
 	tools.PrintError(fmt.Errorf("No file to watch found."))
-	_, _ = colorstring.Print("[yellow][💡][white] If you are using an \"old\" Symfony project directory structure, you have to customize the watched directories with a ")
-	_, _ = colorstring.Println("[yellow].sfcw.yaml [white]file at the root of your project.")
+	_, _ = colorstring.Println("[yellow][💡][white] If you are using an \"old\" Symfony project directory structure")
+	_, _ = colorstring.Println("     you have to customize the watched directories with a [yellow].sfcw.yaml [white]file")
+	_, _ = colorstring.Println(fmt.Sprintf("     at the root of your Symfony project. Check out the doc: [magenta]%s", repository))
 	os.Exit(0)
 }
 
 func welcome() {
 	fmt.Println(separator)
-	_, _ = colorstring.Println(fmt.Sprintf("  [green]%s [white]version [yellow]v%s[white] by [blue]COil - https://www.strangebuzz.com 🐝 [white]", accronym, version))
+	_, _ = colorstring.Println(fmt.Sprintf("  [bold][green]%s [white]version [yellow]v%s[white] by [blue]COil - https://www.strangebuzz.com 🐝 [white]", accronym, version))
 	fmt.Println(separator)
 	_, _ = colorstring.Println(fmt.Sprintf("[green]%s[white] watches your config files (.env, .yaml) and automatically refreshes your application cache.", accronym))
 	fmt.Println("(CTRL+C to stop watching and this process).")
@@ -113,8 +116,8 @@ func welcome() {
 }
 
 func help() {
-	_, _ = colorstring.Println(fmt.Sprintf("Call [green]%s[white] with the path of your Symfony project as the first argument.", accronym))
-	_, _ = colorstring.Println(fmt.Sprintf("Example: \"[green]%s [yellow]../strangebuzz.com[white]\"", accronym))
-	_, _ = colorstring.Println(fmt.Sprintf("Or even: \"[green]%s [yellow].[white]\" if you call it from the root of your Symfony project directory.", accronym))
-	_, _ = colorstring.Println("[yellow][💡][white] Add it to your $PATH if not already done.\n")
+	_, _ = colorstring.Println(fmt.Sprintf("Call [green]%s[white] with the path of your Symfony project as the first argument.", binary))
+	_, _ = colorstring.Println(fmt.Sprintf("Example: \"[green]%s [yellow]../strangebuzz.com[white]\"", binary))
+	_, _ = colorstring.Println(fmt.Sprintf("Or even: \"[green]%s [yellow].[white]\" if you call it from the root of your Symfony project directory.", binary))
+	_, _ = colorstring.Println("[yellow][💡][white] Add it to your $PATH if not done already.\n")
 }

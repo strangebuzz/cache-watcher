@@ -1,12 +1,11 @@
 ————————————————————————————————————————————————————————————————————————————————
-                    sfcw : The Symfony Cache Watcher
+                    Sfcw : The Symfony Cache Watcher
 ————————————————————————————————————————————————————————————————————————————————
 
 
 @Bugs
 ————————————————————————————————————————————————————————————————————————————————
 
-* Display an error if no file was found
 
 
 @Todo
@@ -14,7 +13,7 @@
 
 * Add a parameter for the yaml extension
 * Add a parameter for the template extension
-* Create a parameter for the nesting level to apply
+* Create a parameter for the nesting level to apply? Make it generic ?
 * Add some tests
 
 -- V0.3
@@ -29,11 +28,13 @@
 @Nice to have
 ————————————————————————————————————————————————————————————————————————————————
 
+* Apply the Symfony style for the console output (use colored background)
 * Create an option to display the watched file (+ bonus: display as a tree)
 * Allow to have an additional whitelist of custom files to watch
 * Handle the case where a Symfony command returns an error
 * Generate a pid file to be able to manually stop the process if something goes wrong.
 * Prevent the user from running sfcw for the same project more than one-time
+* Create a deamon mode: --deamon
 
 
 @Refactoring

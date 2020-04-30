@@ -6,5 +6,5 @@ import (
 )
 
 func PrintError(err error) {
-	_, _ = colorstring.Println(fmt.Sprintf("[red]/!\\ %s /!\\", err))
+	_, _ = colorstring.Println(fmt.Sprintf("[_red_]/!\\ %s /!\\", err))
 }
