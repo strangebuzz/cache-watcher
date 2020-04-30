@@ -11,7 +11,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Display the process PID
 * Add a parameter for the yaml extension
 * Add a parameter for the template extension
 * Create a parameter for the nesting level to apply? Make it generic ?
@@ -33,6 +32,7 @@
 * Create an option to display the watched file (+ bonus: display as a tree)
 * Allow to have an additional whitelist of custom files to watch
 * Handle the case where a Symfony command returns an error
+  > https://stackoverflow.com/q/39508086/633864
 * Generate a pid file to be able to manually stop the process if something goes wrong.
 * Prevent the user from running sfcw for the same project more than one-time
 * Create a deamon mode: --deamon
@@ -45,6 +45,7 @@
 @Ideas/Decision to take
 ————————————————————————————————————————————————————————————————————————————————
 
+* Only display the raw go error with the verbose mode?
 * Watch Twig files?
 * Handling of XML files? ini files?
 * Handling of the old app/console?
@@ -74,8 +75,8 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
-* Added pid number in welcome message
-* Watch twig files
+* Added the pid number in the welcome message
+* Watch Twig files
 * Watch translations files
 * Transfered the ConfigDirectory constant in the config structure
 * Compute the time it takes to get the files list
