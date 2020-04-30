@@ -7,6 +7,7 @@ const EnvDefault = "dev"
 const DebugDefault = true
 const ConfigDirectory = "config"
 const TranslationsDirectory = "translations"
+const TemplatesDir = "templates"
 
 // Watcher process parameters
 const SleepTime = 30
@@ -23,6 +24,7 @@ type Config struct {
 	SymfonyDebug           bool          // This is the APP_DEBUG parameter of the Symfony application
 	SymfonyConfigDir       string        // Relative directory where are stored the configuration files of the Symfony application
 	SymfonyTranslationsDir string        // Relative directory where are stored the translations files of the Symfony application
+	SymfonyTemplatesDir    string        // Relative directory where are stored the Twig template of the Symfony application
 	SleepTime              time.Duration // Sleep time between two filesystem checks in milliseconds
 }
 
@@ -31,5 +33,6 @@ func (obj *Config) Init() {
 	obj.SymfonyDebug = DebugDefault // false by default
 	obj.SymfonyConfigDir = ConfigDirectory
 	obj.SymfonyTranslationsDir = TranslationsDirectory
+	obj.SymfonyTemplatesDir = TemplatesDir
 	obj.SleepTime = SleepTime * time.Millisecond
 }

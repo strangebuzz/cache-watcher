@@ -19,10 +19,20 @@ func getFilesToWatch(config structs.Config) ([]string, error) {
 	// 1) ".env" files at the root of the project
 	filesToWatch = append(filesToWatch, getFilesFromPath(config, ".env*")...)
 
-	// 2) Yaml files in "config/", "config/*/" and "config/*/*/"
+	// 2) Yaml files in "config/"...
 	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.yaml", config.SymfonyConfigDir))...)
 	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*.yaml", config.SymfonyConfigDir))...)
 	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*.yaml", config.SymfonyConfigDir))...)
+
+	// 3) Yaml files in "translations/"...
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.yaml", config.SymfonyTranslationsDir))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*.yaml", config.SymfonyTranslationsDir))...)
+
+	// 4) Twig files in "templates/"...
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.twig", config.SymfonyTemplatesDir))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*.twig", config.SymfonyTemplatesDir))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*.twig", config.SymfonyTemplatesDir))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*/*.twig", config.SymfonyTemplatesDir))...)
 
 	return filesToWatch, nil
 }

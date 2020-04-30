@@ -10,14 +10,18 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Watch translations
+* Add a parameter for the yaml extension
+* Add a parameter for the twig extension
 * Create a parameter for the nesting level to apply
+* Add some tests
 
--- V0.2
+-- V0.3
 
 * Allow to use custom parameters based on the .sfcw.yml file
-* Add some tests
-* Transform command arguments into the config
+
+-- V0.4
+
+* Transform command arguments into config parameters
 
 
 @Nice to have
@@ -66,6 +70,8 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Watch twig files
+* Watch translations files
 * Transfered the ConfigDirectory constant in the config structure
 * Compute the time it takes to get the files list
 * Renamed cc to sfcw
