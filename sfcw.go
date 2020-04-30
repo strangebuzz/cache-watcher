@@ -70,12 +70,17 @@ func main() {
 	// —— 6. Get the files to watch ————————————————————————————————————————————
 	start := time.Now()
 	filesToWatch, err := symfony.GetWatchMap(config)
-	end := time.Now()
-	elapsed := end.Sub(start)
 	if err != nil {
 		tools.PrintError(fmt.Errorf("Error while analysing the files to watch."))
 		tools.PrintError(err)
 		os.Exit(1)
+	}
+	end := time.Now()
+	elapsed := end.Sub(start)
+
+	// —— 6.1 No error, but no file was found ——————————————————————————————————
+	if len(filesToWatch) == 0 {
+		errorNothingtoWatch()
 	}
 	_, _ = colorstring.Println(fmt.Sprintf(" > [yellow]%d [white]file(s) watched in [yellow]%s[white] in [yellow]%d[white] millisecond(s).", len(filesToWatch), config.SymfonyProjectDir, elapsed.Milliseconds()))
 
@@ -94,6 +99,13 @@ func main() {
 			time.Sleep(config.SleepTime) // What time to use to avoid overusing CPU?
 		}
 	}
+}
+
+func errorNothingtoWatch() {
+	tools.PrintError(fmt.Errorf("No file to watch found."))
+	_, _ = colorstring.Print("[yellow][💡][white] If you are using an \"old\" Symfony project directory structure, you have to customize the watched directories with a ")
+	_, _ = colorstring.Println("[yellow].sfcw.yaml [white]file at the root of your project.")
+	os.Exit(0)
 }
 
 func welcome() {

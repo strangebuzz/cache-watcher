@@ -6,12 +6,14 @@
 @Bugs
 ————————————————————————————————————————————————————————————————————————————————
 
+* Display an error if no file was found
+
 
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
 * Add a parameter for the yaml extension
-* Add a parameter for the twig extension
+* Add a parameter for the template extension
 * Create a parameter for the nesting level to apply
 * Add some tests
 
