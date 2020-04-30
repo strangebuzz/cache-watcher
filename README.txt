@@ -10,7 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Compute the time it takes to get the files list
 * Watch translations
 * Watch Twif files
 * Create a parameter for the nesting level of the config directory
@@ -68,6 +67,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Compute the time it takes to get the files list
 * Renamed cc to sfcw
 * Added handling of absolute paths
 * Compute the time that takes to refresh the cache

@@ -66,20 +66,23 @@ func main() {
 	_, _ = colorstring.Println(" > Symfony env: [green]" + strings.Trim(fmt.Sprintf("%s", out), "\n"))
 
 	// —— 6. Get the files to watch ————————————————————————————————————————————
+	start := time.Now()
 	filesToWatch, err := symfony.GetWatchMap(config)
+	end := time.Now()
+	elapsed := end.Sub(start)
 	if err != nil {
 		tools.PrintError(fmt.Errorf("Error while analysing the files to watch."))
 		tools.PrintError(err)
 		os.Exit(1)
 	}
-	_, _ = colorstring.Println(fmt.Sprintf(" > [yellow]%d [white]file(s) watched in [yellow]%s[white] and [yellow](.)/%s", len(filesToWatch), config.SymfonyProjectDir, symfony.ConfigDirectory))
+	_, _ = colorstring.Println(fmt.Sprintf(" > [yellow]%d [white]file(s) watched in [yellow]%s[white] and [yellow](.)/%s[white] in [yellow]%d[white] millisecond(s).", len(filesToWatch), config.SymfonyProjectDir, symfony.ConfigDirectory, elapsed.Milliseconds()))
 
 	// —— 6. Main loop —————————————————————————————————————————————————————————
 	for {
 		updatedFiles, _ := symfony.GetWatchMap(config)
 		if !reflect.DeepEqual(filesToWatch, updatedFiles) {
 			start := time.Now()
-			_, _ = symfony.CacheWarmup(config)
+			_, _ = symfony.CacheWarmup(config) // handle errors
 			end := time.Now()
 			elapsed := end.Sub(start)
 			_, _ = colorstring.Println(" [yellow] ⬇ Update detected[white] > refreshing cache...")
