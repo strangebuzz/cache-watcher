@@ -76,6 +76,7 @@ func main() {
 		errorNothingtoWatch()
 	}
 	_, _ = colorstring.Println(fmt.Sprintf(" > [yellow]%d [white]file(s) watched in [yellow]%s[white] in [yellow]%d[white] millisecond(s).", len(filesToWatch), config.SymfonyProjectDir, elapsed.Milliseconds()))
+	_, _ = colorstring.Println(fmt.Sprintf(" > [green]CTRL+C[white] to stop watching or run [green]kill -9 [yellow]%d[white].", os.Getpid()))
 
 	// —— 6. Main loop —————————————————————————————————————————————————————————
 	mainLoop(config, filesToWatch)
@@ -110,8 +111,7 @@ func welcome() {
 	fmt.Println(separator)
 	_, _ = colorstring.Println(fmt.Sprintf("  [bold][green]%s [white]version [yellow]v%s[white] by [blue]COil - https://www.strangebuzz.com 🐝 [white]", accronym, version))
 	fmt.Println(separator)
-	_, _ = colorstring.Println(fmt.Sprintf("[green]%s[white] watches your config files (.env, .yaml) and automatically refreshes your application cache.", accronym))
-	fmt.Println(fmt.Sprintf("(CTRL+C to stop watching or run \"kill -9 %d\").", os.Getpid()))
+	_, _ = colorstring.Println(fmt.Sprintf("[green]%s[white] watches your files (.env, YAML, Twig) and automatically refreshes your application cache.", accronym))
 	fmt.Println(separator)
 }
 
@@ -119,5 +119,5 @@ func help() {
 	_, _ = colorstring.Println(fmt.Sprintf("Call [green]%s[white] with the path of your Symfony project as the first argument.", binary))
 	_, _ = colorstring.Println(fmt.Sprintf("Example: \"[green]%s [yellow]../strangebuzz.com[white]\"", binary))
 	_, _ = colorstring.Println(fmt.Sprintf("Or even: \"[green]%s [yellow].[white]\" if you call it from the root of your Symfony project directory.", binary))
-	_, _ = colorstring.Println("[yellow][💡][white] Add it to your $PATH if not done already.\n")
+	_, _ = colorstring.Println("[yellow][💡][white] Add it to your $PATH if not done already.")
 }
