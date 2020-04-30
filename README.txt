@@ -10,10 +10,8 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Transfert ConfigDirectory in the config structure
 * Watch translations
 * Create a parameter for the nesting level to apply
-* Make a loop for config glob patterns as they are the same
 
 -- V0.2
 
@@ -68,6 +66,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Transfered the ConfigDirectory constant in the config structure
 * Compute the time it takes to get the files list
 * Renamed cc to sfcw
 * Added handling of absolute paths

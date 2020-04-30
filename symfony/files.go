@@ -8,8 +8,6 @@ import (
 	"path/filepath"
 )
 
-const ConfigDirectory = "config"
-
 /**
  * Get all the files of the Symfony application which have to be watched.
  *
@@ -22,9 +20,9 @@ func getFilesToWatch(config structs.Config) ([]string, error) {
 	filesToWatch = append(filesToWatch, getFilesFromPath(config, ".env*")...)
 
 	// 2) Yaml files in "config/", "config/*/" and "config/*/*/"
-	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.yaml", ConfigDirectory))...)
-	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*.yaml", ConfigDirectory))...)
-	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*.yaml", ConfigDirectory))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.yaml", config.SymfonyConfigDir))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*.yaml", config.SymfonyConfigDir))...)
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*.yaml", config.SymfonyConfigDir))...)
 
 	return filesToWatch, nil
 }

@@ -77,7 +77,7 @@ func main() {
 		tools.PrintError(err)
 		os.Exit(1)
 	}
-	_, _ = colorstring.Println(fmt.Sprintf(" > [yellow]%d [white]file(s) watched in [yellow]%s[white] and [yellow](.)/%s[white] in [yellow]%d[white] millisecond(s).", len(filesToWatch), config.SymfonyProjectDir, symfony.ConfigDirectory, elapsed.Milliseconds()))
+	_, _ = colorstring.Println(fmt.Sprintf(" > [yellow]%d [white]file(s) watched in [yellow]%s[white] in [yellow]%d[white] millisecond(s).", len(filesToWatch), config.SymfonyProjectDir, elapsed.Milliseconds()))
 
 	// —— 6. Main loop —————————————————————————————————————————————————————————
 	for {
