@@ -13,8 +13,8 @@
 
 * Add a parameter for the yaml extension
 * Add a parameter for the template extension
-* Create a parameter for the nesting level to apply? Make it generic ?
 * Add some tests
+* See for the sleep time between two checks
 
 -- V0.3
 
@@ -45,6 +45,7 @@
 @Ideas/Decision to take
 ————————————————————————————————————————————————————————————————————————————————
 
+* Create a parameter for the nesting level to apply? Make it generic ?
 * Only display the raw go error with the verbose mode?
 * Watch Twig files?
 * Handling of XML files? ini files?
