@@ -11,6 +11,7 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
+* Display the process PID
 * Add a parameter for the yaml extension
 * Add a parameter for the template extension
 * Create a parameter for the nesting level to apply? Make it generic ?
@@ -73,6 +74,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Added pid number in welcome message
 * Watch twig files
 * Watch translations files
 * Transfered the ConfigDirectory constant in the config structure

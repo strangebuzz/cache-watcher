@@ -111,7 +111,7 @@ func welcome() {
 	_, _ = colorstring.Println(fmt.Sprintf("  [bold][green]%s [white]version [yellow]v%s[white] by [blue]COil - https://www.strangebuzz.com 🐝 [white]", accronym, version))
 	fmt.Println(separator)
 	_, _ = colorstring.Println(fmt.Sprintf("[green]%s[white] watches your config files (.env, .yaml) and automatically refreshes your application cache.", accronym))
-	fmt.Println("(CTRL+C to stop watching and this process).")
+	fmt.Println(fmt.Sprintf("(CTRL+C to stop watching or run \"kill -9 %d\").", os.Getpid()))
 	fmt.Println(separator)
 }
 
