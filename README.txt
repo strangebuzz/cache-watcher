@@ -11,6 +11,7 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
+* Ajouter l'heure de détection de changement
 * Add some tests
 * See for the sleep time between two checks
 
