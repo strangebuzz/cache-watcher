@@ -12,7 +12,6 @@
 ————————————————————————————————————————————————————————————————————————————————
 
 * Ajouter l'heure de détection de changement
-* Add some tests
 * See for the sleep time between two checks
 
 -- V0.3
@@ -22,6 +21,13 @@
 -- V0.4
 
 * Transform command arguments into config parameters
+
+
+@Distribution
+————————————————————————————————————————————————————————————————————————————————
+
+* https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04
+* https://dave.cheney.net/2012/09/08/an-introduction-to-cross-compilation-with-go
 
 
 @Nice to have

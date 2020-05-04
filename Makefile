@@ -20,7 +20,7 @@ deps: clean ## Clean deps
 
 ## —— Tests ✅ —————————————————————————————————————————————————————————————————
 test: ## Run all tests
-	go test
+	go test -count=1 -v ./...
 
 ## —— Coding standards ✨ ——————————————————————————————————————————————————————
 lint: ## Run gofmt simplify and lint

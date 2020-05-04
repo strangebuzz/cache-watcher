@@ -120,4 +120,5 @@ func help() {
 	_, _ = colorstring.Println(fmt.Sprintf("Example: \"[green]%s [yellow]../strangebuzz.com[white]\"", binary))
 	_, _ = colorstring.Println(fmt.Sprintf("Or even: \"[green]%s [yellow].[white]\" if you call it from the root of your Symfony project directory.", binary))
 	_, _ = colorstring.Println("[yellow][💡][white] Add it to your $PATH if not done already.")
+	//fmt.Printf("Hello %s/%s\n", runtime.GOOS, runtime.GOARCH)
 }
