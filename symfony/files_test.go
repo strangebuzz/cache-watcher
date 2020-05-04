@@ -22,7 +22,11 @@ func TestGetFilesToWatch(t *testing.T) {
 		t.Errorf("Error while testing getFilesToWatch(): '%s'", err)
 	}
 
-	expected := 3
+	// root:         1 file
+	// config:       2 files
+	// translations: 2 files
+	// ========
+	expected := 5
 	if expected != len(filesToWatch) {
 		t.Errorf("[symfony 5] getFilesToWatch() problem, expected: '%d' files found '%d' ", expected, len(filesToWatch))
 	}

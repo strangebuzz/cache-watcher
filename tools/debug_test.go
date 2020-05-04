@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// This is just a test example
 func TestPrettyFormat(t *testing.T) {
 	testTable := map[string]bool{
 		"Yes": true,
