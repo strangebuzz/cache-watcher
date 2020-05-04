@@ -68,6 +68,7 @@
 @Resources
 ————————————————————————————————————————————————————————————————————————————————
 
+* https://stackoverflow.com/q/26804642/633864
 * https://golang.org/pkg/fmt/
 * https://golang.org/doc/effective_go.html
 * https://www.golangprograms.com/go-language/struct.html
