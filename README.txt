@@ -10,9 +10,8 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Add tests for structs.go
-* Add at least one test by Go file
 * Ajouter l'heure de détection de changement
+* Add at least one test by Go file
 * See for the sleep time between two checks
 
 -- V0.3
