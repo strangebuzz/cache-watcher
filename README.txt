@@ -10,14 +10,7 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* See for the sleep time between two checks
-
--- V0.3
-
-* Allow to use custom parameters based on the .sfcw.yml file
-
--- V0.4
-
+* Multiply by one mimmion the user value for sleep time
 * Transform command arguments into config parameters
 
 
@@ -44,6 +37,7 @@
 @Refactoring/Long term
 ————————————————————————————————————————————————————————————————————————————————
 
+* See for ideal sleep time between two checks
 * Add at least one test by Go file
 
 

@@ -9,34 +9,31 @@ import (
 
 const versionOption = "--version"
 const cacheWarmupArgument = "cache:warmup"
-const consoleRelativePath = "bin/console"
 
-func CheckSymfonyConsole(config structs.Config) (string, error) {
-	console := config.SymfonyProjectDir + "/" + consoleRelativePath
+func CheckSymfonyConsole(config structs.Config) error {
+	console := config.SymfonyProjectDir + "/" + config.SymfonyConsolePath
 	_, err := os.Stat(console)
-	if err != nil {
-		return "", err
-	}
 	if os.IsNotExist(err) {
-		return "", err
+		return err
 	}
 
-	return console, nil
+	return nil
 }
 
 /**
- * @todo permetre de passer un environnement.
+ * Run a Symfony command with a given argument or option.
  */
 func RunCommand(config structs.Config, mainArgumentOrOption string) (string, error) {
 	var out []byte
 	var err error
 	envOption := "--env=" + config.SymfonyEnv
+	consoleFullPath := config.SymfonyProjectDir + "/" + config.SymfonyConsolePath
 
-	// @fixme: if the debugOption if empty then the debug is set to false
+	// @fixme: if the debugOption (4th parameter) if empty then the debug is set to false, why?
 	if config.SymfonyDebug == true {
-		out, err = exec.Command(config.SymfonyConsolePath, mainArgumentOrOption, envOption).CombinedOutput()
+		out, err = exec.Command(consoleFullPath, mainArgumentOrOption, envOption).CombinedOutput()
 	} else {
-		out, err = exec.Command(config.SymfonyConsolePath, mainArgumentOrOption, envOption, "--no-debug").CombinedOutput()
+		out, err = exec.Command(consoleFullPath, mainArgumentOrOption, envOption, "--no-debug").CombinedOutput()
 	}
 
 	if err != nil {

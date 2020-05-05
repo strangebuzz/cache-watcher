@@ -4,6 +4,7 @@ import "time"
 
 // Symfony parameters, these are the best defaults for Symfony 5/Flex.
 const EnvDefault = "dev"
+const ConsolePath = "bin/console"
 const DebugDefault = true
 const ConfigDirectory = "config"
 const TranslationsDirectory = "translations"
@@ -21,7 +22,7 @@ const SleepTime = 30
  */
 type Config struct {
 	SymfonyProjectDir      string        `yaml:"project_dir"`         // The main Symfony project directory
-	SymfonyConsolePath     string        `yaml:"console_path"`        // Full path to "bin/console"
+	SymfonyConsolePath     string        `yaml:"console_path"`        // Relative path to the Symfony console
 	SymfonyEnv             string        `yaml:"env"`                 // This is the APP_ENV parameter of the Symfony application
 	SymfonyDebug           bool          `yaml:"debug"`               // This is the APP_DEBUG parameter of the Symfony application
 	SymfonyConfigDir       string        `yaml:"config_dir"`          // Relative directory where are stored the configuration files of the Symfony application
@@ -33,6 +34,7 @@ type Config struct {
 }
 
 func (obj *Config) Init() {
+	obj.SymfonyConsolePath = ConsolePath
 	obj.SymfonyEnv = EnvDefault
 	obj.SymfonyDebug = DebugDefault // false by default
 	obj.SymfonyConfigDir = ConfigDirectory

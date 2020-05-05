@@ -37,7 +37,6 @@ func CheckCustomConfig(config structs.Config) (structs.Config, error) {
 		fmt.Print(fmt.Errorf("Error when reading the custom file values: #%v ", err))
 		os.Exit(1)
 	}
-
 	tools.PrettyPrint(config)
 
 	return config, nil

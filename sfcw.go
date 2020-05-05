@@ -18,7 +18,7 @@ import (
 
 const accronym = "Sfcw"
 const binary = "sfcw"
-const version = "0.2.0"
+const version = "0.3.0"
 const separator = "——————————————————————————————————————————————————————————————————————"
 const repository = "https://github.com/strangebuzz/cc"
 
@@ -47,12 +47,11 @@ func main() {
 	}
 	_, _ = colorstring.Println(" > Project directory: [green]" + config.SymfonyProjectDir)
 
-	// —— 4. Test if we have a custome config ——————————————————————————————————
+	// —— 4. Test if we have a custom config file and load it ——————————————————
 	config, err = symfony.CheckCustomConfig(config)
-	//os.Exit(1)
 
 	// —— 4. Test if it is a Symfony project ———————————————————————————————————
-	config.SymfonyConsolePath, err = symfony.CheckSymfonyConsole(config)
+	err = symfony.CheckSymfonyConsole(config)
 	if err != nil {
 		tools.PrintError(fmt.Errorf("Symfony console not found."))
 		tools.PrintError(err)
