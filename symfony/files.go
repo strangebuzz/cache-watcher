@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"github.com/strangebuzz/cc/structs"
 	"github.com/strangebuzz/cc/tools"
+	"gopkg.in/yaml.v2"
+	"io/ioutil"
 	"os"
 	"path/filepath"
 )
@@ -23,6 +25,20 @@ func CheckCustomConfig(config structs.Config) (structs.Config, error) {
 	}
 
 	tools.PrettyPrint("Custom config file found!")
+
+	yamlFile, err := ioutil.ReadFile(customConfigFilepath)
+	if err != nil {
+		fmt.Print(fmt.Errorf("Error when trying to load the %s file: #%v ", customConfigFilename, err))
+		os.Exit(1)
+	}
+
+	err = yaml.Unmarshal(yamlFile, &config)
+	if err != nil {
+		fmt.Print(fmt.Errorf("Error when reading the custom file values: #%v ", err))
+		os.Exit(1)
+	}
+
+	tools.PrettyPrint(config)
 
 	return config, nil
 }
