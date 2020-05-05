@@ -10,9 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Multiply by one mimmion the user value for sleep time
-* Transform command arguments into config parameters
-
 
 @Distribution
 ————————————————————————————————————————————————————————————————————————————————

@@ -8,23 +8,23 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"time"
 )
 
 const customConfigFilename = ".sfcw.yaml"
 
 /**
- * Get custom config.
+ * Get and load the custom config if it exists.
  */
 func CheckCustomConfig(config structs.Config) (structs.Config, error) {
 	customConfigFilepath := config.SymfonyProjectDir + "/" + customConfigFilename
-
 	_, err := os.Stat(customConfigFilepath)
 	if os.IsNotExist(err) {
-		tools.PrettyPrint("Custom config file not found.")
+		fmt.Println("Custom config file not found.")
 		return config, nil
 	}
 
-	tools.PrettyPrint("Custom config file found!")
+	fmt.Println("Custom config file found!")
 
 	yamlFile, err := ioutil.ReadFile(customConfigFilepath)
 	if err != nil {
@@ -37,6 +37,12 @@ func CheckCustomConfig(config structs.Config) (structs.Config, error) {
 		fmt.Print(fmt.Errorf("Error when reading the custom file values: #%v ", err))
 		os.Exit(1)
 	}
+
+	// Convert milliseconds of user setting to the duration unit
+	if config.SleepTime != structs.SleepTime {
+		config.SleepTime = config.SleepTime * time.Millisecond
+	}
+
 	tools.PrettyPrint(config)
 
 	return config, nil
