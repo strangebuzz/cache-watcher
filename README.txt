@@ -10,8 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Ajouter l'heure de détection de changement
-* Add at least one test by Go file
 * See for the sleep time between two checks
 
 -- V0.3
@@ -43,8 +41,10 @@
 * Create a deamon mode: --deamon
 
 
-@Refactoring
+@Refactoring/Long term
 ————————————————————————————————————————————————————————————————————————————————
+
+* Add at least one test by Go file
 
 
 @Ideas/Decision to take
@@ -61,14 +61,15 @@
 ————————————————————————————————————————————————————————————————————————————————
 
 * sfcw
-* Not "cc" because it's the C,C++ compiler.
+* Not "cc" because it's the C compiler.
 
 
 @Resources
 ————————————————————————————————————————————————————————————————————————————————
 
-* https://stackoverflow.com/q/26804642/633864
+* https://golang.org/pkg/time/#Time.Format > Mon Jan 2 15:04:05 -0700 MST 2006
 * https://golang.org/pkg/fmt/
+* https://stackoverflow.com/q/26804642/633864
 * https://golang.org/doc/effective_go.html
 * https://www.golangprograms.com/go-language/struct.html
 * https://golangbot.com/structs/
@@ -82,6 +83,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Added some tests
 * Added the pid number in the welcome message
 * Watch Twig files
 * Watch translations files

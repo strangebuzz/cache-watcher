@@ -87,10 +87,10 @@ func mainLoop(config structs.Config, filesToWatch map[string]string) {
 		updatedFiles, _ := symfony.GetWatchMap(config)
 		if !reflect.DeepEqual(filesToWatch, updatedFiles) {
 			start := time.Now()
+			_, _ = colorstring.Println(fmt.Sprintf(" [yellow] ⬇ Update detected[white] at [green]%s[white] > refreshing cache...", start.Format("15:04:05")))
 			_, _ = symfony.CacheWarmup(config) // handle errors
 			end := time.Now()
 			elapsed := end.Sub(start)
-			_, _ = colorstring.Println(" [yellow] ⬇ Update detected[white] > refreshing cache...")
 			_, _ = colorstring.Println(fmt.Sprintf("  [green]✅  Done![white] in [yellow]%.2f[white] second(s).", elapsed.Seconds()))
 			filesToWatch = updatedFiles
 		} else {
@@ -120,5 +120,4 @@ func help() {
 	_, _ = colorstring.Println(fmt.Sprintf("Example: \"[green]%s [yellow]../strangebuzz.com[white]\"", binary))
 	_, _ = colorstring.Println(fmt.Sprintf("Or even: \"[green]%s [yellow].[white]\" if you call it from the root of your Symfony project directory.", binary))
 	_, _ = colorstring.Println("[yellow][💡][white] Add it to your $PATH if not done already.")
-	//fmt.Printf("Hello %s/%s\n", runtime.GOOS, runtime.GOARCH)
 }
