@@ -1,3 +1,2 @@
-# Do we really need this?
-cc:
-  config_directory: config
+sfcw:
+  config_dir: config

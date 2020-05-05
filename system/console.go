@@ -13,10 +13,6 @@ func GetSymfonyProjectDir() (string, error) {
 	}
 
 	_, err = os.Stat(path)
-	if err != nil {
-		return "", err
-	}
-
 	if os.IsNotExist(err) {
 		return "", err
 	}

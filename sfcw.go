@@ -47,6 +47,10 @@ func main() {
 	}
 	_, _ = colorstring.Println(" > Project directory: [green]" + config.SymfonyProjectDir)
 
+	// —— 4. Test if we have a custome config ——————————————————————————————————
+	config, err = symfony.CheckCustomConfig(config)
+	os.Exit(1)
+
 	// —— 4. Test if it is a Symfony project ———————————————————————————————————
 	config.SymfonyConsolePath, err = symfony.CheckSymfonyConsole(config)
 	if err != nil {

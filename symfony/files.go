@@ -8,6 +8,25 @@ import (
 	"path/filepath"
 )
 
+const customConfigFilename = ".sfcw.yaml"
+
+/**
+ * Get custom config.
+ */
+func CheckCustomConfig(config structs.Config) (structs.Config, error) {
+	customConfigFilepath := config.SymfonyProjectDir + "/" + customConfigFilename
+
+	_, err := os.Stat(customConfigFilepath)
+	if os.IsNotExist(err) {
+		tools.PrettyPrint("Custom config file not found.")
+		return config, nil
+	}
+
+	tools.PrettyPrint("Custom config file found!")
+
+	return config, nil
+}
+
 /**
  * Get all the files of the Symfony application which have to be watched.
  *

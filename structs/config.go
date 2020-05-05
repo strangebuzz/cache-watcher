@@ -26,7 +26,7 @@ type Config struct {
 	SymfonyDebug           bool          // This is the APP_DEBUG parameter of the Symfony application
 	SymfonyConfigDir       string        // Relative directory where are stored the configuration files of the Symfony application
 	SymfonyTranslationsDir string        // Relative directory where are stored the translations files of the Symfony application
-	SymfonyTemplatesDir    string        // Relative directory where are stored the translations files of the Symfony application
+	SymfonyTemplatesDir    string        // Relative directory where are stored the templates files of the Symfony application
 	TemplatesExtension     string        // Default extension for templates files
 	YamlExtension          string        // Default extension for YAML files, we consider it must be consistent within an application
 	SleepTime              time.Duration // Sleep time between two filesystem checks in milliseconds
