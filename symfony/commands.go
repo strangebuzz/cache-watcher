@@ -2,7 +2,7 @@ package symfony
 
 import (
 	"fmt"
-	"github.com/strangebuzz/cc/structs"
+	"github.com/strangebuzz/sfcw/structs"
 	"os"
 	"os/exec"
 )

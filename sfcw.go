@@ -6,10 +6,10 @@ package main
 import (
 	"fmt"
 	"github.com/mitchellh/colorstring"
-	"github.com/strangebuzz/cc/structs"
-	"github.com/strangebuzz/cc/symfony"
-	"github.com/strangebuzz/cc/system"
-	"github.com/strangebuzz/cc/tools"
+	"github.com/strangebuzz/sfcw/structs"
+	"github.com/strangebuzz/sfcw/symfony"
+	"github.com/strangebuzz/sfcw/system"
+	"github.com/strangebuzz/sfcw/tools"
 	"os"
 	"reflect"
 	"strings"
@@ -20,7 +20,7 @@ const accronym = "Sfcw"
 const binary = "sfcw"
 const version = "0.3.0"
 const separator = "——————————————————————————————————————————————————————————————————————"
-const repository = "https://github.com/strangebuzz/cc"
+const repository = "https://github.com/strangebuzz/sfcw"
 
 func main() {
 	var config structs.Config

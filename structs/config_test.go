@@ -1,7 +1,7 @@
 package structs_test
 
 import (
-	"github.com/strangebuzz/cc/structs"
+	"github.com/strangebuzz/sfcw/structs"
 	"testing"
 )
 

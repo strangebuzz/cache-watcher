@@ -1,7 +1,7 @@
 package tools_test
 
 import (
-	"github.com/strangebuzz/cc/tools"
+	"github.com/strangebuzz/sfcw/tools"
 	"strings"
 	"testing"
 )

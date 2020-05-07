@@ -1,4 +1,4 @@
-module github.com/strangebuzz/cc
+module github.com/strangebuzz/sfcw
 
 go 1.14
 

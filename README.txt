@@ -10,9 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Transfert the repo in sfcw, make it public
-* Change the go import
-
 
 @Questions/Investigations:
 ————————————————————————————————————————————————————————————————————————————————
@@ -85,6 +82,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Renamed repo and made it public
 * Doc to create linux and win exec in Makefile
 * Added Symfony5 and 4 fixtures
 * Added some tests

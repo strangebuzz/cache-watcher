@@ -2,8 +2,8 @@ package symfony
 
 import (
 	"fmt"
-	"github.com/strangebuzz/cc/structs"
-	"github.com/strangebuzz/cc/tools"
+	"github.com/strangebuzz/sfcw/structs"
+	"github.com/strangebuzz/sfcw/tools"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"os"
