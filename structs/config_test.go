@@ -1,12 +1,13 @@
-package structs
+package structs_test
 
 import (
+	"github.com/strangebuzz/cc/structs"
 	"testing"
 )
 
 // Test default values for Symfony 5
 func TestConfig(t *testing.T) {
-	var config Config
+	var config structs.Config
 	config.Init()
 
 	expected := "dev"

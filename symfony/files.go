@@ -24,8 +24,6 @@ func CheckCustomConfig(config structs.Config) (structs.Config, error) {
 		return config, nil
 	}
 
-	fmt.Println("Custom config file found!")
-
 	yamlFile, err := ioutil.ReadFile(customConfigFilepath)
 	if err != nil {
 		fmt.Print(fmt.Errorf("Error when trying to load the %s file: #%v ", customConfigFilename, err))
