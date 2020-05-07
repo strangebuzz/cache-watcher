@@ -10,6 +10,7 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
+* Handle Symfony console errors
 * Transfert the repo in sfcw, make it public
 * Change the go import
 
@@ -56,7 +57,6 @@
 * Create a parameter for the nesting level to apply? Make it generic ?
 * Only display the raw go errors with the verbose mode?
 * Handling of XML files? ini files?
-* Handling of the old app/console?
 
 
 @Naming
