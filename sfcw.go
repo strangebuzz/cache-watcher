@@ -71,6 +71,7 @@ func main() {
 	// —— 6. Get the files to watch ————————————————————————————————————————————
 	start := time.Now()
 	filesToWatch, _ := symfony.GetWatchMap(config)
+	//tools.PrettyPrint(filesToWatch)
 	end := time.Now()
 	elapsed := end.Sub(start)
 

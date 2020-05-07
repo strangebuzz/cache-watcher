@@ -43,8 +43,6 @@ func CheckCustomConfig(config structs.Config) (structs.Config, error) {
 		config.SleepTime = config.SleepTime * time.Millisecond
 	}
 
-	tools.PrettyPrint(config)
-
 	return config, nil
 }
 

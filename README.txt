@@ -10,7 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Add Symfony4 fixtures
 * Tester with an old console path (app/console) -> Symfony 2 fixtures
 * Transfert the repo in sfcw, make it public
 * Change the go import
@@ -48,8 +47,7 @@
 ————————————————————————————————————————————————————————————————————————————————
 
 * Create a parameter for the nesting level to apply? Make it generic ?
-* Only display the raw go error with the verbose mode?
-* Watch Twig files?
+* Only display the raw go errors with the verbose mode?
 * Handling of XML files? ini files?
 * Handling of the old app/console?
 

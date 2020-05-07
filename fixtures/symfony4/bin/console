@@ -2,4 +2,4 @@
 <?php
 
 // Simulate a "php bin/console --version" call
-echo 'Symfony 5.0.8 (env: dev, debug: true)';
+echo 'Symfony 4.4.8 (env: dev, debug: true)';
