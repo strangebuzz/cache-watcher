@@ -1,14 +1,17 @@
-package symfony
+package symfony_test
 
 import (
 	"github.com/strangebuzz/cc/structs"
+	"github.com/strangebuzz/cc/symfony"
 	"github.com/strangebuzz/cc/system"
 	"path/filepath"
 	"testing"
+	"time"
 )
 
 // Test against the Symfony 5 fixtures
-func TestGetFilesToWatchSymfony5(t *testing.T) {
+// @see fixtures/symfony4/.sfcw.yaml
+func TestCheckCustomConfig(t *testing.T) {
 	config := structs.Config{}
 	config.Init()
 	execDir, err := system.GetExecDir()
@@ -16,20 +19,35 @@ func TestGetFilesToWatchSymfony5(t *testing.T) {
 		t.Errorf("Error while testing getFilesToWatch(): '%s'", err)
 	}
 
-	config.SymfonyProjectDir = filepath.Clean(execDir + "/../fixtures/symfony5")
-	filesToWatch, err := getFilesToWatch(config)
+	config.SymfonyProjectDir = filepath.Clean(execDir + "/../fixtures/symfony4")
+	config, err = symfony.CheckCustomConfig(config)
 	if err != nil {
-		t.Errorf("Error while testing getFilesToWatch(): '%s'", err)
+		t.Errorf("CheckCustomConfig problem: '%s'", err)
 	}
 
-	// root:         1 file
-	// config:       2 files
-	// templates:    1 file
-	// translations: 2 files
-	// ========
-	expected := 6
-	if expected != len(filesToWatch) {
-		t.Errorf("[symfony 5] getFilesToWatch() problem, expected: '%d' files found '%d' ", expected, len(filesToWatch))
+	expected := "app/config"
+	if config.SymfonyConfigDir != expected {
+		t.Errorf("CheckCustomConfig problem, expected config dir: '%s', found '%s' ", expected, config.SymfonyConfigDir)
+	}
+
+	expected = "src/AppBundle/Resources/translations"
+	if config.SymfonyTranslationsDir != expected {
+		t.Errorf("CheckCustomConfig problem, expected translations dir: '%s', found '%s' ", expected, config.SymfonyTranslationsDir)
+	}
+
+	expected = "src/AppBundle/Resources/views"
+	if config.SymfonyTemplatesDir != expected {
+		t.Errorf("CheckCustomConfig problem, expected translations dir: '%s', found '%s' ", expected, config.SymfonyTemplatesDir)
+	}
+
+	expected = "yml"
+	if config.YamlExtension != expected {
+		t.Errorf("CheckCustomConfig problem, expected YAML extension: '%s', found '%s' ", expected, config.YamlExtension)
+	}
+
+	var expectedDuration time.Duration = 50000000
+	if config.SleepTime != expectedDuration {
+		t.Errorf("CheckCustomConfig problem, expected sleep time: '%v', found '%v' ", expectedDuration, config.SleepTime)
 	}
 }
 
@@ -48,7 +66,7 @@ func TestGetFilesToWatchSymfony4(t *testing.T) {
 	}
 
 	config.SymfonyProjectDir = filepath.Clean(execDir + "/../fixtures/symfony4")
-	filesToWatch, err := getFilesToWatch(config)
+	filesToWatch, err := symfony.GetFilesToWatch(config)
 
 	if err != nil {
 		t.Errorf("Error while testing getFilesToWatch(): '%s'", err)
@@ -61,5 +79,31 @@ func TestGetFilesToWatchSymfony4(t *testing.T) {
 	expected := 6
 	if expected != len(filesToWatch) {
 		t.Errorf("[Symfony 4] getFilesToWatch() problem, expected: '%d' files found '%d' ", expected, len(filesToWatch))
+	}
+}
+
+// Test against the Symfony 5 fixtures
+func TestGetFilesToWatchSymfony5(t *testing.T) {
+	config := structs.Config{}
+	config.Init()
+	execDir, err := system.GetExecDir()
+	if err != nil {
+		t.Errorf("Error while testing getFilesToWatch(): '%s'", err)
+	}
+
+	config.SymfonyProjectDir = filepath.Clean(execDir + "/../fixtures/symfony5")
+	filesToWatch, err := symfony.GetFilesToWatch(config)
+	if err != nil {
+		t.Errorf("Error while testing getFilesToWatch(): '%s'", err)
+	}
+
+	// root:         1 file
+	// config:       2 files
+	// templates:    1 file
+	// translations: 2 files
+	// ========
+	expected := 6
+	if expected != len(filesToWatch) {
+		t.Errorf("[symfony 5] getFilesToWatch() problem, expected: '%d' files found '%d' ", expected, len(filesToWatch))
 	}
 }

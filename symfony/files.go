@@ -51,7 +51,7 @@ func CheckCustomConfig(config structs.Config) (structs.Config, error) {
  *
  * @todo handle nesting level? Add a parameter for that?
  */
-func getFilesToWatch(config structs.Config) ([]string, error) {
+func GetFilesToWatch(config structs.Config) ([]string, error) {
 	var filesToWatch []string
 
 	// 1) ".env" files at the root of the project
@@ -96,7 +96,7 @@ func getFilesFromPath(config structs.Config, glob string) []string {
  */
 func GetWatchMap(config structs.Config) (map[string]string, error) {
 	watchMap := map[string]string{}
-	filesTowatch, _ := getFilesToWatch(config)
+	filesTowatch, _ := GetFilesToWatch(config)
 
 	for _, file := range filesTowatch {
 		stats, err := os.Stat(file)

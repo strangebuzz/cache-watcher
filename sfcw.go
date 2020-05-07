@@ -49,8 +49,13 @@ func main() {
 
 	// —— 4. Test if we have a custom config file and load it ——————————————————
 	config, err = symfony.CheckCustomConfig(config)
+	if err != nil {
+		tools.PrintError(fmt.Errorf("Error while checking the custom config."))
+		tools.PrintError(err)
+		os.Exit(1)
+	}
 
-	// —— 4. Test if it is a Symfony project ———————————————————————————————————
+	// —— 5. Test if it is a Symfony project ———————————————————————————————————
 	err = symfony.CheckSymfonyConsole(config)
 	if err != nil {
 		tools.PrintError(fmt.Errorf("Symfony console not found."))
@@ -59,7 +64,7 @@ func main() {
 	}
 	_, _ = colorstring.Println(" > Symfony console path: [green]" + config.SymfonyConsolePath)
 
-	// —— 5. Test the Symfony console with the version command —————————————————
+	// —— 6. Test the Symfony console with the version command —————————————————
 	out, err := symfony.Version(config)
 	if err != nil {
 		tools.PrintError(fmt.Errorf("Error while running the Symfony version command (right problems?)."))
@@ -68,14 +73,14 @@ func main() {
 	}
 	_, _ = colorstring.Println(" > Symfony env: [green]" + strings.Trim(fmt.Sprintf("%s", out), "\n"))
 
-	// —— 6. Get the files to watch ————————————————————————————————————————————
+	// —— 7. Get the files to watch ————————————————————————————————————————————
 	start := time.Now()
 	filesToWatch, _ := symfony.GetWatchMap(config)
 	//tools.PrettyPrint(filesToWatch)
 	end := time.Now()
 	elapsed := end.Sub(start)
 
-	// —— 6.1 No error, but no file was found ——————————————————————————————————
+	// —— 7.1 No error, but no file was found ——————————————————————————————————
 	if len(filesToWatch) == 0 {
 		errorNothingtoWatch()
 	}
