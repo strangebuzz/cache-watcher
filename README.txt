@@ -43,8 +43,11 @@
 @Refactoring/Long term
 ————————————————————————————————————————————————————————————————————————————————
 
-* See for ideal sleep time between two checks
-* Add at least one test by Go file
+
+@V2
+————————————————————————————————————————————————————————————————————————————————
+
+* Rewrite with https://github.com/fsnotify/fsnotify?
 
 
 @Ideas/Decision to take
@@ -66,6 +69,7 @@
 @Resources
 ————————————————————————————————————————————————————————————————————————————————
 
+* https://www.jetbrains.com/help/webstorm/using-file-watchers.html#
 * https://golang.org/pkg/time/#Time.Format > Mon Jan 2 15:04:05 -0700 MST 2006
 * https://golang.org/pkg/fmt/
 * https://stackoverflow.com/q/26804642/633864
@@ -82,6 +86,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Doc to create linux and win exec in Makefile
 * Added Symfony5 and 4 fixtures
 * Added some tests
 * Added the pid number in the welcome message

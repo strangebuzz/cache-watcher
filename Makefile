@@ -6,8 +6,11 @@ help: ## Outputs this help screen
 run: ## Run the main go file on a Symfony 5 project
 	go run sfcw.go ../strangebuzz.com
 
-build: ## Build the sfcw executable
+build: ## Build the sfcw executable for the current platform
 	go build sfcw.go
+	# To build the Linux executable run
+	# env GOOS=linux GOARCH=amd64 go build sfcw.go
+	# env GOOS=windows GOARCH=amd64 go build sfcw.go
 
 exec: ## Run cc on a Symfony 5 project
 	./cc ../strangebuzz.com
