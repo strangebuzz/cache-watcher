@@ -67,7 +67,7 @@ func main() {
 	// —— 6. Test the Symfony console with the version command —————————————————
 	out, err := symfony.Version(config)
 	if err != nil {
-		tools.PrintError(fmt.Errorf("Error while running the Symfony version command (right problems?)."))
+		tools.PrintError(fmt.Errorf("Error while running the Symfony version command."))
 		tools.PrintError(err)
 		os.Exit(1)
 	}

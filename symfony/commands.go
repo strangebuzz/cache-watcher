@@ -37,7 +37,9 @@ func RunCommand(config structs.Config, mainArgumentOrOption string) (string, err
 	}
 
 	if err != nil {
-		return "", nil
+		if _, ok := err.(*exec.ExitError); ok {
+			return "", fmt.Errorf("The Symfony command didn't return a success code.")
+		}
 	}
 
 	return fmt.Sprintf("%s", out), nil

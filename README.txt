@@ -10,7 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Handle Symfony console errors
 * Transfert the repo in sfcw, make it public
 * Change the go import
 
