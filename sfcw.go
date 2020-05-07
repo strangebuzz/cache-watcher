@@ -88,7 +88,6 @@ func main() {
 	_, _ = colorstring.Println(fmt.Sprintf(" > [green]CTRL+C[white] to stop watching or run [green]kill -9 [yellow]%d[white].", os.Getpid()))
 
 	// —— 6. Main loop —————————————————————————————————————————————————————————
-	//runtime.GOMAXPROCS(1) // limit CPU usage
 	mainLoop(config, filesToWatch)
 }
 
