@@ -24,9 +24,10 @@ func TestGetFilesToWatch(t *testing.T) {
 
 	// root:         1 file
 	// config:       2 files
+	// templates:    1 file
 	// translations: 2 files
 	// ========
-	expected := 5
+	expected := 6
 	if expected != len(filesToWatch) {
 		t.Errorf("[symfony 5] getFilesToWatch() problem, expected: '%d' files found '%d' ", expected, len(filesToWatch))
 	}

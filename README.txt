@@ -10,7 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Add templates in fixtures
 * Add Symfony4 fixtures
 * Tester with an old console path (app/console) -> Symfony 2 fixtures
 * Transfert the repo in sfcw, make it public
