@@ -27,8 +27,6 @@
 @Nice to have
 ————————————————————————————————————————————————————————————————————————————————
 
-* Apply the Symfony style for the console output (use colored background)
-* Add an option to display the watched file (+ bonus: display as a tree)
 * Allow to have an additional whitelist of custom files to watch
 * Handle the case where a Symfony command returns an error
   > https://stackoverflow.com/q/39508086/633864
