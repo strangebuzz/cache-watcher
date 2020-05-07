@@ -1,0 +1,4 @@
+#!/usr/bin/env php
+<?php
+
+echo 'Sfcw Symfony 5 fixtures.';
