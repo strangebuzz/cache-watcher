@@ -88,6 +88,7 @@ func main() {
 	_, _ = colorstring.Println(fmt.Sprintf(" > [green]CTRL+C[white] to stop watching or run [green]kill -9 [yellow]%d[white].", os.Getpid()))
 
 	// —— 6. Main loop —————————————————————————————————————————————————————————
+	//runtime.GOMAXPROCS(1) // limit CPU usage
 	mainLoop(config, filesToWatch)
 }
 
@@ -103,7 +104,7 @@ func mainLoop(config structs.Config, filesToWatch map[string]string) {
 			_, _ = colorstring.Println(fmt.Sprintf("  [green]✅  Done![white] in [yellow]%.2f[white] second(s).", elapsed.Seconds()))
 			filesToWatch = updatedFiles
 		} else {
-			time.Sleep(config.SleepTime) // What time to use to avoid overusing CPU?
+			time.Sleep(config.SleepTime)
 		}
 	}
 }

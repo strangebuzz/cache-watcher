@@ -13,7 +13,12 @@
 * Tester with an old console path (app/console) -> Symfony 2 fixtures
 * Transfert the repo in sfcw, make it public
 * Change the go import
-* Send message pour the béta test
+
+
+@Questions/Investigations:
+————————————————————————————————————————————————————————————————————————————————
+
+* About the main loop: https://stackoverflow.com/q/61657220/633864
 
 
 @Distribution

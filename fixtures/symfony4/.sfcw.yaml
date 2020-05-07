@@ -1,0 +1,5 @@
+config_dir:       app/config
+translations_dir: src/AppBundle/Resources/translations
+templates_dir:    src/AppBundle/Resources/views
+yaml_extension:   yml
+sleep_time:       50
