@@ -10,7 +10,6 @@
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Tester with an old console path (app/console) -> Symfony 2 fixtures
 * Transfert the repo in sfcw, make it public
 * Change the go import
 
@@ -32,7 +31,7 @@
 ————————————————————————————————————————————————————————————————————————————————
 
 * Apply the Symfony style for the console output (use colored background)
-* Create an option to display the watched file (+ bonus: display as a tree)
+* Add an option to display the watched file (+ bonus: display as a tree)
 * Allow to have an additional whitelist of custom files to watch
 * Handle the case where a Symfony command returns an error
   > https://stackoverflow.com/q/39508086/633864
@@ -83,6 +82,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Added Symfony5 and 4 fixtures
 * Added some tests
 * Added the pid number in the welcome message
 * Watch Twig files
