@@ -1,11 +1,9 @@
-# Sfcw
-
-Sfcw stands for SymFony Cache Watcher.
+# Sfcw: the SymFony Cache Watcher
 
 It's a small Go program that will watch your Symfony files and refresh your cache
-when needed so you don't have to wait when hitting refreshing the page in the browser.
+when needed so you don't have to wait when refreshing your browser.
 
-It's goal is to improve your the DX (Developper Experience) with Symfony.   
+It's goal is to improve the DX > [Developper Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony.   
 
 <img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/logos/sfcw.png" alt="The Sfcw mascot" align="right" />
 
