@@ -2,6 +2,8 @@
                     Sfcw : The Symfony Cache Watcher
 ————————————————————————————————————————————————————————————————————————————————
 
+These are dev notes. For the full documentation check-out README.md
+
 
 @Bugs
 ————————————————————————————————————————————————————————————————————————————————
@@ -63,6 +65,8 @@
 @Resources
 ————————————————————————————————————————————————————————————————————————————————
 
+* https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
+* https://guides.github.com/features/mastering-markdown/
 * https://www.jetbrains.com/help/webstorm/using-file-watchers.html#
 * https://golang.org/pkg/time/#Time.Format > Mon Jan 2 15:04:05 -0700 MST 2006
 * https://golang.org/pkg/fmt/
@@ -80,6 +84,7 @@
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
+* Added the sfcw.dev webiste
 * Renamed repo and made it public
 * Doc to create linux and win exec in Makefile
 * Added Symfony5 and 4 fixtures
