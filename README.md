@@ -5,12 +5,12 @@ when needed so you don't have to wait when refreshing your browser.
 
 It's goal is to improve the DX > [Developper Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony.   
 
-<img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/logos/sfcw.png" alt="The Sfcw mascot" align="right" />
+<img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/logos/sfcw_400w.png" alt="The Sfcw mascot" align="right" />
 
 ## How does it work?
 
 It's important to understand that the program will not create nor delete files
-on your filesystem. In fact, it will just run the symfony command `cache:warmup` 
+on your filesystem. In fact, it will just run the Symfony command `cache:warmup` 
 for you.
 
 ## Installation
@@ -26,7 +26,7 @@ $ cd sfcw
 $ make build 
 ```
 
-This will build the `sfcw` or `sfcw.exe` depenfing on your platform.
+This will build the `sfcw` or `sfcw.exe` executable depending on your platform.
 
 ### Download
 
@@ -35,13 +35,13 @@ For now, I have built the following executables:
 If you need another one, create an issue and point out the operating system/target
 plaftorm you need, you will find the possible values in [this article](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures).
 
-For conveniency, add `sfcw` in your path so you can access to it everywhere.
+For conveniency, add `sfcw` in your path so you can access it everywhere.
 
 ## Running the watcher
 
 Now you have built or downloaded the program. If you run it without argument, it
 will display the help. If you are at the root of your Symfony application you can
-run the following command:
+stat to watch your project files with he following command:
 
 ```terminal
 $ sfcw .
@@ -56,7 +56,6 @@ You should have an output like this:
 Sfcw watches your files (.env, YAML, Twig) and automatically refreshes your application cache.
 ——————————————————————————————————————————————————————————————————————
  > Project directory: /Users/coil/Sites/strangebuzz.com
-Custom config file not found.
  > Symfony console path: bin/console
  > Symfony env: Symfony 5.1.0-BETA1 (env: dev, debug: true)
  > 263 file(s) watched in /Users/coil/Sites/strangebuzz.com in 12 millisecond(s).
@@ -65,13 +64,17 @@ Custom config file not found.
 
 That's it! If you have a Symfony 4 or 5 project with Flex it's all that you need.
 
-When a file change will be detected in your `services.yaml` files for example, you
-will get a feedback:
+When a change will be detected in your `services.yaml` file for example, you will
+get the following feedback:
 
 ```terminal
 ⬇ Update detected at 17:09:03 > refreshing cache...
   ✅  Done! in 2.43 second(s).
 ```
+
+Now refresh you page. It should be "fast" as the cache is already OK. 🎉
+
+Instead of:
 
 You can also pass a relative path or an absolute path for the first arugument:
 

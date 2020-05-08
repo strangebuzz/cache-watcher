@@ -20,7 +20,6 @@ func CheckCustomConfig(config structs.Config) (structs.Config, error) {
 	customConfigFilepath := config.SymfonyProjectDir + "/" + customConfigFilename
 	_, err := os.Stat(customConfigFilepath)
 	if os.IsNotExist(err) {
-		fmt.Println("Custom config file not found.")
 		return config, nil
 	}
 
