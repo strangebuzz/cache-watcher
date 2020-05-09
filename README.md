@@ -17,7 +17,8 @@ your filesystem.
 ## Installation
 
 You can either build the program yourself (this means that you must have a working
-Go developement environment) or you can download an executable (download links below). 
+Go developement environment) or you can download an executable (download links below).
+The program was developped with **go1.14.2**. 
 
 ### Compiling the program
 
@@ -40,8 +41,8 @@ linux            | amd64    | [sfcw](https://sfcw.dev/downloads/linux/amd64/sfcw
 windows          | amd64    | [sfcw.exe](https://sfcw.dev/downloads/windows/amd64/sfcw.exe) (3.3mo) | 59420d2ba7c1df9e6afa6746e1bdc3d197792e2263df3cb857cd65d3e6980011
 
 When downloaded, you can check than the executable is not compromised by comparing
-the SHA checksum you get by running the following command and comparing the value
-with the one displayed in the previous table.
+the SHA checksum you get by running the following command and the value displayed
+in the previous table.
 
 ```terminal
 $ shasum -a 256 ./sfcw 
