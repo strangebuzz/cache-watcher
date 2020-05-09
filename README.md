@@ -40,8 +40,8 @@ linux            | amd64    | [sfcw](https://sfcw.dev/downloads/linux/amd64/sfcw
 windows          | amd64    | [sfcw.exe](https://sfcw.dev/downloads/windows/amd64/sfcw.exe) (3.3mo) | 59420d2ba7c1df9e6afa6746e1bdc3d197792e2263df3cb857cd65d3e6980011
 
 When downloaded you can check than the executable is not compromised by comparing
-the sha1 you get by running the following and comparing the value with the one displayed
-in the previous table.
+the sha1 you get by running the following command and comparing the value with the
+one displayed in the previous table.
 
 ```terminal
 $ shasum -a 256 ./sfcw 
@@ -51,7 +51,7 @@ $ shasum -a 256 ./sfcw
 If you need another executable type, create an issue and point out the operating
 system/target plaftorm you need, you will find the possible values in [this article](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures).
 
-For conveniency, add `sfcw` in your path so you can access it everywhere.
+For conveniency, add `sfcw` in your path so you can access it from everywhere.
 
 💡 The executable is "quite" big (several mo) because it includes the [Go run-time](https://stackoverflow.com/q/28576173/633864)
 and hasn't external dependencies.
@@ -104,9 +104,6 @@ Instead of having a "slow" page:
 
 ```terminal
 $ sfcw ../strangebuzz.com
-```
-
-```terminal
 $ sfcw /Users/coil/Sites/strangebuzz.com 
 ```
 
@@ -129,7 +126,8 @@ $ sudo kill -9 28157
 ## Configuration
 
 As we saw previously, if your are using a project with the [Flex directory structure](https://symfony.com/doc/current/setup/flex.html)
-we default settings should be OK. Here are the defaults values:
+the default settings should be OK. The default values will alwyas be set for the
+last minor Symfony version, actually 5.1:
 
 Key                 | Value        | Description
 ------------------- | -------------| -------------------------------------------
@@ -147,7 +145,6 @@ If you are not using Flex, you can put a `.sfcw.yaml` file at the root of your p
 Here is the configuration I use for one of my "old" Symfony 4.4 project:
 
 ```
-console_path:     bin/console
 config_dir:       app/config
 translations_dir: src/AppBundle/Resources/translations
 templates_dir:    src/AppBundle/Resources/views
@@ -155,13 +152,23 @@ yaml_extension:   yml
 sleep_time:       40
 ```
 
+💡 The sleep time is the parameter in milliseconds between two filesystem check.
+The lower it is the faster the cache will be refreshed but the higher the CPU will
+be used. I found 30ms to be a good value for my MacMini 2018 (i7, 3,2gh) but you
+probably want to find the best value for your system (with top or htop). 
+
 ## Todo
 
-- [ ] Apply the Symfony style for the console output
+- [ ] Apply the Symfony style for the console output -> issue #1
 - [ ] Add CI with Github actions
 - [ ] Add an option to display the watched file
 - [ ] Allow to have an additional whitelist of custom files to watch
 - [ ] ...feel free to [create an issue](https://github.com/strangebuzz/sfcw/issues/new) 🙂.
+
+## Notes
+
+I won't do a LIVE update like the Symfony binary. Please watch the repository to
+be notified of new releases.
 
 ## License
 
