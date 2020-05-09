@@ -3,7 +3,7 @@
 Sfcw is a small Go program that will watch your Symfony files and refresh your cache
 when needed so you don't have to wait when refreshing your browser.
 
-It's goal is to improve the [Developper Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony (DX).   
+Its goal is to improve the [Developer Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony (DX).   
 
 <img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/logos/sfcw_400w.png" alt="The Sfcw mascot" align="right" />
 
@@ -39,9 +39,9 @@ darwin (macOS)   | amd64    | [sfcw](https://sfcw.dev/downloads/darwin/amd64/sfc
 linux            | amd64    | [sfcw](https://sfcw.dev/downloads/linux/amd64/sfcw) (3.2mo)         | 68ee5fbe26835b60e027066602fda079d6d997899dd58d6ffccc80b191a2fb1d
 windows          | amd64    | [sfcw.exe](https://sfcw.dev/downloads/windows/amd64/sfcw.exe) (3.3mo) | 59420d2ba7c1df9e6afa6746e1bdc3d197792e2263df3cb857cd65d3e6980011
 
-When downloaded you can check than the executable is not compromised by comparing
-the sha1 you get by running the following command and comparing the value with the
-one displayed in the previous table.
+When downloaded, you can check than the executable is not compromised by comparing
+the SHA checksum you get by running the following command and comparing the value
+with the one displayed in the previous table.
 
 ```terminal
 $ shasum -a 256 ./sfcw 
@@ -59,14 +59,14 @@ and hasn't external dependencies.
 ## Running the watcher
 
 Now that you have built or downloaded the program, let's try it. If you run it without
-argument, it will display the help. If you are at the root of your Symfony application
-you can start to watch your project files with he following command:
+argument, it will display the help message. If you are at the root of your Symfony
+application you can start to watch your project files with he following command:
 
 ```terminal
 $ sfcw .
 ```
 
-You should have an output like this:
+You should have the following output:
 
 ```terminal
 ——————————————————————————————————————————————————————————————————————
@@ -116,8 +116,8 @@ automatically be killed. /‼️\
 
 ## Stopping the watcher
 
-You can either hit *CTRL+C* or run the kill command with the PID the program has displayed
-in the welcome message:
+You can either hit *CTRL+C* or run the kill command with the PID the program has
+displayed in the welcome message:
 
 ```terminal
 $ sudo kill -9 28157
@@ -126,7 +126,7 @@ $ sudo kill -9 28157
 ## Configuration
 
 As we saw previously, if your are using a project with the [Flex directory structure](https://symfony.com/doc/current/setup/flex.html)
-the default settings should be OK. The default values will alwyas be set for the
+the default settings should be OK. The default values will always be set for the
 last minor Symfony version, actually 5.1:
 
 Key                 | Value        | Description
@@ -153,22 +153,36 @@ sleep_time:       40
 ```
 
 💡 The sleep time is the parameter in milliseconds between two filesystem check.
-The lower it is the faster the cache will be refreshed but the higher the CPU will
-be used. I found 30ms to be a good value for my MacMini 2018 (i7, 3,2gh) but you
-probably want to find the best value for your system (with top or htop). 
+The lower it is, the faster the cache will be refreshed but the higher the CPU will
+be used. I found 30ms to be a good value for my MacMini 2018 (i7, 3,2gh, 16go) but
+you probably want to find the best value for your system (with top or htop). 
 
 ## Todo
 
-- [ ] Apply the Symfony style for the console output -> issue #1
-- [ ] Add CI with Github actions
-- [ ] Add an option to display the watched file
-- [ ] Allow to have an additional whitelist of custom files to watch
+- [ ] Apply the Symfony style for the console output #1
+- [ ] Add an option to display the watched file #2
+- [ ] Add CI with Github actions #3
+- [ ] Allow to have an additional whitelist of custom files to watch #4
 - [ ] ...feel free to [create an issue](https://github.com/strangebuzz/sfcw/issues/new) 🙂.
 
 ## Notes
 
 I won't do a LIVE update like the Symfony binary. Please watch the repository to
 be notified of new releases.
+
+## Contributing
+
+Your are welcome. But don't forget that I want to keep this program very light
+with a unique feature. In fact, even it's very young it's almost "feature complete".
+
+## Fun fact
+
+When I developped `sfcw`, I played a lot with configuration files. One time I modified
+my `.env` file... and it turns out that when I refreshed the browser the page was
+"fast", like 50ms. I repeated the process several times, same result... 🤔 It took
+me some time to realize that a sfcw process was still running in the background! 
+That's why I couldn't see the "slow" timer. That was it, I had my proof; it works!
+™ 😊
 
 ## License
 
