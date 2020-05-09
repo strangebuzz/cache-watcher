@@ -8,6 +8,7 @@ run: ## Run the main go file on a Symfony 5 project
 
 build: ## Build the sfcw executable for the current platform
 	go build sfcw.go
+	shasum -a 256 sfcw
 	# To build the Linux executable run
 	# env GOOS=darwin GOARCH=amd64 go build sfcw.go
 	# env GOOS=linux GOARCH=amd64 go build sfcw.go
