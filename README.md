@@ -3,7 +3,7 @@
 It's a small Go program that will watch your Symfony files and refresh your cache
 when needed so you don't have to wait when refreshing your browser.
 
-It's goal is to improve the DX > [Developper Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony.   
+It's goal is to improve the [Developper Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony (DX).   
 
 <img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/logos/sfcw_400w.png" alt="The Sfcw mascot" align="right" />
 
@@ -32,11 +32,11 @@ This will build the `sfcw` or `sfcw.exe` executable depending on your platform.
 
 For now, I have built the following executables for the main operating systems:
 
-Operating System | Platform | file       | SHA256 Checksum 
----------------- | -------- | ---------- | ---------------
+Operating System | Platform | file       | SHA checksum 
+---------------- | -------- | ---------- | ------------
 darwin (macOS)   | amd64    | [sfcw](https://sfcw.dev/downloads/darwin/amd64/sfcw) (3.2mo)        | 6670592d4e6a74ba692bdfd912107cba3a6b9bc3ab1f1139778a16c2b730f2cf
 linux            | amd64    | [sfcw](https://sfcw.dev/downloads/linux/amd64/sfcw) (3.2mo)         | 68ee5fbe26835b60e027066602fda079d6d997899dd58d6ffccc80b191a2fb1d
-windows          | amd64    | [sfcw.exe](https://sfcw.dev/downloads/linux/amd64/sfcw.exe) (3.3mo) | 59420d2ba7c1df9e6afa6746e1bdc3d197792e2263df3cb857cd65d3e6980011
+windows          | amd64    | [sfcw.exe](https://sfcw.dev/downloads/windows/amd64/sfcw.exe) (3.3mo) | 59420d2ba7c1df9e6afa6746e1bdc3d197792e2263df3cb857cd65d3e6980011
 
 When downloaded you can check than the executalbe is not compromised by comparing
 the sha1 you get by running the following and comparing the value with the one displayed
