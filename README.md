@@ -178,7 +178,7 @@ with a unique feature. In fact, even it's very young it's almost "feature comple
 
 ## Fun fact
 
-When I developped `sfcw`, I played a lot with configuration files. One time I modified
+When I developped `sfcw`, I played a lot with configuration files. One time, I modified
 my `.env` file... and it turns out that when I refreshed the browser the page was
 "fast", like 50ms. I repeated the process several times, same result... 🤔 It took
 me some time to realize that a sfcw process was still running in the background! 
