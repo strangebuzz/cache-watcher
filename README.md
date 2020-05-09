@@ -105,7 +105,8 @@ I personnaly run it in the PHPStorm included terminal:
 
 <img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/sfcw-phpstorm-terminal.png" alt="Using sfcw inside a PHPStorn terminal" align="center" />
 
-When closing the PHPStorm window, the `sfcw` process will automatically be killed.
+/‼️\ Be careful that when closing the PHPStorm window, the `sfcw` process won't be 
+automatically be killed. /‼️\
 
 ## Stopping the watcher
 
@@ -117,6 +118,33 @@ $ sudo kill -9 28157
 ```
 
 ## Configuration
+
+As we saw previously, if your are using a project with the [Flex directory structure](https://symfony.com/doc/current/setup/flex.html)
+we default settings should be OK. Here are the defaults values:
+
+Key                 | value
+------------------- | ----------------------------------------------------------
+console_path        | Relative path to the Symfony console
+env                 | This is the APP_ENV parameter of the Symfony application
+debug               | This is the APP_DEBUG parameter of the Symfony application
+config_dir          | Relative directory where are stored the configuration files of the Symfony application
+translations_dir    | Relative directory where are stored the translations files of the Symfony application
+templates_dir       | Relative directory where are stored the templates files of the Symfony application
+templates_extension | Default extension for templates files
+yaml_extension      | Default extension for YAML files, we consider it must be consistent within an application
+sleep_time          | Sleep time between two filesystem checks in milliseconds
+
+If you are not using Flex, you can put a .sfcw.yaml file at the root of your project.
+Here is the configuration I use for one of my "old" Symfony 4.4 project:
+
+```
+console_path:     bin/console
+config_dir:       app/config
+translations_dir: src/AppBundle/Resources/translations
+templates_dir:    src/AppBundle/Resources/views
+yaml_extension:   yml
+sleep_time:       40
+```
 
 ## Todo
 
