@@ -39,20 +39,21 @@ darwin (macOS)   | amd64    | [sfcw](https://sfcw.dev/downloads/darwin/amd64/sfc
 linux            | amd64    | [sfcw](https://sfcw.dev/downloads/linux/amd64/sfcw) (3.2mo)         | 68ee5fbe26835b60e027066602fda079d6d997899dd58d6ffccc80b191a2fb1d
 windows          | amd64    | [sfcw.exe](https://sfcw.dev/downloads/windows/amd64/sfcw.exe) (3.3mo) | 59420d2ba7c1df9e6afa6746e1bdc3d197792e2263df3cb857cd65d3e6980011
 
-When downloaded you can check than the executalbe is not compromised by comparing
+When downloaded you can check than the executable is not compromised by comparing
 the sha1 you get by running the following and comparing the value with the one displayed
 in the previous table.
 
 ```terminal
 $ shasum -a 256 ./sfcw 
+6670592d4e6a74ba692bdfd912107cba3a6b9bc3ab1f1139778a16c2b730f2cf  ./sfcw
 ```
 
-If you need another one excutable type, create an issue and point out the operating
+If you need another executable type, create an issue and point out the operating
 system/target plaftorm you need, you will find the possible values in [this article](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures).
 
 For conveniency, add `sfcw` in your path so you can access it everywhere.
 
-💡: The executable is "quite" big (several mo) because it includes the Go runtime
+💡 The executable is "quite" big (several mo) because it includes the [Go run-time](https://stackoverflow.com/q/28576173/633864)
 and hasn't external dependencies.
 
 ## Running the watcher
@@ -99,7 +100,7 @@ Instead of having a "slow" page:
 
 <img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/slow-cache.png" alt="Cache refreshed by the browser call" align="center" />
 
-You can also pass a relative path or an absolute path for the first arugument:
+💡 You can also pass a relative path or an absolute path for the first argument:
 
 ```terminal
 $ sfcw ../strangebuzz.com
@@ -118,7 +119,7 @@ automatically be killed. /‼️\
 
 ## Stopping the watcher
 
-You can either hit CTRL+C or run the kill command with the PID the program has displayed
+You can either hit *CTRL+C* or run the kill command with the PID the program has displayed
 in the welcome message:
 
 ```terminal
@@ -130,19 +131,19 @@ $ sudo kill -9 28157
 As we saw previously, if your are using a project with the [Flex directory structure](https://symfony.com/doc/current/setup/flex.html)
 we default settings should be OK. Here are the defaults values:
 
-Key                 | value
-------------------- | ----------------------------------------------------------
-console_path        | Relative path to the Symfony console
-env                 | This is the APP_ENV parameter of the Symfony application
-debug               | This is the APP_DEBUG parameter of the Symfony application
-config_dir          | Relative directory where are stored the configuration files of the Symfony application
-translations_dir    | Relative directory where are stored the translations files of the Symfony application
-templates_dir       | Relative directory where are stored the templates files of the Symfony application
-templates_extension | Default extension for templates files
-yaml_extension      | Default extension for YAML files, we consider it must be consistent within an application
-sleep_time          | Sleep time between two filesystem checks in milliseconds
+Key                 | Value        | Description
+------------------- | -------------| -------------------------------------------
+console_path        | bin/console  | Relative path to the Symfony console
+env                 | dev          | This is the APP_ENV parameter of the Symfony application
+debug               | true         | This is the APP_DEBUG parameter of the Symfony application
+config_dir          | config       | Relative directory where are stored the configuration files of the Symfony application
+translations_dir    | translations | Relative directory where are stored the translations files of the Symfony application
+templates_dir       | templates    | Relative directory where are stored the templates files of the Symfony application
+templates_extension | twig         | Default extension for templates files
+yaml_extension      | yaml         | Default extension for YAML files, we consider it must be consistent within an application
+sleep_time          | 30           | Sleep time between two filesystem checks in milliseconds
 
-If you are not using Flex, you can put a .sfcw.yaml file at the root of your project.
+If you are not using Flex, you can put a `.sfcw.yaml` file at the root of your project.
 Here is the configuration I use for one of my "old" Symfony 4.4 project:
 
 ```
@@ -165,5 +166,3 @@ sleep_time:       40
 ## License
 
 This software is published under the [MIT License](LICENSE.md)
-
-
