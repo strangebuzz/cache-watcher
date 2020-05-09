@@ -1,6 +1,6 @@
 # Sfcw: the SymFony Cache Watcher
 
-It's a small Go program that will watch your Symfony files and refresh your cache
+Sfcw is a small Go program that will watch your Symfony files and refresh your cache
 when needed so you don't have to wait when refreshing your browser.
 
 It's goal is to improve the [Developper Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony (DX).   
@@ -9,14 +9,15 @@ It's goal is to improve the [Developper Experience](https://symfony.com/blog/mak
 
 ## How does it work?
 
-It's important to understand that the program will not create nor delete files
-on your filesystem. In fact, it will just run the Symfony command `cache:warmup` 
-for you.
+The program "watches" your files (.env, yaml, twig) and as soon as it detects a
+modification it will call the symfony `cache:warmup` command to refresh the cache.
+It's important to understand that the program will not create nor delete files on
+your filesystem.
 
 ## Installation
 
 You can either build the program yourself (this means that you must have a working
-Go developement environment or you can download an executable. 
+Go developement environment) or you can download an executable (download links below). 
 
 ### Compiling the program
 
@@ -28,9 +29,9 @@ $ make build
 
 This will build the `sfcw` or `sfcw.exe` executable depending on your platform.
 
-### Downloading the exexcutable
+### Downloading the executable
 
-For now, I have built the following executables for the main operating systems:
+Here are the executables for the main operating systems:
 
 Operating System | Platform | file       | SHA checksum 
 ---------------- | -------- | ---------- | ------------
@@ -51,11 +52,14 @@ system/target plaftorm you need, you will find the possible values in [this arti
 
 For conveniency, add `sfcw` in your path so you can access it everywhere.
 
+💡: The executable is "quite" big (several mo) because it includes the Go runtime
+and hasn't external dependencies.
+
 ## Running the watcher
 
-Now you have built or downloaded the program. If you run it without argument, it
-will display the help. If you are at the root of your Symfony application you can
-start to watch your project files with he following command:
+Now that you have built or downloaded the program, let's try it. If you run it without
+argument, it will display the help. If you are at the root of your Symfony application
+you can start to watch your project files with he following command:
 
 ```terminal
 $ sfcw .
@@ -89,7 +93,11 @@ get the following feedback:
 
 Now refresh you page. It should be "fast" as the cache is already refreshed. 🎉
 
+<img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/fast-cache.png" alt="Cache already loaded" align="center" />
+
 Instead of having a "slow" page:
+
+<img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/slow-cache.png" alt="Cache refreshed by the browser call" align="center" />
 
 You can also pass a relative path or an absolute path for the first arugument:
 
