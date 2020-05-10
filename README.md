@@ -99,7 +99,7 @@ Now refresh you page. It should be "fast" as the cache is already refreshed. ğŸ
 
 Instead of having a "slow" page:
 
-<img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/slow-cache.png" alt="Cache refreshed by the browser call" align="center" />
+<img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/slow-cache2.png" alt="Cache refreshed by the browser call" align="center" />
 
 ğŸ’¡ You can also pass a relative path or an absolute path for the first argument:
 
