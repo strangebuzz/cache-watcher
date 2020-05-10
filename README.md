@@ -12,12 +12,12 @@ Its goal is to improve the [Developer Experience](https://symfony.com/blog/makin
 The program "watches" your files (.env, yaml, twig) and as soon as it detects a
 modification it will call the symfony `cache:warmup` command to refresh the cache.
 It's important to understand that the program will not create nor delete files on
-your filesystem.
+your filesystem by itself.
 
 ## Installation 🛠️
 
 You can either build the program yourself (this means that you must have a working
-Go developement environment) or you can download an executable (download links below).
+Go developement environment) or you can [download an executable](https://github.com/strangebuzz/sfcw#downloading-the-executable-).
 The program was developped with **go1.14.2**. 
 
 ### Compiling the program ⚙️
@@ -187,4 +187,4 @@ That's why I couldn't see the "slow" timer. That was it, I had my proof; it work
 
 ## License ™️
 
-This software is published under the [MIT License](LICENSE.md)
+This software is published under the [MIT License](LICENSE.md).
