@@ -1,26 +1,26 @@
-# Sfcw: the SymFony Cache Watcher
+# Sfcw: the SymFony Cache Watcher 🧙‍♀️
 
-Sfcw is a small Go program that will watch your Symfony files and refresh your cache
+Sfcw is a small Go program that watches your Symfony files and refreshes your cache
 when needed so you don't have to wait when refreshing your browser.
 
 Its goal is to improve the [Developer Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony (DX).   
 
 <img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/logos/sfcw_400w.png" alt="The Sfcw mascot" align="right" />
 
-## How does it work?
+## How does it work? 🤔
 
 The program "watches" your files (.env, yaml, twig) and as soon as it detects a
 modification it will call the symfony `cache:warmup` command to refresh the cache.
 It's important to understand that the program will not create nor delete files on
 your filesystem.
 
-## Installation
+## Installation 🛠️
 
 You can either build the program yourself (this means that you must have a working
 Go developement environment) or you can download an executable (download links below).
 The program was developped with **go1.14.2**. 
 
-### Compiling the program
+### Compiling the program ⚙️
 
 ```terminal
 $ git clone git@github.com:strangebuzz/sfcw.git
@@ -30,7 +30,7 @@ $ make build
 
 This will build the `sfcw` or `sfcw.exe` executable depending on your platform.
 
-### Downloading the executable
+### Downloading the executable 🔽
 
 Here are the executables for the main operating systems:
 
@@ -57,7 +57,7 @@ For conveniency, add `sfcw` in your path so you can access it from everywhere.
 💡 The executable is "quite" big (several mo) because it includes the [Go run-time](https://stackoverflow.com/q/28576173/633864)
 and hasn't external dependencies.
 
-## Running the watcher
+## Running the watcher ⚡
 
 Now that you have built or downloaded the program, let's try it. If you run it without
 argument, it will display the help message. If you are at the root of your Symfony
@@ -115,7 +115,7 @@ I personnaly run it in the PHPStorm included terminal:
 /‼️\ Be careful that when closing the PHPStorm window, the `sfcw` process won't be 
 automatically be killed. /‼️\
 
-## Stopping the watcher
+## Stopping the watcher ⛔
 
 You can either hit *CTRL+C* or run the kill command with the PID the program has
 displayed in the welcome message:
@@ -124,7 +124,7 @@ displayed in the welcome message:
 $ sudo kill -9 28157
 ```
 
-## Configuration
+## Configuration 🎛️
 
 As we saw previously, if your are using a project with the [Flex directory structure](https://symfony.com/doc/current/setup/flex.html)
 the default settings should be OK. The default values will always be set for the
@@ -155,10 +155,10 @@ sleep_time:       40
 
 💡 The sleep time is the parameter in milliseconds between two filesystem check.
 The lower it is, the faster the cache will be refreshed but the higher the CPU will
-be used. I found 30ms to be a good value for my MacMini 2018 (i7, 3,2gh, 16go) but
-you probably want to find the best value for your system (with top or htop). 
+be used. I found 30ms to be a good value for my MacMini 2018 (i7, 3,2GHz, 16go)
+but you probably want to find the best value for your system (with top or htop).
 
-## Todo
+## Todo 📋
 
 - [ ] Apply the Symfony style for the console output #1
 - [ ] Add an option to display the watched file #2
@@ -166,17 +166,17 @@ you probably want to find the best value for your system (with top or htop).
 - [ ] Allow to have an additional whitelist of custom files to watch #4
 - [ ] ...feel free to [create an issue](https://github.com/strangebuzz/sfcw/issues/new) 🙂.
 
-## Notes
+## Notes 📔
 
 I won't do a LIVE update like the Symfony binary. Please watch the repository to
 be notified of new releases.
 
-## Contributing
+## Contributing 🤝
 
 Your are welcome. But don't forget that I want to keep this program very light
 with a unique feature. In fact, even it's very young it's almost "feature complete".
 
-## Fun fact
+## Fun fact 😄
 
 When I developped `sfcw`, I played a lot with configuration files. One time, I modified
 my `.env` file... and it turns out that when I refreshed the browser the page was
@@ -185,6 +185,6 @@ me some time to realize that a sfcw process was still running in the background!
 That's why I couldn't see the "slow" timer. That was it, I had my proof; it works!
 ™ 😊
 
-## License
+## License ™️
 
 This software is published under the [MIT License](LICENSE.md)
