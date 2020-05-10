@@ -28,7 +28,7 @@ $ cd sfcw
 $ make build 
 ```
 
-This will build the `sfcw` or `sfcw.exe` executable depending on your platform.
+It will build the `sfcw` or `sfcw.exe` executable depending on your platform.
 
 ### Downloading the executable 🔽
 
@@ -61,7 +61,7 @@ and hasn't external dependencies.
 
 Now that you have built or downloaded the program, let's try it. If you run it without
 argument, it will display the help message. If you are at the root of your Symfony
-application you can start to watch your project files with the following command:
+application, you can start to watch your project files with the following command:
 
 ```terminal
 $ sfcw .
@@ -108,7 +108,7 @@ $ sfcw ../strangebuzz.com
 $ sfcw /Users/coil/Sites/strangebuzz.com 
 ```
 
-I personally run it in the PHPStorm included terminal:
+I run it in the PHPStorm included terminal:
 
 <img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/sfcw-phpstorm-terminal.png" alt="Using sfcw inside a PHPStorn terminal" align="center" />
 
@@ -163,8 +163,8 @@ but you probably want to find the best value for your system (with top or htop).
 - [ ] [Apply the Symfony style for the console output](https://github.com/strangebuzz/sfcw/issues/1) 
 - [ ] [Add an option to display the watched file](https://github.com/strangebuzz/sfcw/issues/2)
 - [ ] [Add CI with Github actions](https://github.com/strangebuzz/sfcw/issues/3)
-- [ ] [Allow to have an additional whitelist of custom files to watch](https://github.com/strangebuzz/sfcw/issues/4)
-- [ ] ...feel free to [create an issue](https://github.com/strangebuzz/sfcw/issues/new) 🙂.
+- [ ] [Allow having an additional whitelist of custom files to watch](https://github.com/strangebuzz/sfcw/issues/4)
+- [ ] Feel free to [create an issue](https://github.com/strangebuzz/sfcw/issues/new) 🙂.
 
 ## Notes 📔
 
