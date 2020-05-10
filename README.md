@@ -1,4 +1,4 @@
-# Sfcw: the SymFony Cache Watcher 🧙‍♀️
+# Sfcw: the SymFony Cache Watcher
 
 Sfcw is a small Go program that watches your Symfony files and refreshes your cache
 when needed so you don't have to wait when refreshing your browser.
@@ -130,17 +130,17 @@ As we saw previously, if your are using a project with the [Flex directory struc
 the default settings should be OK. The default values will always be set for the
 last minor Symfony version, actually 5.1:
 
-Key                 | Value        | Description
-------------------- | -------------| -------------------------------------------
-console_path        | bin/console  | Relative path to the Symfony console
-env                 | dev          | This is the APP_ENV parameter of the Symfony application
-debug               | true         | This is the APP_DEBUG parameter of the Symfony application
-config_dir          | config       | Relative directory where are stored the configuration files of the Symfony application
-translations_dir    | translations | Relative directory where are stored the translations files of the Symfony application
-templates_dir       | templates    | Relative directory where are stored the templates files of the Symfony application
-templates_extension | twig         | Default extension for templates files
-yaml_extension      | yaml         | Default extension for YAML files, we consider it must be consistent within an application
-sleep_time          | 30           | Sleep time between two filesystem checks in milliseconds
+Key                 | Default value | Description
+------------------- | --------------| -------------------------------------------
+console_path        | bin/console   | Relative path to the Symfony console
+env                 | dev           | This is the APP_ENV parameter of the Symfony application
+debug               | true          | This is the APP_DEBUG parameter of the Symfony application
+config_dir          | config        | Relative directory where are stored the configuration files of the Symfony application
+translations_dir    | translations  | Relative directory where are stored the translations files of the Symfony application
+templates_dir       | templates     | Relative directory where are stored the templates files of the Symfony application
+templates_extension | twig          | Default extension for templates files
+yaml_extension      | yaml          | Default extension for YAML files, we consider it must be consistent within an application
+sleep_time          | 30            | Sleep time between two filesystem checks in milliseconds
 
 If you are not using Flex, you can put a `.sfcw.yaml` file at the root of your project.
 Here is the configuration I use for one of my "old" Symfony 4.4 project:
@@ -155,15 +155,15 @@ sleep_time:       40
 
 💡 The sleep time is the parameter in milliseconds between two filesystem check.
 The lower it is, the faster the cache will be refreshed but the higher the CPU will
-be used. I found 30ms to be a good value for my MacMini 2018 (i7, 3,2GHz, 16go)
+be used. I found 30ms to be a good value for my MacMini 2018 (i7/3,2GHz/16go)
 but you probably want to find the best value for your system (with top or htop).
 
 ## Todo 📋
 
-- [ ] Apply the Symfony style for the console output #1
-- [ ] Add an option to display the watched file #2
-- [ ] Add CI with Github actions #3
-- [ ] Allow to have an additional whitelist of custom files to watch #4
+- [ ] [Apply the Symfony style for the console output](https://github.com/strangebuzz/sfcw/issues/1) 
+- [ ] [Add an option to display the watched file](https://github.com/strangebuzz/sfcw/issues/2)
+- [ ] [Add CI with Github actions](https://github.com/strangebuzz/sfcw/issues/3)
+- [ ] [Allow to have an additional whitelist of custom files to watch](https://github.com/strangebuzz/sfcw/issues/4)
 - [ ] ...feel free to [create an issue](https://github.com/strangebuzz/sfcw/issues/new) 🙂.
 
 ## Notes 📔
