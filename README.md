@@ -1,7 +1,7 @@
 # Sfcw: the SymFony Cache Watcher
 
 Sfcw is a small Go program that watches your Symfony files and refreshes your cache
-when needed so you don't have to wait when refreshing your browser.
+when needed, so you don't have to wait when refreshing your browser.
 
 Its goal is to improve the [Developer Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony (DX).   
 
@@ -9,16 +9,16 @@ Its goal is to improve the [Developer Experience](https://symfony.com/blog/makin
 
 ## How does it work? 🤔
 
-The program "watches" your files (.env, yaml, twig) and as soon as it detects a
-modification it will call the symfony `cache:warmup` command to refresh the cache.
+The program "watches" your files (.env, YAML, twig) and as soon as it detects a
+modification, it will call the Symfony `cache:warmup` command to refresh the cache.
 It's important to understand that the program will not create nor delete files on
 your filesystem by itself.
 
 ## Installation 🛠️
 
-You can either build the program yourself (this means that you must have a working
-Go developement environment) or you can [download an executable](https://github.com/strangebuzz/sfcw#downloading-the-executable-).
-The program was developped with **go1.14.2**. 
+You can build the program yourself (this means that you must have a working
+Go development environment) or you can [download an executable](https://github.com/strangebuzz/sfcw#downloading-the-executable-).
+The program was developed with **go1.14.2**. 
 
 ### Compiling the program ⚙️
 
@@ -50,9 +50,9 @@ $ shasum -a 256 ./sfcw
 ```
 
 If you need another executable type, create an issue and point out the operating
-system/target plaftorm you need, you will find the possible values in [this article](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures).
+system/target platform you want, you will find the possible values in [this article](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures).
 
-For conveniency, add `sfcw` in your path so you can access it from everywhere.
+For convenience, add `sfcw` in your path so you can access it from everywhere.
 
 💡 The executable is "quite" big (several mo) because it includes the [Go run-time](https://stackoverflow.com/q/28576173/633864)
 and hasn't external dependencies.
@@ -61,7 +61,7 @@ and hasn't external dependencies.
 
 Now that you have built or downloaded the program, let's try it. If you run it without
 argument, it will display the help message. If you are at the root of your Symfony
-application you can start to watch your project files with he following command:
+application you can start to watch your project files with the following command:
 
 ```terminal
 $ sfcw .
@@ -85,7 +85,7 @@ Sfcw watches your files (.env, YAML, Twig) and automatically refreshes your appl
 That's it! If you have a Symfony 4 or 5 project with the Flex directory structure,
 it's all that you need.
 
-When a change will be detected in your `services.yaml` file for example, you will
+When a change will be detected in your `services.yaml` file, for example, you will
 get the following feedback:
 
 ```terminal
@@ -93,7 +93,7 @@ get the following feedback:
   ✅  Done! in 2.43 second(s).
 ```
 
-Now refresh you page. It should be "fast" as the cache is already refreshed: 🐰
+Now refresh your page. It should be "fast" as the cache is already refreshed: 🐰
 
 <img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/fast-cache.png" alt="Cache already loaded" align="center" />
 
@@ -108,7 +108,7 @@ $ sfcw ../strangebuzz.com
 $ sfcw /Users/coil/Sites/strangebuzz.com 
 ```
 
-I personnaly run it in the PHPStorm included terminal:
+I personally run it in the PHPStorm included terminal:
 
 <img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/sfcw-phpstorm-terminal.png" alt="Using sfcw inside a PHPStorn terminal" align="center" />
 
@@ -126,7 +126,7 @@ $ sudo kill -9 28157
 
 ## Configuration 🎛️
 
-As we saw previously, if your are using a project with the [Flex directory structure](https://symfony.com/doc/current/setup/flex.html)
+As we saw previously, if your project has the [Flex directory structure](https://symfony.com/doc/current/setup/flex.html),
 the default settings should be OK. The default values will always be set for the
 last minor Symfony version, actually 5.1:
 
@@ -143,7 +143,7 @@ yaml_extension      | yaml          | Default extension for YAML files, we consi
 sleep_time          | 30            | Sleep time between two filesystem checks in milliseconds
 
 If you are not using Flex, you can put a `.sfcw.yaml` file at the root of your project.
-Here is the configuration I use for one of my "old" Symfony 4.4 project:
+Here is the configuration I use for one of my "old" Symfony 4.4 projects:
 
 ```
 config_dir:       app/config
@@ -154,8 +154,8 @@ sleep_time:       40
 ```
 
 💡 The sleep time is the parameter in milliseconds between two filesystem check.
-The lower it is, the faster the cache will be refreshed but the higher the CPU will
-be used. I found 30ms to be a good value for my MacMini 2018 (i7/3,2GHz/16go)
+The lower it is, the faster the cache will be refreshed, but the higher the CPU
+will be used. I found 30ms to be a good value for my MacMini 2018 (i7/3,2GHz/16go),
 but you probably want to find the best value for your system (with top or htop).
 
 ## Todo 📋
@@ -168,21 +168,21 @@ but you probably want to find the best value for your system (with top or htop).
 
 ## Notes 📔
 
-I won't do a LIVE update like the Symfony binary. Please watch the repository to
+I won't do a live update like the Symfony binary. Please watch the repository to
 be notified of new releases.
 
 ## Contributing 🤝
 
-Your are welcome. But don't forget that I want to keep this program very light
-with a unique feature. In fact, even it's very young it's almost "feature complete".
+You are welcome. But don't forget that I want to keep this program very light
+with a unique feature. Even it's very young; it's almost "feature complete".
 
 ## Fun fact 😄
 
-When I developped `sfcw`, I played a lot with configuration files. One time, I modified
-my `.env` file... and it turns out that when I refreshed the browser the page was
-"fast", like 50ms. I repeated the process several times, same result... 🤔 It took
-me some time to realize that a sfcw process was still running in the background! 
-That's why I couldn't see the "slow" timer. That was it, I had my proof; it works!
+When I developed `sfcw`, I played a lot with configuration files. One time, I modified
+my `.env` file. And it turns out that when I refreshed the browser, the page was
+"fast", like 50ms. I repeated the process several times, the same result! 🤔 It took
+me some time to realize that an `sfcw` process was still running in the background! 
+That's why I couldn't see the "slow" timer. That was it; I had my proof; it works!
 ™ 😊
 
 ## License ™️
