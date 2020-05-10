@@ -93,11 +93,11 @@ get the following feedback:
   ✅  Done! in 2.43 second(s).
 ```
 
-Now refresh you page. It should be "fast" as the cache is already refreshed. 🎉
+Now refresh you page. It should be "fast" as the cache is already refreshed. 🐰
 
 <img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/fast-cache.png" alt="Cache already loaded" align="center" />
 
-Instead of having a "slow" page:
+Instead of having a "slow" page: 🐌
 
 <img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/slow-cache2.png" alt="Cache refreshed by the browser call" align="center" />
 
