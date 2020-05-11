@@ -40,7 +40,7 @@ darwin (macOS)   | amd64    | [sfcw](https://sfcw.dev/downloads/darwin/amd64/sfc
 linux            | amd64    | [sfcw](https://sfcw.dev/downloads/linux/amd64/sfcw) (3.2mo)         | 68ee5fbe26835b60e027066602fda079d6d997899dd58d6ffccc80b191a2fb1d
 windows          | amd64    | [sfcw.exe](https://sfcw.dev/downloads/windows/amd64/sfcw.exe) (3.3mo) | 59420d2ba7c1df9e6afa6746e1bdc3d197792e2263df3cb857cd65d3e6980011
 
-When downloaded, you can check than the executable is not compromised by comparing
+When downloaded, you can check that the executable isn't compromised by comparing
 the SHA checksum you get by running the following command and the value displayed
 in the previous table.
 
@@ -60,7 +60,7 @@ and hasn't external dependencies.
 ## Running the watcher ⚡
 
 Now that you have built or downloaded the program, let's try it. If you run it without
-argument, it will display the help message. If you are at the root of your Symfony
+arguments, it will display the help message. If you are at the root of your Symfony
 application, you can start to watch your project files with the following command:
 
 ```terminal
@@ -83,7 +83,7 @@ Sfcw watches your files (.env, YAML, Twig) and automatically refreshes your appl
 ```
 
 That's it! If you have a Symfony 4 or 5 project with the Flex directory structure,
-it's all that you need.
+it's everything you need.
 
 When a change will be detected in your `services.yaml` file, for example, you will
 get the following feedback:
@@ -128,7 +128,7 @@ $ sudo kill -9 28157
 
 As we saw previously, if your project has the [Flex directory structure](https://symfony.com/doc/current/setup/flex.html),
 the default settings should be OK. The default values will always be set for the
-last minor Symfony version, actually 5.1:
+last minor Symfony version, currently 5.1:
 
 Key                 | Default value | Description
 ------------------- | --------------| -------------------------------------------
@@ -153,7 +153,7 @@ yaml_extension:   yml
 sleep_time:       40
 ```
 
-💡 The sleep time is the parameter in milliseconds between two filesystem check.
+💡 The sleep time is the parameter in milliseconds between two filesystem checks.
 The lower it is, the faster the cache will be refreshed, but the higher the CPU
 will be used. I found 30ms to be a good value for my MacMini 2018 (i7/3,2GHz/16go),
 but you probably want to find the best value for your system (with top or htop).
