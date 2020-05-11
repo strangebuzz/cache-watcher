@@ -34,11 +34,11 @@ It will build the `sfcw` or `sfcw.exe` executable depending on your platform.
 
 Here are the executables for the main operating systems:
 
-Operating System | Platform | file       | SHA checksum 
----------------- | -------- | ---------- | ------------
-darwin (macOS)   | amd64    | [sfcw](https://sfcw.dev/downloads/darwin/amd64/sfcw) (3.2mo)        | 6670592d4e6a74ba692bdfd912107cba3a6b9bc3ab1f1139778a16c2b730f2cf
-linux            | amd64    | [sfcw](https://sfcw.dev/downloads/linux/amd64/sfcw) (3.2mo)         | 68ee5fbe26835b60e027066602fda079d6d997899dd58d6ffccc80b191a2fb1d
-windows          | amd64    | [sfcw.exe](https://sfcw.dev/downloads/windows/amd64/sfcw.exe) (3.3mo) | 59420d2ba7c1df9e6afa6746e1bdc3d197792e2263df3cb857cd65d3e6980011
+Operating System | Platform | version | file        | SHA checksum 
+---------------- | -------- | ------- | ----------- | ------------
+darwin (macOS)   | amd64    | 0.3.0   | [sfcw](https://sfcw.dev/downloads/darwin/amd64/sfcw) (3.2mo)        | 6670592d4e6a74ba692bdfd912107cba3a6b9bc3ab1f1139778a16c2b730f2cf
+linux            | amd64    | 0.3.0   | [sfcw](https://sfcw.dev/downloads/linux/amd64/sfcw) (3.2mo)         | 68ee5fbe26835b60e027066602fda079d6d997899dd58d6ffccc80b191a2fb1d
+windows          | amd64    | 0.3.0   | [sfcw.exe](https://sfcw.dev/downloads/windows/amd64/sfcw.exe) (3.3mo) | 59420d2ba7c1df9e6afa6746e1bdc3d197792e2263df3cb857cd65d3e6980011
 
 When downloaded, you can check that the executable isn't compromised by comparing
 the SHA checksum you get by running the following command and the value displayed
@@ -47,6 +47,12 @@ in the previous table.
 ```
 $ shasum -a 256 ./sfcw 
 6670592d4e6a74ba692bdfd912107cba3a6b9bc3ab1f1139778a16c2b730f2cf  ./sfcw
+```
+
+On linux and macOS, give the executable permission to the file:
+
+```
+$ chmod +x ./sfcw
 ```
 
 If you need another executable type, create an issue and point out the operating
