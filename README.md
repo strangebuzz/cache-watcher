@@ -22,7 +22,7 @@ The program was developed with **go1.14.2**.
 
 ### Compiling the program ⚙️
 
-```terminal
+```
 $ git clone git@github.com:strangebuzz/sfcw.git
 $ cd sfcw
 $ make build 
@@ -44,7 +44,7 @@ When downloaded, you can check that the executable isn't compromised by comparin
 the SHA checksum you get by running the following command and the value displayed
 in the previous table.
 
-```terminal
+```
 $ shasum -a 256 ./sfcw 
 6670592d4e6a74ba692bdfd912107cba3a6b9bc3ab1f1139778a16c2b730f2cf  ./sfcw
 ```
@@ -63,13 +63,13 @@ Now that you have built or downloaded the program, let's try it. If you run it w
 arguments, it will display the help message. If you are at the root of your Symfony
 application, you can start to watch your project files with the following command:
 
-```terminal
+```
 $ sfcw .
 ```
 
 You should have the following output:
 
-```terminal
+```
 ——————————————————————————————————————————————————————————————————————
   Sfcw version v0.3.0 by COil - https://www.strangebuzz.com 🐝
 ——————————————————————————————————————————————————————————————————————
@@ -88,7 +88,7 @@ it's everything you need.
 When a change will be detected in your `services.yaml` file, for example, you will
 get the following feedback:
 
-```terminal
+```
 ⬇ Update detected at 17:09:03 > refreshing cache...
   ✅  Done! in 2.43 second(s).
 ```
@@ -103,7 +103,7 @@ Instead of having a "slow" page: 🐌
 
 💡 You can also pass a relative path or an absolute path for the first argument:
 
-```terminal
+```
 $ sfcw ../strangebuzz.com
 $ sfcw /Users/coil/Sites/strangebuzz.com 
 ```
@@ -120,7 +120,7 @@ automatically be killed. /‼️\
 You can either hit *CTRL+C* or run the kill command with the PID the program has
 displayed in the welcome message:
 
-```terminal
+```
 $ sudo kill -9 28157
 ```
 
