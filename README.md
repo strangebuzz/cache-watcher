@@ -150,7 +150,7 @@ config_dir:       app/config
 translations_dir: src/AppBundle/Resources/translations
 templates_dir:    src/AppBundle/Resources/views
 yaml_extension:   yml
-sleep_time:       40
+sleep_time:       30
 ```
 
 💡 The sleep time is the parameter in milliseconds between two filesystem checks.
