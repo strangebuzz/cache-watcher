@@ -36,9 +36,9 @@ Here are the executables for the main operating systems:
 
 Operating System | Platform | version | file        | SHA checksum 
 ---------------- | -------- | ------- | ----------- | ------------
-darwin (macOS)   | amd64    | 0.4.0   | [cw](https://sfcw.dev/downloads/darwin/amd64/sfcw) (3.2mo)        | 
-linux            | amd64    | 0.4.0   | [cw](https://sfcw.dev/downloads/linux/amd64/sfcw) (3.2mo)         | 
-windows          | amd64    | 0.4.0   | [cw.exe](https://sfcw.dev/downloads/windows/amd64/sfcw.exe) (3.3mo) | 
+darwin (macOS)   | amd64    | 0.4.0   | [cw](https://sfcw.dev/downloads/darwin/amd64/sfcw) (3.2mo)        | b35078644ac3b3f025276a0c5fcd77b3d2c8fe9cd15d136df969772e6f513973 
+linux            | amd64    | 0.4.0   | [cw](https://sfcw.dev/downloads/linux/amd64/sfcw) (3.2mo)         | cc5c4b828482db2dd00ae5a566799ff9778de4d48dde520e4cb2e867c7ad4182 
+windows          | amd64    | 0.4.0   | [cw.exe](https://sfcw.dev/downloads/windows/amd64/sfcw.exe) (3.3mo) | d244f9322d2d45b60312fafcb4d2d9499b4632d2a652c38f0d86094af90bfcda 
 
 When downloaded, you can check that the executable isn't compromised by comparing
 the SHA checksum you get by running the following command and the value displayed
