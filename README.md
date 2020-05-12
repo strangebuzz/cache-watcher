@@ -5,7 +5,7 @@ your cache when needed, so you don't have to wait when refreshing your browser.
 
 Its goal is to improve the [Developer Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony (DX).   
 
-<!--img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/logos/sfcw_400w.png" alt="The Sfcw mascot" align="right" /-->
+<!--img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/logos/sfcw_400w.png" alt="The Sfcw mascot" align="right" /-->
 
 ## How does it work? 🤔
 
@@ -16,15 +16,15 @@ your filesystem by itself.
 
 ## Installation 🛠️
 
-You can build the program yourself (this means that you must have a working
-Go development environment) or you can [download an executable](#downloading-the-executable-).
+You can build the program yourself (this means that you must have a working Go development
+environment) or you can [download an executable](#downloading-the-executable-).
 The program was developed with **go1.14.2**. 
 
 ### Compiling the program ⚙️
 
 ```
-$ git clone git@github.com:strangebuzz/sfcw.git
-$ cd sfcw
+$ git clone git@github.com:strangebuzz/cache-watcher.git
+$ cd cache-watcher
 $ make build 
 ```
 
@@ -36,29 +36,29 @@ Here are the executables for the main operating systems:
 
 Operating System | Platform | version | file        | SHA checksum 
 ---------------- | -------- | ------- | ----------- | ------------
-darwin (macOS)   | amd64    | 0.3.0   | [sfcw](https://sfcw.dev/downloads/darwin/amd64/sfcw) (3.2mo)        | 6670592d4e6a74ba692bdfd912107cba3a6b9bc3ab1f1139778a16c2b730f2cf
-linux            | amd64    | 0.3.0   | [sfcw](https://sfcw.dev/downloads/linux/amd64/sfcw) (3.2mo)         | 68ee5fbe26835b60e027066602fda079d6d997899dd58d6ffccc80b191a2fb1d
-windows          | amd64    | 0.3.0   | [sfcw.exe](https://sfcw.dev/downloads/windows/amd64/sfcw.exe) (3.3mo) | 59420d2ba7c1df9e6afa6746e1bdc3d197792e2263df3cb857cd65d3e6980011
+darwin (macOS)   | amd64    | 0.4.0   | [cw](https://sfcw.dev/downloads/darwin/amd64/sfcw) (3.2mo)        | 
+linux            | amd64    | 0.4.0   | [cw](https://sfcw.dev/downloads/linux/amd64/sfcw) (3.2mo)         | 
+windows          | amd64    | 0.4.0   | [cw.exe](https://sfcw.dev/downloads/windows/amd64/sfcw.exe) (3.3mo) | 
 
 When downloaded, you can check that the executable isn't compromised by comparing
 the SHA checksum you get by running the following command and the value displayed
 in the previous table.
 
 ```
-$ shasum -a 256 ./sfcw 
-6670592d4e6a74ba692bdfd912107cba3a6b9bc3ab1f1139778a16c2b730f2cf  ./sfcw
+$ shasum -a 256 ./cw 
+6670592d4e6a74ba692bdfd912107cba3a6b9bc3ab1f1139778a16c2b730f2cf  ./cw
 ```
 
 On linux and macOS, give the executable permission to the file:
 
 ```
-$ chmod +x ./sfcw
+$ chmod +x ./cw
 ```
 
 If you need another executable type, create an issue and point out the operating
 system/target platform you want, you will find the possible values in [this article](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures).
 
-For convenience, add `sfcw` in your path so you can access it from everywhere.
+For convenience, add `cw` in your path so you can access it from everywhere.
 
 💡 The executable is "quite" big (several mo) because it includes the [Go run-time](https://stackoverflow.com/q/28576173/633864)
 and hasn't external dependencies.
@@ -70,16 +70,16 @@ arguments, it will display the help message. If you are at the root of your Symf
 application, you can start to watch your project files with the following command:
 
 ```
-$ sfcw .
+$ cw .
 ```
 
 You should have the following output:
 
 ```
 ——————————————————————————————————————————————————————————————————————
-  Sfcw version v0.3.0 by COil - https://www.strangebuzz.com 🐝
+  CacheWatcher version v0.4.0 by COil - https://www.strangebuzz.com 🐝
 ——————————————————————————————————————————————————————————————————————
-Sfcw watches your files (.env, YAML, Twig) and automatically refreshes your application cache.
+CacheWatcher watches your files (.env, YAML, Twig) and automatically refreshes your application cache.
 ——————————————————————————————————————————————————————————————————————
  > Project directory: /Users/coil/Sites/strangebuzz.com
  > Symfony console path: bin/console
@@ -101,24 +101,24 @@ get the following feedback:
 
 Now refresh your page. It should be "fast" as the cache is already refreshed: 🐰
 
-<img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/fast-cache.png" alt="Cache already loaded" align="center" />
+<img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/fast-cache.png" alt="Cache already loaded" align="center" />
 
 Instead of having a "slow" page: 🐌
 
-<img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/slow-cache2.png" alt="Cache refreshed by the browser call" align="center" />
+<img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/slow-cache2.png" alt="Cache refreshed by the browser call" align="center" />
 
 💡 You can also pass a relative path or an absolute path for the first argument:
 
 ```
-$ sfcw ../strangebuzz.com
-$ sfcw /Users/coil/Sites/strangebuzz.com 
+$ cw ../strangebuzz.com
+$ cw /Users/coil/Sites/strangebuzz.com 
 ```
 
 I run it in the PHPStorm included terminal:
 
-<img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/doc/img/sfcw-phpstorm-terminal.png" alt="Using sfcw inside a PHPStorn terminal" align="center" />
+<img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/sfcw-phpstorm-terminal.png" alt="Using sfcw inside a PHPStorn terminal" align="center" />
 
-/‼️\ Be careful that when closing the PHPStorm window, the `sfcw` process won't be 
+/‼️\ Be careful that when closing the PHPStorm window, the `cw` process won't be 
 automatically be killed. /‼️\
 
 ## Stopping the watcher ⛔
@@ -148,7 +148,7 @@ templates_extension | twig          | Default extension for templates files
 yaml_extension      | yaml          | Default extension for YAML files, we consider it must be consistent within an application
 sleep_time          | 30            | Sleep time between two filesystem checks in milliseconds
 
-If you are not using Flex, you can put a `.sfcw.yaml` file at the root of your project.
+If you are not using Flex, you can put a `.cw.yaml` file at the root of your project.
 Here is the configuration I use for one of my "old" Symfony 4.4 projects:
 
 ```
@@ -184,10 +184,10 @@ with a unique feature. Even it's very young; it's almost "feature complete".
 
 ## Fun fact 😄
 
-When I developed `sfcw`, I played a lot with configuration files. One time, I modified
+When I developed `cw`, I played a lot with configuration files. One time, I modified
 my `.env` file. And it turns out that when I refreshed the browser, the page was
 "fast", like 50ms. I repeated the process several times, the same result! 🤔 It took
-me some time to realize that an `sfcw` process was still running in the background! 
+me some time to realize that an `cw` process was still running in the background! 
 That's why I couldn't see the "slow" timer. That was it; I had my proof; it works!
 ™ 😊
 

@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-const customConfigFilename = ".sfcw.yaml"
+const customConfigFilename = ".cw.yaml"
 
 /**
  * Get and load the custom config if it exists.
