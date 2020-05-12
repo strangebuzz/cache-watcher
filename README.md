@@ -191,6 +191,11 @@ me some time to realize that an `sfcw` process was still running in the backgrou
 That's why I couldn't see the "slow" timer. That was it; I had my proof; it works!
 ™ 😊
 
+## Credits ™
+
+* Symfony ™ is a trademark of [Symfony SAS](https://symfony.com/license)
+* Original Golang logo "Gopher" by [Renee French](http://reneefrench.blogspot.com)
+
 ## License ™️
 
 This software is published under the [MIT License](LICENSE).

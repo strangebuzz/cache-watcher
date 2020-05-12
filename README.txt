@@ -61,8 +61,11 @@ These are dev notes. For the full documentation check-out README.md
 @Naming
 ————————————————————————————————————————————————————————————————————————————————
 
-* sfcw
-* Not "cc" because it's the C compiler.
+*
+* cagony - compte github déjà pris
+* goffy - vrai prénom
+* lacyg - trop générique, contient le vrai prénim lacy
+* cloae - nom de domaine pris
 
 
 @Resources
