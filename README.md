@@ -196,6 +196,6 @@ That's why I couldn't see the "slow" timer. That was it; I had my proof; it work
 * Symfony ™ is a trademark of [Symfony SAS](https://symfony.com/license).
 * Original Golang logo "Gopher" by [Renee French](http://reneefrench.blogspot.com).
 
-## License ™️
+## License ™
 
 This software is published under the [MIT License](LICENSE).
