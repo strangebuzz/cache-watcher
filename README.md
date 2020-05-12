@@ -105,7 +105,7 @@ Now refresh your page. It should be "fast" as the cache is already refreshed: �
 
 Instead of having a "slow" page: 🐌
 
-<img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/slow-cache2.png" alt="Cache refreshed by the browser call" align="center" />
+<img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/slow-cache.png" alt="Cache refreshed by the browser call" align="center" />
 
 💡 You can also pass a relative path or an absolute path for the first argument:
 
@@ -116,7 +116,7 @@ $ cw /Users/coil/Sites/strangebuzz.com
 
 I run it in the PHPStorm included terminal:
 
-<img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/sfcw-phpstorm-terminal.png" alt="Using sfcw inside a PHPStorn terminal" align="center" />
+<img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/cw-phpstorm-terminal.png" alt="Using sfcw inside a PHPStorn terminal" align="center" />
 
 /‼️\ Be careful that when closing the PHPStorm window, the `cw` process won't be 
 automatically be killed. /‼️\
@@ -193,8 +193,8 @@ That's why I couldn't see the "slow" timer. That was it; I had my proof; it work
 
 ## Credits ™
 
-* Symfony ™ is a trademark of [Symfony SAS](https://symfony.com/license)
-* Original Golang logo "Gopher" by [Renee French](http://reneefrench.blogspot.com)
+* Symfony ™ is a trademark of [Symfony SAS](https://symfony.com/license).
+* Original Golang logo "Gopher" by [Renee French](http://reneefrench.blogspot.com).
 
 ## License ™️
 
