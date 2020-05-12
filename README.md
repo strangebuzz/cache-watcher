@@ -1,11 +1,11 @@
-# Sfcw: the SymFony Cache Watcher
+# CacheWatcher
 
-Sfcw is a small Go program that watches your Symfony files and refreshes your cache
-when needed, so you don't have to wait when refreshing your browser.
+CacheWatcher is a small Go program that watches your Symfony files and refreshes
+your cache when needed, so you don't have to wait when refreshing your browser.
 
 Its goal is to improve the [Developer Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony (DX).   
 
-<img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/logos/sfcw_400w.png" alt="The Sfcw mascot" align="right" />
+<!--img src="https://raw.githubusercontent.com/strangebuzz/sfcw/master/logos/sfcw_400w.png" alt="The Sfcw mascot" align="right" /-->
 
 ## How does it work? 🤔
 
@@ -17,7 +17,7 @@ your filesystem by itself.
 ## Installation 🛠️
 
 You can build the program yourself (this means that you must have a working
-Go development environment) or you can [download an executable](https://github.com/strangebuzz/sfcw#downloading-the-executable-).
+Go development environment) or you can [download an executable](#downloading-the-executable-).
 The program was developed with **go1.14.2**. 
 
 ### Compiling the program ⚙️
@@ -28,7 +28,7 @@ $ cd sfcw
 $ make build 
 ```
 
-It will build the `sfcw` or `sfcw.exe` executable depending on your platform.
+It will build the `cw` or `cw.exe` executable depending on your platform.
 
 ### Downloading the executable 🔽
 

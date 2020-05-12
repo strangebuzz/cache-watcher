@@ -16,11 +16,11 @@ import (
 	"time"
 )
 
-const accronym = "Sfcw"
-const binary = "sfcw"
-const version = "0.3.0"
+const accronym = "CacheWatcher"
+const binary = "cw"
+const version = "0.4.0"
 const separator = "——————————————————————————————————————————————————————————————————————"
-const repository = "https://github.com/strangebuzz/sfcw"
+const repository = "https://github.com/strangebuzz/cache-watcher"
 
 func main() {
 	var config structs.Config
