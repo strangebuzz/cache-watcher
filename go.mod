@@ -1,4 +1,4 @@
-module github.com/strangebuzz/sfcw
+module github.com/strangebuzz/cache-watcher
 
 go 1.14
 

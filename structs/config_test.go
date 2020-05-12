@@ -1,7 +1,7 @@
 package structs_test
 
 import (
-	"github.com/strangebuzz/sfcw/structs"
+	"github.com/strangebuzz/cache-watcher/structs"
 	"testing"
 )
 

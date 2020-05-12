@@ -2,7 +2,7 @@ package symfony
 
 import (
 	"fmt"
-	"github.com/strangebuzz/sfcw/structs"
+	"github.com/strangebuzz/cache-watcher/structs"
 	"os"
 	"os/exec"
 )

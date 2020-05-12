@@ -1,9 +1,9 @@
 package symfony_test
 
 import (
-	"github.com/strangebuzz/sfcw/structs"
-	"github.com/strangebuzz/sfcw/symfony"
-	"github.com/strangebuzz/sfcw/system"
+	"github.com/strangebuzz/cache-watcher/structs"
+	"github.com/strangebuzz/cache-watcher/symfony"
+	"github.com/strangebuzz/cache-watcher/system"
 	"path/filepath"
 	"testing"
 	"time"

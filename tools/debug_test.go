@@ -1,7 +1,7 @@
 package tools_test
 
 import (
-	"github.com/strangebuzz/sfcw/tools"
+	"github.com/strangebuzz/cache-watcher/tools"
 	"strings"
 	"testing"
 )

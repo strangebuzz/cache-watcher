@@ -166,11 +166,11 @@ but you probably want to find the best value for your system (with top or htop).
 
 ## Todo 📋
 
-- [ ] [Apply the Symfony style for the console output](https://github.com/strangebuzz/sfcw/issues/1) 
-- [ ] [Add an option to display the watched file](https://github.com/strangebuzz/sfcw/issues/2)
-- [ ] [Add CI with Github actions](https://github.com/strangebuzz/sfcw/issues/3)
-- [ ] [Allow having an additional whitelist of custom files to watch](https://github.com/strangebuzz/sfcw/issues/4)
-- [ ] Feel free to [create an issue](https://github.com/strangebuzz/sfcw/issues/new) 🙂.
+- [ ] [Apply the Symfony style for the console output](https://github.com/strangebuzz/cache-watcher/issues/1) 
+- [ ] [Add an option to display the watched file](https://github.com/strangebuzz/cache-watcher/issues/2)
+- [ ] [Add CI with Github actions](https://github.com/strangebuzz/cache-watcher/issues/3)
+- [ ] [Allow having an additional whitelist of custom files to watch](https://github.com/strangebuzz/cache-watcher/issues/4)
+- [ ] Feel free to [create an issue](https://github.com/strangebuzz/cache-watcher/issues/new) 🙂.
 
 ## Notes 📔
 
