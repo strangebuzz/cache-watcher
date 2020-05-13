@@ -31,7 +31,7 @@ $ make build
 
 Cela va construire l'exécutable `cw` or `cw.exe` selon votre système d'exploitation.
 
-### Téléchargement de l'éxécutable 🔽
+### Téléchargement de l'exécutable 🔽
 
 Voici les exécutables des principaux systèmes d'exploitation :
 
@@ -41,9 +41,9 @@ darwin (macOS)         | amd64      | 0.4.0   | [cw](https://sfcw.dev/downloads/
 Linux                  | amd64      | 0.4.0   | [cw](https://sfcw.dev/downloads/linux/amd64/cw) (3.2mo)         | cc5c4b828482db2dd00ae5a566799ff9778de4d48dde520e4cb2e867c7ad4182 
 Windows                | amd64      | 0.4.0   | [cw.exe](https://sfcw.dev/downloads/windows/amd64/cw.exe) (3.3mo) | d244f9322d2d45b60312fafcb4d2d9499b4632d2a652c38f0d86094af90bfcda 
 
-Une fois téléchargé, vous pouvez vérifier que le fichier n'est pas compromis en
-comparant le contrôle d'intégrité SHA en exécutant la commande suivante et la valeur
-affichée avec celle du tableau précédent : 
+Une fois téléchargé, vous pouvez vérifier que le fichier n'est pas compromis. Comparez
+d'une part, le code de contrôle d'intégrité SHA en exécutant la commande suivante
+et d'autre part, la valeur affichée dans le tableau précédent : 
 
 ```
 $ shasum -a 256 ./cw 
