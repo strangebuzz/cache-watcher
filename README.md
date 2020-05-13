@@ -46,7 +46,7 @@ in the previous table.
 
 ```
 $ shasum -a 256 ./cw 
-6670592d4e6a74ba692bdfd912107cba3a6b9bc3ab1f1139778a16c2b730f2cf  ./cw
+b35078644ac3b3f025276a0c5fcd77b3d2c8fe9cd15d136df969772e6f513973  ./cw
 ```
 
 On Linux and macOS, give the executable permission to the file:
