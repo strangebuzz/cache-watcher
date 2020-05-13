@@ -210,5 +210,5 @@ Ce logiciel est publié sous la [license MIT](LICENSE).
 
 ## Remerciements 👏
 
-* [Johanatan Scheiber](@jschme) pour ces nombreuses relectures de la documention 
+* [Jonathan Scheiber](@jmsche) pour ces nombreuses relectures de la documention 
   et des articles du blog.

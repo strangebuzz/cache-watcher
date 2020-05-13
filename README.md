@@ -199,3 +199,7 @@ That's why I couldn't see the "slow" timer. That was it; I had my proof; it work
 ## License ™
 
 This software is published under the [MIT License](LICENSE).
+
+## Thanks 👏
+
+* [Jonathan Scheiber](@jmsche) for his many documentation and blog posts proofreading.
