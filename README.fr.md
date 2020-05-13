@@ -57,8 +57,8 @@ $ chmod +x ./cw
 ```
 
 Si vous avez besoin d'un autre type d'exécutable, vous pouvez créer un ticket en
-mentionant le système d'exploitation et plateforme dont vous avez besoin. Vous trouverez
-les valeur possibles dans [cet article](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures).
+mentionnant le système d'exploitation et plateforme dont vous avez besoin. Vous
+trouverez les valeur possibles dans [cet article](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures).
 
 Par commodité, ajoutez `cw` à votre `path` pour y accéder de n'importe ou.
 
@@ -107,7 +107,7 @@ est déjà prêt : 🐰
 
 <img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/fast-cache.png" alt="Cache already loaded" align="center" />
 
-Au lien d'avoir une page "lente" : 🐌
+Au lieu d'avoir une page "lente" : 🐌
 
 <img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/slow-cache.png" alt="Cache refreshed by the browser call" align="center" />
 
@@ -118,7 +118,7 @@ $ cw ../strangebuzz.com
 $ cw /Users/coil/Sites/strangebuzz.com 
 ```
 
-Je l'utiliser dans le terminal inclus dans PHPStorm : 
+Je l'utilise dans le terminal inclus dans PHPStorm : 
 
 <img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/cw-phpstorm-terminal.png" alt="Using cw inside a PHPStorn terminal" align="center" />
 
@@ -136,7 +136,7 @@ $ sudo kill -9 28157
 
 ## Configuration 🎛️
 
-Comment nous l'avons vu précédemment, si votre projet a [une structure Flex](https://symfony.com/doc/current/setup/flex.html), 
+Comme nous l'avons vu précédemment, si votre projet a [une structure Flex](https://symfony.com/doc/current/setup/flex.html), 
 les paramètres par défaut devraient être bons. Ces paramètres par défaut seront
 toujours adaptés à la dernière version mineure de Symfony, actuellement 5.1 :
 
@@ -192,11 +192,11 @@ les fonctionnalités principales sont déjà implémentées.
 
 ## Truc marrant (ou pas) 😄
 
-Quand je développais `cw`, j'ai beaucoup joué avec les fichier de configuration.
+Quand je développais `cw`, j'ai beaucoup joué avec les fichiers de configuration.
 Une fois, j'ai modifié un fichier `.env` et il se trouve que quand j'ai rafraichit
 la page, elle était rapide, genre 50ms. J'ai répété l'opération plusieurs fois, 
 même résultat ! 🤔 Ça m'a pris quelques instants avant de comprendre qu'un processus
-`cw` tournait toujours en tâche de fond, c'est pourquoi je ne pouvais pas constater
+`cw` tournait toujours en tâche de fond. C'est pourquoi je ne pouvais pas constater
 un chargement "lent" de ma page. Et voilà, j'avais ma preuve, ça fonctionne ! ™ 😊
  
 ## Mérites ™
