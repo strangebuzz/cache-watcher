@@ -5,7 +5,7 @@ your cache when needed, so you don't have to wait when refreshing your browser.
 
 Its goal is to improve the [Developer Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony (DX).   
 
-<img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/logos/cw_400w.png" alt="The Cw mascot" align="right" />
+<img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/cw_400w.png" alt="The Cw mascot" align="right" />
 
 ## How does it work? 🤔
 

@@ -1,12 +1,12 @@
 # CacheWatcher
 
-CacheWatcher est un petit program qui surveille vos fichiers Symfony et rafraichit
-votre cache si besoin afin que vous n'ayez pas attendre lors du rafraichissment
+CacheWatcher est un petit program Go qui surveille vos fichiers Symfony et rafraichit
+votre cache si besoin afin que vous n'ayez pas à attendre lors du rafraichissment
 du navigateur.
 
 Son but est d'améliorer [l'epérience Développeur](https://symfony.com/blog/making-the-symfony-experience-exceptional) avec Symfony (DX).
 
-<img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/logos/cw_400w.png" alt="The Cw mascot" align="right" />
+<img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/cw_400w.png" alt="La mascotte Cw" align="right" />
 
 ## Comment ça marche ? 🤔
 
