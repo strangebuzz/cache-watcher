@@ -5,12 +5,12 @@ your cache when needed, so you don't have to wait when refreshing your browser.
 
 Its goal is to improve the [Developer Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony (DX).   
 
-<!--img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/logos/cw_400w.png" alt="The cw mascot" align="right" /-->
+<img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/logos/cw_400w.png" alt="The Cw mascot" align="right" />
 
 ## How does it work? 🤔
 
 The program "watches" your files (.env, YAML, twig) and as soon as it detects a
-modification, it will call the Symfony `cache:warmup` command to refresh the cache.
+modification, it calls the Symfony `cache:warmup` command to refresh the cache.
 It's important to understand that the program will not create nor delete files on
 your filesystem by itself.
 
@@ -37,8 +37,8 @@ Here are the executables for the main operating systems:
 Operating System | Platform | version | file        | SHA checksum 
 ---------------- | -------- | ------- | ----------- | ------------
 darwin (macOS)   | amd64    | 0.4.0   | [cw](https://sfcw.dev/downloads/darwin/amd64/cw) (3.2mo)        | b35078644ac3b3f025276a0c5fcd77b3d2c8fe9cd15d136df969772e6f513973 
-linux            | amd64    | 0.4.0   | [cw](https://sfcw.dev/downloads/linux/amd64/cw) (3.2mo)         | cc5c4b828482db2dd00ae5a566799ff9778de4d48dde520e4cb2e867c7ad4182 
-windows          | amd64    | 0.4.0   | [cw.exe](https://sfcw.dev/downloads/windows/amd64/cw.exe) (3.3mo) | d244f9322d2d45b60312fafcb4d2d9499b4632d2a652c38f0d86094af90bfcda 
+Linux            | amd64    | 0.4.0   | [cw](https://sfcw.dev/downloads/linux/amd64/cw) (3.2mo)         | cc5c4b828482db2dd00ae5a566799ff9778de4d48dde520e4cb2e867c7ad4182 
+Windows          | amd64    | 0.4.0   | [cw.exe](https://sfcw.dev/downloads/windows/amd64/cw.exe) (3.3mo) | d244f9322d2d45b60312fafcb4d2d9499b4632d2a652c38f0d86094af90bfcda 
 
 When downloaded, you can check that the executable isn't compromised by comparing
 the SHA checksum you get by running the following command and the value displayed
@@ -49,7 +49,7 @@ $ shasum -a 256 ./cw
 6670592d4e6a74ba692bdfd912107cba3a6b9bc3ab1f1139778a16c2b730f2cf  ./cw
 ```
 
-On linux and macOS, give the executable permission to the file:
+On Linux and macOS, give the executable permission to the file:
 
 ```
 $ chmod +x ./cw
@@ -58,7 +58,7 @@ $ chmod +x ./cw
 If you need another executable type, create an issue and point out the operating
 system/target platform you want, you will find the possible values in [this article](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures).
 
-For convenience, add `cw` in your path so you can access it from everywhere.
+For convenience, add `cw` in your `path` so you can access it from everywhere.
 
 💡 The executable is "quite" big (several mo) because it includes the [Go run-time](https://stackoverflow.com/q/28576173/633864)
 and hasn't external dependencies.
@@ -107,7 +107,7 @@ Instead of having a "slow" page: 🐌
 
 <img src="https://raw.githubusercontent.com/strangebuzz/cache-watcher/master/doc/img/slow-cache.png" alt="Cache refreshed by the browser call" align="center" />
 
-💡 You can also pass a relative path or an absolute path for the first argument:
+💡 You can also pass a relative path or an absolute path for the argument:
 
 ```
 $ cw ../strangebuzz.com
