@@ -202,6 +202,7 @@ un chargement "lent" de ma page. Et voilà, j'avais ma preuve, ça fonctionne ! 
 ## Mérites ™
 
 * Symfony ™ est une marque déposée de [Symfony SAS](https://symfony.com/license).
+* Logo par [Claire Brunaud](https://clairebrunaud.myportfolio.com).
 * Logo Golang original "Gopher" par [Renee French](http://reneefrench.blogspot.com).
 
 ## Licence ™

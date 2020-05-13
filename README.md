@@ -194,6 +194,7 @@ That's why I couldn't see the "slow" timer. That was it; I had my proof; it work
 ## Credits ™
 
 * Symfony ™ is a trademark of [Symfony SAS](https://symfony.com/license).
+* Logo par [Claire Brunaud](https://clairebrunaud.myportfolio.com).
 * Original Golang logo "Gopher" by [Renee French](http://reneefrench.blogspot.com).
 
 ## License ™
