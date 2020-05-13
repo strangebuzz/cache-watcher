@@ -170,7 +170,7 @@ but you probably want to find the best value for your system (with top or htop).
 - [ ] [Add an option to display the watched file](https://github.com/strangebuzz/cache-watcher/issues/2)
 - [ ] [Add CI with Github actions](https://github.com/strangebuzz/cache-watcher/issues/3)
 - [ ] [Allow having an additional whitelist of custom files to watch](https://github.com/strangebuzz/cache-watcher/issues/4)
-- [ ] Feel free to [create an issue](https://github.com/strangebuzz/cache-watcher/issues/new) 🙂.
+- [ ] Feel free to [create an issue](https://github.com/strangebuzz/cache-watcher/issues/new) ➕.
 
 ## Notes 📔
 
@@ -182,7 +182,7 @@ be notified of new releases.
 You are welcome. But don't forget that I want to keep this program very light
 with a unique feature. Even it's very young; it's almost "feature complete".
 
-## Fun fact 😄
+## Fun fact (or not) 😄
 
 When I developed `cw`, I played a lot with configuration files. One time, I modified
 my `.env` file. And it turns out that when I refreshed the browser, the page was
