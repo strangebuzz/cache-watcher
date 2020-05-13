@@ -12,6 +12,7 @@ These are dev notes. For the full documentation check-out README.md
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
+* Add a contributor section in the doc.
 * Add badges, ex: https://shields.io/category/coverage
   > https://github.com/carbon-app/carbon/edit/master/README.md
 
