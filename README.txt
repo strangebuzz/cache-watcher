@@ -12,7 +12,7 @@ These are dev notes. For the full documentation check-out README.md
 @Todo
 ————————————————————————————————————————————————————————————————————————————————
 
-* Add a contributor section in the doc.
+* Add refactoring notes of Oromë in an issue.
 * Add badges, ex: https://shields.io/category/coverage
   > https://github.com/carbon-app/carbon/edit/master/README.md
 
@@ -62,16 +62,13 @@ These are dev notes. For the full documentation check-out README.md
 @Naming
 ————————————————————————————————————————————————————————————————————————————————
 
-*
-* cagony - compte github déjà pris
-* goffy - vrai prénom
-* lacyg - trop générique, contient le vrai prénim lacy
-* cloae - nom de domaine pris
+* (...)
 
 
 @Resources
 ————————————————————————————————————————————————————————————————————————————————
 
+* https://github.com/golang-standards/project-layout
 * https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
 * https://guides.github.com/features/mastering-markdown/
 * https://www.jetbrains.com/help/webstorm/using-file-watchers.html#
