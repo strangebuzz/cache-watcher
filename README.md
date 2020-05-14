@@ -123,7 +123,7 @@ automatically be killed. /‼️\
 
 ## Stopping the watcher ⛔
 
-You can either hit *CTRL+C* or run the kill command with the PID the program has
+You can either press *CTRL+C* or run the kill command with the PID the program has
 displayed in the welcome message:
 
 ```

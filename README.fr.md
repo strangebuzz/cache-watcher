@@ -1,6 +1,6 @@
 # CacheWatcher
 
-CacheWatcher est un petit programme Go qui surveille vos fichiers Symfony et rafraichit
+CacheWatcher est un petit programme Go qui observe vos fichiers Symfony et rafraichit
 votre cache si besoin afin que vous n'ayez pas à attendre lors du rafraichissement
 du navigateur.
 
@@ -10,7 +10,7 @@ Son but est d'améliorer [l'expérience Développeur](https://symfony.com/blog/m
 
 ## Comment ça marche ? 🤔
 
-Le programme "surveille" vos fichier (.env, YAML, twig) et dès qu'il détecte un
+Le programme "observe" vos fichier (.env, YAML, twig) et dès qu'il détecte un
 changement, il appelle la commande Symfony `cache:warmup` pour rafraichir le cache.
 Il est important de comprendre que le programme ne va ni appeler ni créer des fichiers
 sur votre machine par lui même.
@@ -69,7 +69,7 @@ et n'a pas de dépendance externe.
 
 Maintenant que vous avez compilé ou téléchargé le programme, essayons le. Si vous
 le lancez sans arguments, il affiche un message d'aide. Si vous êtes à la racine
-de votre application Symfony, vous pouvez commencer à surveiller vos fichier avec
+de votre application Symfony, vous pouvez commencer à observer vos fichier avec
 la sortie suivante : 
 
 ```
@@ -176,7 +176,7 @@ top ou hop).
 - [ ] [Appliquer le style Symfony pour la sortie console](https://github.com/strangebuzz/cache-watcher/issues/1) 
 - [ ] [Ajouter une option pour afficher les fichiers surveillés](https://github.com/strangebuzz/cache-watcher/issues/2)
 - [ ] [Ajouter une CI avec les actions Github](https://github.com/strangebuzz/cache-watcher/issues/3)
-- [ ] [Permettre d'avoir une liste blanche additionnelle de fichiers à surveiller](https://github.com/strangebuzz/cache-watcher/issues/4)
+- [ ] [Permettre d'avoir une liste blanche additionnelle de fichiers à observer](https://github.com/strangebuzz/cache-watcher/issues/4)
 - [ ] Libre à vous de [créer un ticket](https://github.com/strangebuzz/cache-watcher/issues/new) ➕.
 
 ## Notes 📔
