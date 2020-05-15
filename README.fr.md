@@ -70,7 +70,7 @@ et n'a pas de dépendance externe.
 Maintenant que vous avez compilé ou téléchargé le programme, essayons le. Si vous
 le lancez sans arguments, il affiche un message d'aide. Si vous êtes à la racine
 de votre application Symfony, vous pouvez commencer à observer vos fichier avec
-la sortie suivante : 
+la commande suivante : 
 
 ```
 $ cw .
@@ -95,7 +95,7 @@ Et voilà ! Si vous avez un projet Symfony 4 ou 5 avec la structure de répertoi
 c'est tout ce dont vous avez besoin. 
 
 Quand une modification est détectée sur votre fichier `services.yaml` par exemple,
-vous aurez le retour suivant : 
+vous avez le retour suivant : 
 
 ```
 ⬇ Update detected at 17:09:03 > refreshing cache...
@@ -131,7 +131,7 @@ Vous pouvez soit utiliser *CTRL+C* ou arrêter le processus manuellement grâce 
 qui a été affiché dans le message d'accueil :
 
 ```
-$ sudo kill -9 28157
+$ kill -9 28157
 ```
 
 ## Configuration 🎛️

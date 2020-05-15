@@ -127,7 +127,7 @@ You can either press *CTRL+C* or run the kill command with the PID the program h
 displayed in the welcome message:
 
 ```
-$ sudo kill -9 28157
+$ kill -9 28157
 ```
 
 ## Configuration 🎛️
