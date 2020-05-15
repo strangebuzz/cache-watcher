@@ -144,7 +144,7 @@ Clé                 | Valeur par défaut | Description
 ------------------- | ------------------| -------------------------------------------
 console_path        | bin/console       | Chemin relatif vers la console Symfony
 env                 | dev               | Correspond au paramètre APP_ENV de l'application Symfony 
-debug               | true              | Correspond au paramètre APP_DEBUG de l'application Symfony
+debug               | true              | Correspond au paramètre APP_DEBUG de l'application Symfony (true ou false)
 config_dir          | config            | Chemin relatif ou sont stockés les fichiers de configuration de l'application Symfony
 translations_dir    | translations      | Chemin relatif ou sont stockés les fichiers de traductions de l'application Symfony
 templates_dir       | templates         | Chemin relatif ou sont stockés les templates de l'application Symfony

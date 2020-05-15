@@ -140,7 +140,7 @@ Key                 | Default value | Description
 ------------------- | --------------| -------------------------------------------
 console_path        | bin/console   | Relative path to the Symfony console
 env                 | dev           | This is the APP_ENV parameter of the Symfony application
-debug               | true          | This is the APP_DEBUG parameter of the Symfony application
+debug               | true          | This is the APP_DEBUG parameter of the Symfony application (true or false)
 config_dir          | config        | Relative directory where are stored the configuration files of the Symfony application
 translations_dir    | translations  | Relative directory where are stored the translations files of the Symfony application
 templates_dir       | templates     | Relative directory where are stored the templates files of the Symfony application
