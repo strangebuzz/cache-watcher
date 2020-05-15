@@ -203,4 +203,4 @@ This software is published under the [MIT License](LICENSE).
 
 ## Thanks 👏
 
-* [Jonathan Scheiber](https://github.com/jmsche) for his many documentation and blog posts proofreading.
+* [Jonathan Scheiber](https://github.com/jmsche) for his many documentation and blog posts proofreadings.
