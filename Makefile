@@ -6,7 +6,7 @@ help: ## Outputs this help screen
 run: ## Run the main go file on a Symfony 5 project
 	go run cw.go ../strangebuzz.com
 
-build: ## Build the sfcw executable for the current platform
+build: ## Build the cw executable for the current platform
 	go build cw.go
 	shasum -a 256 cw
 	# To build the Linux executable run
@@ -17,7 +17,7 @@ build: ## Build the sfcw executable for the current platform
 exec: ## Run cc on a Symfony 5 project
 	./cc ../strangebuzz.com
 
-clean: sfcw ## Clean the current executable
+clean: cw ## Clean the current executable
 	rm ./cw
 
 deps: clean ## Clean deps
