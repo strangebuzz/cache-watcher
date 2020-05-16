@@ -61,7 +61,7 @@ system/target platform you want, you will find the possible values in [this arti
 For convenience, add `cw` in your `path` so you can access it from everywhere.
 
 💡 The executable is "quite" big (several mo) because it includes the [Go run-time](https://stackoverflow.com/q/28576173/633864)
-and hasn't external dependencies.
+and doesn't have external dependencies.
 
 ## Running the watcher ⚡
 
