@@ -149,7 +149,7 @@ config_dir          | config            | Chemin relatif ou sont stockés les fi
 translations_dir    | translations      | Chemin relatif ou sont stockés les fichiers de traductions de l'application Symfony
 templates_dir       | templates         | Chemin relatif ou sont stockés les templates de l'application Symfony
 templates_extension | twig              | Extension par défaut des templates
-yaml_extension      | yaml              | Extension par défaut des fichiers YAML, on considère qu'elle cohérente pour l'ensemble de l'application
+yaml_extension      | yaml              | Extension par défaut des fichiers YAML, on considère qu'elle est cohérente pour l'ensemble de l'application
 sleep_time          | 30                | Pause entre deux analyses du système de fichiers en millisecondes
 
 Si vous n'utilisez pas Flex, vous pouvez mettre un fichier `.cw.yaml` à la racine
@@ -169,7 +169,7 @@ analyses du système de fichiers. Plus petite est la valeur, plus rapide sera le
 rafraichissement du cache, mais plus haute sera l'utilisation du processeur. J'ai
 constaté que 30ms était un bon compromis pour mon MacMini 2018 (i7 / 3,2GHz / 16go),
 mais vous voudrez surement trouver la valeur la plus adaptée à votre système (avec
-top ou hop).
+top ou htop).
 
 ## À faire 📋
 
