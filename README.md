@@ -34,11 +34,11 @@ It will build the `cw` or `cw.exe` executable depending on your platform.
 
 Here are the executables for the main operating systems:
 
-Operating System | Platform | version | file        | SHA checksum 
----------------- | -------- | ------- | ----------- | ------------
-darwin (macOS)   | amd64    | 0.5.0   | [cw](https://sfcw.dev/downloads/darwin/amd64/cw) (3.3mo)          | 80b4011567c71aef7a13e9bbdad9acacee124acb330222fa2b2abf172ce2879e
-Linux            | amd64    | 0.5.0   | [cw](https://sfcw.dev/downloads/linux/amd64/cw) (3.3mo)           | 7203e4facfd82f54501ff17b569055daf7856164ed71a66b3fbfbe8dd9633293 
-Windows          | amd64    | 0.5.0   | [cw.exe](https://sfcw.dev/downloads/windows/amd64/cw.exe) (3.4mo) | 2278d95d28011cbd2b97aed08e5e73274f08d245092cab58ac7f9d5c772e6892  
+Operating System | Platform | version | date       | file         | SHA checksum 
+---------------- | -------- | ------- | ---------- | ------------ | ------------
+darwin (macOS)   | amd64    | 0.5.0   | 2020-12-05 | [cw](https://sfcw.dev/downloads/darwin/amd64/cw) (3.3mo)          | 80b4011567c71aef7a13e9bbdad9acacee124acb330222fa2b2abf172ce2879e
+Linux            | amd64    | 0.5.0   | 2020-12-05 | [cw](https://sfcw.dev/downloads/linux/amd64/cw) (3.3mo)           | 7203e4facfd82f54501ff17b569055daf7856164ed71a66b3fbfbe8dd9633293 
+Windows          | amd64    | 0.5.0   | 2020-12-05 | [cw.exe](https://sfcw.dev/downloads/windows/amd64/cw.exe) (3.4mo) | 2278d95d28011cbd2b97aed08e5e73274f08d245092cab58ac7f9d5c772e6892  
 
 When downloaded, you can check that the executable isn't compromised by comparing
 the SHA checksum you get by running the following command and the value displayed
