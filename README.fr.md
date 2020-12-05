@@ -179,11 +179,6 @@ top ou htop).
 - [ ] [Permettre d'avoir une liste blanche additionnelle de fichiers à observer](https://github.com/strangebuzz/cache-watcher/issues/4)
 - [ ] Libre à vous de [créer un ticket](https://github.com/strangebuzz/cache-watcher/issues/new) ➕.
 
-## Notes 📔
-
-Je ne ferai pas de mise à jour en direct comme le binaire Symfony. Merci de surveiller
-le dépôt afin d'être notifié de la publication de nouvelles versions.
-
 ## Contribuer  🤝
 
 Vous êtes la bienvenue. Mais n'oubliez pas que je veux garder ce programme aussi

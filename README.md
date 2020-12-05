@@ -174,11 +174,6 @@ but you probably want to find the best value for your system (with top or htop).
 - [ ] [Allow having an additional whitelist of custom files to watch](https://github.com/strangebuzz/cache-watcher/issues/4)
 - [ ] Feel free to [create an issue](https://github.com/strangebuzz/cache-watcher/issues/new) ➕.
 
-## Notes 📔
-
-I won't do a live update like the Symfony binary. Please watch the repository to
-be notified of new releases.
-
 ## Contributing 🤝
 
 You are welcome. But don't forget that I want to keep this program very light
