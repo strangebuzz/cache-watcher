@@ -36,9 +36,9 @@ Here are the executables for the main operating systems:
 
 Operating System | Platform | version | file        | SHA checksum 
 ---------------- | -------- | ------- | ----------- | ------------
-darwin (macOS)   | amd64    | 0.4.0   | [cw](https://sfcw.dev/downloads/darwin/amd64/cw) (3.2mo)        | b35078644ac3b3f025276a0c5fcd77b3d2c8fe9cd15d136df969772e6f513973 
-Linux            | amd64    | 0.4.0   | [cw](https://sfcw.dev/downloads/linux/amd64/cw) (3.2mo)         | cc5c4b828482db2dd00ae5a566799ff9778de4d48dde520e4cb2e867c7ad4182 
-Windows          | amd64    | 0.4.0   | [cw.exe](https://sfcw.dev/downloads/windows/amd64/cw.exe) (3.3mo) | d244f9322d2d45b60312fafcb4d2d9499b4632d2a652c38f0d86094af90bfcda 
+darwin (macOS)   | amd64    | 0.5.0   | [cw](https://sfcw.dev/downloads/darwin/amd64/cw) (3.3mo)          | 80b4011567c71aef7a13e9bbdad9acacee124acb330222fa2b2abf172ce2879e
+Linux            | amd64    | 0.5.0   | [cw](https://sfcw.dev/downloads/linux/amd64/cw) (3.3mo)           | 7203e4facfd82f54501ff17b569055daf7856164ed71a66b3fbfbe8dd9633293 
+Windows          | amd64    | 0.5.0   | [cw.exe](https://sfcw.dev/downloads/windows/amd64/cw.exe) (3.4mo) | 2278d95d28011cbd2b97aed08e5e73274f08d245092cab58ac7f9d5c772e6892  
 
 When downloaded, you can check that the executable isn't compromised by comparing
 the SHA checksum you get by running the following command and the value displayed
