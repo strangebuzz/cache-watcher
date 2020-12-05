@@ -1,5 +1,7 @@
 config_dir:       app/config
 translations_dir: src/AppBundle/Resources/translations
 templates_dir:    src/AppBundle/Resources/views
+entities_dir:     src/AppBundle/Entity
 yaml_extension:   yml
+php_extension:    php7
 sleep_time:       50

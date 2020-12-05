@@ -40,9 +40,19 @@ func TestCheckCustomConfig(t *testing.T) {
 		t.Errorf("CheckCustomConfig problem, expected translations dir: '%s', found '%s' ", expected, config.SymfonyTemplatesDir)
 	}
 
+	expected = "src/AppBundle/Entity"
+	if config.SymfonyEntitiesDir != expected {
+		t.Errorf("CheckCustomConfig problem, expected entities dir: '%s', found '%s' ", expected, config.SymfonyEntitiesDir)
+	}
+
 	expected = "yml"
 	if config.YamlExtension != expected {
 		t.Errorf("CheckCustomConfig problem, expected YAML extension: '%s', found '%s' ", expected, config.YamlExtension)
+	}
+
+	expected = "php7"
+	if config.PhpExtension != expected {
+		t.Errorf("CheckCustomConfig problem, expected PHP extension: '%s', found '%s' ", expected, config.PhpExtension)
 	}
 
 	var expectedDuration time.Duration = 50000000

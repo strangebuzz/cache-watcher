@@ -9,10 +9,10 @@ Its goal is to improve the [Developer Experience](https://symfony.com/blog/makin
 
 ## How does it work? 🤔
 
-The program "watches" your files (.env, YAML, twig) and as soon as it detects a
-modification, it calls the Symfony `cache:warmup` command to refresh the cache.
-It's important to understand that the program will not create nor delete files on
-your filesystem by itself.
+The program "watches" your files (.env, YAML, Twig, Doctrine entities) and as soon
+as it detects a modification, it calls the Symfony `cache:warmup` command to refresh
+the cache. It's important to understand that the program will not create nor delete
+files on your filesystem by itself.
 
 ## Installation 🛠️
 
@@ -77,15 +77,15 @@ You should have the following output:
 
 ```
 ——————————————————————————————————————————————————————————————————————
-  CacheWatcher version v0.4.0 by COil - https://www.strangebuzz.com 🐝
+  CacheWatcher version v0.5.0 by COil - https://www.strangebuzz.com 🐝
 ——————————————————————————————————————————————————————————————————————
 CacheWatcher watches your files (.env, YAML, Twig) and automatically refreshes your application cache.
 ——————————————————————————————————————————————————————————————————————
  > Project directory: /Users/coil/Sites/strangebuzz.com
  > Symfony console path: bin/console
- > Symfony env: Symfony 5.1.0-BETA1 (env: dev, debug: true)
- > 263 file(s) watched in /Users/coil/Sites/strangebuzz.com in 12 millisecond(s).
- > CTRL+C to stop watching or run kill -9 28157.
+ > Symfony env: Symfony 5.2.0 (env: dev, debug: true)
+ > 321 file(s) watched in /Users/coil/Sites/strangebuzz.com in 12 millisecond(s).
+ > CTRL+C to stop watching or run kill -9 7817.
 ```
 
 That's it! If you have a Symfony 4 or 5 project with the Flex directory structure,
@@ -139,13 +139,15 @@ last minor Symfony version, currently 5.1:
 Key                 | Default value | Description
 ------------------- | --------------| -------------------------------------------
 console_path        | bin/console   | Relative path to the Symfony console
-env                 | dev           | This is the APP_ENV parameter of the Symfony application
-debug               | true          | This is the APP_DEBUG parameter of the Symfony application (true or false)
-config_dir          | config        | Relative directory where are stored the configuration files of the Symfony application
-translations_dir    | translations  | Relative directory where are stored the translations files of the Symfony application
-templates_dir       | templates     | Relative directory where are stored the templates files of the Symfony application
+env                 | dev           | This is the APP_ENV parameter
+debug               | true          | This is the APP_DEBUG parameter (true or false)
+config_dir          | config        | Relative directory where are stored the configuration files
+translations_dir    | translations  | Relative directory where are stored the translations files
+templates_dir       | templates     | Relative directory where are stored the templates files
+entities_dir        | src/Entity    | Relative directory where are stored the Doctrine entities
 templates_extension | twig          | Default extension for templates files
-yaml_extension      | yaml          | Default extension for YAML files, we consider it must be consistent within an application
+yaml_extension      | yaml          | Default extension for YAML files, we consider it must be consistent within the application
+php_extension       | php           | Default extension for PHP files, we consider it must be consistent within the application
 sleep_time          | 30            | Sleep time between two filesystem checks in milliseconds
 
 If you are not using Flex, you can put a `.cw.yaml` file at the root of your project.
@@ -155,20 +157,20 @@ Here is the configuration I use for one of my "old" Symfony 4.4 projects:
 config_dir:       app/config
 translations_dir: src/AppBundle/Resources/translations
 templates_dir:    src/AppBundle/Resources/views
+entities_dir:     src/AppBundle/Entity
 yaml_extension:   yml
 sleep_time:       30
 ```
 
 💡 The sleep time is the parameter in milliseconds between two filesystem checks.
 The lower it is, the faster the cache will be refreshed, but the higher the CPU
-will be used. I found 30ms to be a good value for my MacMini 2018 (i7/3,2GHz/16go),
+will be used. I found 30 ms to be a good value for my MacMini 2018 (i7/3,2GHz/16go),
 but you probably want to find the best value for your system (with top or htop).
 
 ## Todo 📋
 
-- [ ] [Apply the Symfony style for the console output](https://github.com/strangebuzz/cache-watcher/issues/1) 
+- [ ] [Add CI with GitHub actions](https://github.com/strangebuzz/cache-watcher/issues/3)
 - [ ] [Add an option to display the watched file](https://github.com/strangebuzz/cache-watcher/issues/2)
-- [ ] [Add CI with Github actions](https://github.com/strangebuzz/cache-watcher/issues/3)
 - [ ] [Allow having an additional whitelist of custom files to watch](https://github.com/strangebuzz/cache-watcher/issues/4)
 - [ ] Feel free to [create an issue](https://github.com/strangebuzz/cache-watcher/issues/new) ➕.
 
@@ -204,3 +206,13 @@ This software is published under the [MIT License](LICENSE).
 ## Thanks 👏
 
 * [Jonathan Scheiber](https://github.com/jmsche) for his many documentation and blog posts proofreadings.
+
+## Changelog 📒
+
+### V0.5.0
+
+* Added support to watch Doctrine entities (useful for API Platform)
+
+### V0.4.0
+
+* Initial version

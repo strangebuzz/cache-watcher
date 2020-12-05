@@ -4,21 +4,34 @@ help: ## Outputs this help screen
 
 ## —— Project 🐝 ———————————————————————————————————————————————————————————————
 run: ## Run the main go file on a Symfony 5 project
-	go run cw.go ../strangebuzz.com
+	$(eval path ?= ../strangebuzz.com)
+	go run cw.go $(path)
 
 build: ## Build the cw executable for the current platform
 	go build cw.go
 	shasum -a 256 cw
-	# To build the Linux executable run
-	# env GOOS=darwin GOARCH=amd64 go build cw.go
-	# env GOOS=linux GOARCH=amd64 go build cw.go
-	# env GOOS=windows GOARCH=amd64 go build cw.go
 
-exec: ## Run cc on a Symfony 5 project
-	./cc ../strangebuzz.com
+build-darwin: ## Build for Darwin OS
+	GOOS=darwin GOARCH=amd64 go build cw.go
+	shasum -a 256 cw
+
+build-linux: ## Build for Linux OS
+	GOOS=linux GOARCH=amd64 go build cw.go
+	shasum -a 256 cw
+
+build-windows: ## Build for Windows OS
+	GOOS=windows GOARCH=amd64 go build cw.go
+	shasum -a 256 cw.exe
+
+exec: ## Exec cw on a Symfony 5 project
+	$(eval path ?= ../strangebuzz.com)
+	./cw $(path)
 
 clean: cw ## Clean the current executable
 	rm ./cw
+
+clean-all: cw cw.exe ## Clean all executable
+	rm ./cw ./cw.exe
 
 deps: clean ## Clean deps
 	go get -d -v ./...

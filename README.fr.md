@@ -10,10 +10,10 @@ Son but est d'améliorer [l'expérience Développeur](https://symfony.com/blog/m
 
 ## Comment ça marche ? 🤔
 
-Le programme "observe" vos fichier (.env, YAML, twig) et dès qu'il détecte un
-changement, il appelle la commande Symfony `cache:warmup` pour rafraichir le cache.
-Il est important de comprendre que le programme ne va ni appeler ni créer des fichiers
-sur votre machine par lui même.
+Le programme "observe" vos fichiers (.env, YAML, Twig, entités Doctrine) et dès qu'il
+détecte un changement, il appelle la commande Symfony `cache:warmup` pour rafraichir
+le cache. Il est important de comprendre que le programme ne va ni appeler ni créer
+des fichiers sur votre machine par lui-même.
 
 ## Installation 🛠️
 
@@ -58,18 +58,18 @@ $ chmod +x ./cw
 
 Si vous avez besoin d'un autre type d'exécutable, vous pouvez créer un ticket en
 mentionnant le système d'exploitation et plateforme dont vous avez besoin. Vous
-trouverez les valeur possibles dans [cet article](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures).
+trouverez les valeurs possibles dans [cet article](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures).
 
-Par commodité, ajoutez `cw` à votre `path` pour y accéder de n'importe ou.
+Par commodité, ajoutez `cw` à votre `path` pour y accéder de n'importe où.
 
-💡 L'exécutable est "assez" gros (plusieurs mo) car il embarque le [run-time Go](https://stackoverflow.com/q/28576173/633864)
+💡 L'exécutable est "assez" gros (plusieurs mo), car il embarque le [run-time Go](https://stackoverflow.com/q/28576173/633864)
 et n'a pas de dépendance externe.
 
 ## Lancement ⚡
 
-Maintenant que vous avez compilé ou téléchargé le programme, essayons le. Si vous
+Maintenant que vous avez compilé ou téléchargé le programme, essayons-le. Si vous
 le lancez sans arguments, il affiche un message d'aide. Si vous êtes à la racine
-de votre application Symfony, vous pouvez commencer à observer vos fichier avec
+de votre application Symfony, vous pouvez commencer à observer vos fichiers avec
 la commande suivante : 
 
 ```
@@ -80,15 +80,15 @@ Vous devriez avoir la sortie suivante :
 
 ```
 ——————————————————————————————————————————————————————————————————————
-  CacheWatcher version v0.4.0 by COil - https://www.strangebuzz.com 🐝
+  CacheWatcher version v0.5.0 by COil - https://www.strangebuzz.com 🐝
 ——————————————————————————————————————————————————————————————————————
 CacheWatcher watches your files (.env, YAML, Twig) and automatically refreshes your application cache.
 ——————————————————————————————————————————————————————————————————————
  > Project directory: /Users/coil/Sites/strangebuzz.com
  > Symfony console path: bin/console
- > Symfony env: Symfony 5.1.0-BETA1 (env: dev, debug: true)
- > 263 file(s) watched in /Users/coil/Sites/strangebuzz.com in 12 millisecond(s).
- > CTRL+C to stop watching or run kill -9 28157.
+ > Symfony env: Symfony 5.2.0 (env: dev, debug: true)
+ > 321 file(s) watched in /Users/coil/Sites/strangebuzz.com in 12 millisecond(s).
+ > CTRL+C to stop watching or run kill -9 7817.
 ```
 
 Et voilà ! Si vous avez un projet Symfony 4 ou 5 avec la structure de répertoire Flex,
@@ -138,7 +138,7 @@ $ kill -9 28157
 
 Comme nous l'avons vu précédemment, si votre projet a [une structure Flex](https://symfony.com/doc/current/setup/flex.html), 
 les paramètres par défaut devraient être bons. Ces paramètres par défaut seront
-toujours adaptés à la dernière version mineure de Symfony, actuellement 5.1 :
+toujours adaptés à la dernière version mineure de Symfony, actuellement 5.2 :
 
 Clé                 | Valeur par défaut | Description
 ------------------- | ------------------| -------------------------------------------
@@ -148,12 +148,13 @@ debug               | true              | Correspond au paramètre APP_DEBUG de 
 config_dir          | config            | Chemin relatif ou sont stockés les fichiers de configuration de l'application Symfony
 translations_dir    | translations      | Chemin relatif ou sont stockés les fichiers de traductions de l'application Symfony
 templates_dir       | templates         | Chemin relatif ou sont stockés les templates de l'application Symfony
+entities_dir        | src/Entity        | Chemin relatif ou sont stockés les entités Doctrine
 templates_extension | twig              | Extension par défaut des templates
 yaml_extension      | yaml              | Extension par défaut des fichiers YAML, on considère qu'elle est cohérente pour l'ensemble de l'application
 sleep_time          | 30                | Pause entre deux analyses du système de fichiers en millisecondes
 
 Si vous n'utilisez pas Flex, vous pouvez mettre un fichier `.cw.yaml` à la racine
-de votre projet. Voici la configuration que j'utilise pour un de mes "anciens" projets
+de votre projet. Voici la configuration que j'utilise pour un de mes anciens projets
 Symfony 4.4 :
 
 ```
@@ -167,15 +168,14 @@ sleep_time:       30
 💡 Le temps de pause (sleep_time) est le paramètre en millisecondes entre deux
 analyses du système de fichiers. Plus petite est la valeur, plus rapide sera le
 rafraichissement du cache, mais plus haute sera l'utilisation du processeur. J'ai
-constaté que 30ms était un bon compromis pour mon MacMini 2018 (i7 / 3,2GHz / 16go),
+constaté que 30 ms était un bon compromis pour mon Mac Mini 2018 (i7 / 3,2 GHz / 16 go),
 mais vous voudrez surement trouver la valeur la plus adaptée à votre système (avec
 top ou htop).
 
 ## À faire 📋
 
-- [ ] [Appliquer le style Symfony pour la sortie console](https://github.com/strangebuzz/cache-watcher/issues/1) 
+- [ ] [Ajouter une CI avec les actions GitHub](https://github.com/strangebuzz/cache-watcher/issues/3)
 - [ ] [Ajouter une option pour afficher les fichiers surveillés](https://github.com/strangebuzz/cache-watcher/issues/2)
-- [ ] [Ajouter une CI avec les actions Github](https://github.com/strangebuzz/cache-watcher/issues/3)
 - [ ] [Permettre d'avoir une liste blanche additionnelle de fichiers à observer](https://github.com/strangebuzz/cache-watcher/issues/4)
 - [ ] Libre à vous de [créer un ticket](https://github.com/strangebuzz/cache-watcher/issues/new) ➕.
 
@@ -193,7 +193,7 @@ les fonctionnalités principales sont déjà implémentées.
 ## Truc marrant (ou pas) 😄
 
 Quand je développais `cw`, j'ai beaucoup joué avec les fichiers de configuration.
-Une fois, j'ai modifié un fichier `.env` et il se trouve que quand j'ai rafraichit
+Une fois, j'ai modifié un fichier `.env` et il se trouve que quand j'ai rafraîchi
 la page, elle était rapide, genre 50ms. J'ai répété l'opération plusieurs fois, 
 même résultat ! 🤔 Ça m'a pris quelques instants avant de comprendre qu'un processus
 `cw` tournait toujours en tâche de fond. C'est pourquoi je ne pouvais pas constater
@@ -213,3 +213,13 @@ Ce logiciel est publié sous la [licence MIT](LICENSE).
 
 * [Jonathan Scheiber](https://github.com/jmsche) pour ces nombreuses relectures
   de la documentation et des articles du blog.
+
+## Changelog 📒
+
+### V0.5.0
+
+* Ajout du support pour surveiller les entités Doctrine (utile pour API Platform)
+
+### V0.4.0
+
+* Version initiale

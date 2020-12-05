@@ -18,7 +18,7 @@ import (
 
 const accronym = "CacheWatcher"
 const binary = "cw"
-const version = "0.4.0"
+const version = "0.5.0"
 const separator = "——————————————————————————————————————————————————————————————————————"
 const repository = "https://github.com/strangebuzz/cache-watcher"
 

@@ -69,6 +69,9 @@ func GetFilesToWatch(config structs.Config) ([]string, error) {
 	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*.%s", config.SymfonyTemplatesDir, config.TemplatesExtension))...)
 	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*/*/*/*.%s", config.SymfonyTemplatesDir, config.TemplatesExtension))...)
 
+	// 5) Doctrine entities "src/Entity"...
+	filesToWatch = append(filesToWatch, getFilesFromPath(config, fmt.Sprintf("%s/*.%s", config.SymfonyEntitiesDir, config.PhpExtension))...)
+
 	return filesToWatch, nil
 }
 
@@ -98,7 +101,7 @@ func GetWatchMap(config structs.Config) (map[string]string, error) {
 	for _, file := range filesTowatch {
 		stats, err := os.Stat(file)
 		if err != nil {
-			tools.PrintError(fmt.Errorf("Can't get stats for the \"%s\" file, check the project permissions.", err))
+			tools.PrintError(fmt.Errorf("Can't get stats for the \"%s\" file, check the project permissions. Or new file created?", err))
 			os.Exit(1)
 		}
 		watchMap[file] = fmt.Sprintf("%s", stats.ModTime())

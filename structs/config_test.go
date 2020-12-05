@@ -29,6 +29,11 @@ func TestConfig(t *testing.T) {
 		t.Errorf("TranslationsDirectory default value is not OK, expected '%s', found '%s'", expected, config.SymfonyTranslationsDir)
 	}
 
+	expected = "src/Entity"
+	if expected != config.SymfonyEntitiesDir {
+		t.Errorf("SymfonyEntitiesDir default value is not OK, expected '%s', found '%s'", expected, config.SymfonyEntitiesDir)
+	}
+
 	expected = "templates"
 	if expected != config.SymfonyTemplatesDir {
 		t.Errorf("SymfonyTemplatesDir default value is not OK, expected '%s', found '%s'", expected, config.SymfonyTemplatesDir)
@@ -37,6 +42,11 @@ func TestConfig(t *testing.T) {
 	expected = "twig"
 	if expected != config.TemplatesExtension {
 		t.Errorf("TemplatesExtension default value is not OK, expected '%s', found '%s'", expected, config.TemplatesExtension)
+	}
+
+	expected = "php"
+	if expected != config.PhpExtension {
+		t.Errorf("PhpExtension default value is not OK, expected '%s', found '%s'", expected, config.PhpExtension)
 	}
 
 	expected = "yaml"
