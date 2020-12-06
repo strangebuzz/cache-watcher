@@ -111,7 +111,7 @@ func mainLoop(config structs.Config, filesToWatch map[string]string) {
 func errorNothingtoWatch() {
 	tools.PrintError(fmt.Errorf("No file to watch found."))
 	_, _ = colorstring.Println("[yellow][💡][white] If you are using an \"old\" Symfony project directory structure")
-	_, _ = colorstring.Println("     you have to customize the watched directories with a [yellow].sfcw.yaml [white]file")
+	_, _ = colorstring.Println("     you have to customize the watched directories with a [yellow].cw.yaml [white]file")
 	_, _ = colorstring.Println(fmt.Sprintf("     at the root of your Symfony project. Check out the doc: [magenta]%s", repository))
 	os.Exit(0)
 }
