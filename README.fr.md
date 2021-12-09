@@ -35,11 +35,11 @@ Cela va construire l'exécutable `cw` or `cw.exe` selon votre système d'exploit
 
 Voici les exécutables des principaux systèmes d'exploitation :
 
-Système d'exploitation | Plateforme | version | date       | fichier     | Contrôle d'intégrité SHA 
----------------------- | ---------- | ------- | ---------- | ----------- | ------------------------
-darwin (macOS)         | amd64      | 0.5.0   | 2020-12-05 | [cw](https://sfcw.dev/downloads/darwin/amd64/cw) (3.3mo)          | 80b4011567c71aef7a13e9bbdad9acacee124acb330222fa2b2abf172ce2879e
-Linux                  | amd64      | 0.5.0   | 2020-12-05 | [cw](https://sfcw.dev/downloads/linux/amd64/cw) (3.3mo)           | 7203e4facfd82f54501ff17b569055daf7856164ed71a66b3fbfbe8dd9633293
-Windows                | amd64      | 0.5.0   | 2020-12-05 | [cw.exe](https://sfcw.dev/downloads/windows/amd64/cw.exe) (3.4mo) | 2278d95d28011cbd2b97aed08e5e73274f08d245092cab58ac7f9d5c772e6892
+| Système d'exploitation | Plateforme | version | date       | fichier                                                           | Contrôle d'intégrité SHA                                         |
+|------------------------|------------|---------|------------|-------------------------------------------------------------------|------------------------------------------------------------------|
+| darwin (macOS)         | amd64      | 0.5.0   | 2020-12-05 | [cw](https://sfcw.ovh/downloads/darwin/amd64/cw) (3.3mo)          | 80b4011567c71aef7a13e9bbdad9acacee124acb330222fa2b2abf172ce2879e |
+| Linux                  | amd64      | 0.5.0   | 2020-12-05 | [cw](https://sfcw.ovh/downloads/linux/amd64/cw) (3.3mo)           | 7203e4facfd82f54501ff17b569055daf7856164ed71a66b3fbfbe8dd9633293 |
+| Windows                | amd64      | 0.5.0   | 2020-12-05 | [cw.exe](https://sfcw.ovh/downloads/windows/amd64/cw.exe) (3.4mo) | 2278d95d28011cbd2b97aed08e5e73274f08d245092cab58ac7f9d5c772e6892 |
 
 Une fois téléchargé, vous pouvez vérifier que le fichier n'est pas compromis. Comparez
 d'une part, le code de contrôle d'intégrité SHA en exécutant la commande suivante
@@ -86,7 +86,7 @@ CacheWatcher watches your files (.env, YAML, Twig) and automatically refreshes y
 ——————————————————————————————————————————————————————————————————————
  > Project directory: /Users/coil/Sites/strangebuzz.com
  > Symfony console path: bin/console
- > Symfony env: Symfony 5.2.0 (env: dev, debug: true)
+ > Symfony env: Symfony 5.4.0 (env: dev, debug: true)
  > 321 file(s) watched in /Users/coil/Sites/strangebuzz.com in 12 millisecond(s).
  > CTRL+C to stop watching or run kill -9 7817.
 ```
@@ -138,20 +138,20 @@ $ kill -9 28157
 
 Comme nous l'avons vu précédemment, si votre projet a [une structure Flex](https://symfony.com/doc/current/setup/flex.html), 
 les paramètres par défaut devraient être bons. Ces paramètres par défaut seront
-toujours adaptés à la dernière version mineure de Symfony, actuellement 5.2 :
+toujours adaptés à la dernière version mineure de Symfony, actuellement 5.4 :
 
-Clé                 | Valeur par défaut | Description
-------------------- | ------------------| -------------------------------------------
-console_path        | bin/console       | Chemin relatif vers la console Symfony
-env                 | dev               | Correspond au paramètre APP_ENV de l'application Symfony 
-debug               | true              | Correspond au paramètre APP_DEBUG de l'application Symfony (true ou false)
-config_dir          | config            | Chemin relatif ou sont stockés les fichiers de configuration de l'application Symfony
-translations_dir    | translations      | Chemin relatif ou sont stockés les fichiers de traductions de l'application Symfony
-templates_dir       | templates         | Chemin relatif ou sont stockés les templates de l'application Symfony
-entities_dir        | src/Entity        | Chemin relatif ou sont stockés les entités Doctrine
-templates_extension | twig              | Extension par défaut des templates
-yaml_extension      | yaml              | Extension par défaut des fichiers YAML, on considère qu'elle est cohérente pour l'ensemble de l'application
-sleep_time          | 30                | Pause entre deux analyses du système de fichiers en millisecondes
+| Clé                 | Valeur par défaut | Description                                                                                                 |
+|---------------------|-------------------|-------------------------------------------------------------------------------------------------------------|
+| console_path        | bin/console       | Chemin relatif vers la console Symfony                                                                      |
+| env                 | dev               | Correspond au paramètre APP_ENV de l'application Symfony                                                    |
+| debug               | true              | Correspond au paramètre APP_DEBUG de l'application Symfony (true ou false)                                  |
+| config_dir          | config            | Chemin relatif ou sont stockés les fichiers de configuration de l'application Symfony                       |
+| translations_dir    | translations      | Chemin relatif ou sont stockés les fichiers de traductions de l'application Symfony                         |
+| templates_dir       | templates         | Chemin relatif ou sont stockés les templates de l'application Symfony                                       |
+| entities_dir        | src/Entity        | Chemin relatif ou sont stockés les entités Doctrine                                                         |
+| templates_extension | twig              | Extension par défaut des templates                                                                          |
+| yaml_extension      | yaml              | Extension par défaut des fichiers YAML, on considère qu'elle est cohérente pour l'ensemble de l'application |
+| sleep_time          | 30                | Pause entre deux analyses du système de fichiers en millisecondes                                           |
 
 Si vous n'utilisez pas Flex, vous pouvez mettre un fichier `.cw.yaml` à la racine
 de votre projet. Voici la configuration que j'utilise pour un de mes anciens projets

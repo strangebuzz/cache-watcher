@@ -88,7 +88,7 @@ These are dev notes. For the full documentation check-out README.md
 @Done
 ————————————————————————————————————————————————————————————————————————————————
 
-* Added the sfcw.dev webiste
+* Added the sfcw.ovh webiste
 * Renamed repo and made it public
 * Doc to create linux and win exec in Makefile
 * Added Symfony5 and 4 fixtures

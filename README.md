@@ -34,11 +34,11 @@ It will build the `cw` or `cw.exe` executable depending on your platform.
 
 Here are the executables for the main operating systems:
 
-Operating System | Platform | version | date       | file         | SHA checksum 
----------------- | -------- | ------- | ---------- | ------------ | ------------
-darwin (macOS)   | amd64    | 0.5.0   | 2020-12-05 | [cw](https://sfcw.dev/downloads/darwin/amd64/cw) (3.3mo)          | 80b4011567c71aef7a13e9bbdad9acacee124acb330222fa2b2abf172ce2879e
-Linux            | amd64    | 0.5.0   | 2020-12-05 | [cw](https://sfcw.dev/downloads/linux/amd64/cw) (3.3mo)           | 7203e4facfd82f54501ff17b569055daf7856164ed71a66b3fbfbe8dd9633293 
-Windows          | amd64    | 0.5.0   | 2020-12-05 | [cw.exe](https://sfcw.dev/downloads/windows/amd64/cw.exe) (3.4mo) | 2278d95d28011cbd2b97aed08e5e73274f08d245092cab58ac7f9d5c772e6892  
+| Operating System | Platform | version | date       | file                                                              | SHA checksum                                                     |
+|------------------|----------|---------|------------|-------------------------------------------------------------------|------------------------------------------------------------------|
+| darwin (macOS)   | amd64    | 0.5.0   | 2020-12-05 | [cw](https://sfcw.ovh/downloads/darwin/amd64/cw) (3.3mo)          | 80b4011567c71aef7a13e9bbdad9acacee124acb330222fa2b2abf172ce2879e |
+| Linux            | amd64    | 0.5.0   | 2020-12-05 | [cw](https://sfcw.ovh/downloads/linux/amd64/cw) (3.3mo)           | 7203e4facfd82f54501ff17b569055daf7856164ed71a66b3fbfbe8dd9633293 |
+| Windows          | amd64    | 0.5.0   | 2020-12-05 | [cw.exe](https://sfcw.ovh/downloads/windows/amd64/cw.exe) (3.4mo) | 2278d95d28011cbd2b97aed08e5e73274f08d245092cab58ac7f9d5c772e6892 |
 
 When downloaded, you can check that the executable isn't compromised by comparing
 the SHA checksum you get by running the following command and the value displayed
@@ -83,7 +83,7 @@ CacheWatcher watches your files (.env, YAML, Twig) and automatically refreshes y
 ——————————————————————————————————————————————————————————————————————
  > Project directory: /Users/coil/Sites/strangebuzz.com
  > Symfony console path: bin/console
- > Symfony env: Symfony 5.2.0 (env: dev, debug: true)
+ > Symfony env: Symfony 5.4.0 (env: dev, debug: true)
  > 321 file(s) watched in /Users/coil/Sites/strangebuzz.com in 12 millisecond(s).
  > CTRL+C to stop watching or run kill -9 7817.
 ```
@@ -134,21 +134,21 @@ $ kill -9 28157
 
 As we saw previously, if your project has the [Flex directory structure](https://symfony.com/doc/current/setup/flex.html),
 the default settings should be OK. The default values will always be set for the
-last minor Symfony version, currently 5.1:
+last minor Symfony version, currently 5.4:
 
-Key                 | Default value | Description
-------------------- | --------------| -------------------------------------------
-console_path        | bin/console   | Relative path to the Symfony console
-env                 | dev           | This is the APP_ENV parameter
-debug               | true          | This is the APP_DEBUG parameter (true or false)
-config_dir          | config        | Relative directory where are stored the configuration files
-translations_dir    | translations  | Relative directory where are stored the translations files
-templates_dir       | templates     | Relative directory where are stored the templates files
-entities_dir        | src/Entity    | Relative directory where are stored the Doctrine entities
-templates_extension | twig          | Default extension for templates files
-yaml_extension      | yaml          | Default extension for YAML files, we consider it must be consistent within the application
-php_extension       | php           | Default extension for PHP files, we consider it must be consistent within the application
-sleep_time          | 30            | Sleep time between two filesystem checks in milliseconds
+| Key                 | Default value | Description                                                                                |
+|---------------------|---------------|--------------------------------------------------------------------------------------------|
+| console_path        | bin/console   | Relative path to the Symfony console                                                       |
+| env                 | dev           | This is the APP_ENV parameter                                                              |
+| debug               | true          | This is the APP_DEBUG parameter (true or false)                                            |
+| config_dir          | config        | Relative directory where are stored the configuration files                                |
+| translations_dir    | translations  | Relative directory where are stored the translations files                                 |
+| templates_dir       | templates     | Relative directory where are stored the templates files                                    |
+| entities_dir        | src/Entity    | Relative directory where are stored the Doctrine entities                                  |
+| templates_extension | twig          | Default extension for templates files                                                      |
+| yaml_extension      | yaml          | Default extension for YAML files, we consider it must be consistent within the application |
+| php_extension       | php           | Default extension for PHP files, we consider it must be consistent within the application  |
+| sleep_time          | 30            | Sleep time between two filesystem checks in milliseconds                                   |
 
 If you are not using Flex, you can put a `.cw.yaml` file at the root of your project.
 Here is the configuration I use for one of my "old" Symfony 4.4 projects:
