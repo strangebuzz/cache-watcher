@@ -1,6 +1,6 @@
 # CacheWatcher
 
-CacheWatcher is a small Go program that watches your Symfony files and refreshes
+CacheWatcher is a small Go program that watches your Symfony files and updates
 your cache when needed, so you don't have to wait when refreshing your browser.
 
 Its goal is to improve the [Developer Experience](https://symfony.com/blog/making-the-symfony-experience-exceptional) with Symfony (DX).   
@@ -18,7 +18,7 @@ files on your filesystem by itself.
 
 You can build the program yourself (this means that you must have a working Go development
 environment) or you can [download an executable](#downloading-the-executable-).
-The program was developed with **go1.14.2**. 
+The program was developed with **go1.17.2**. 
 
 ### Compiling the program ⚙️
 
@@ -34,11 +34,12 @@ It will build the `cw` or `cw.exe` executable depending on your platform.
 
 Here are the executables for the main operating systems:
 
-| Operating System | Platform | version | date       | file                                                              | SHA checksum                                                     |
-|------------------|----------|---------|------------|-------------------------------------------------------------------|------------------------------------------------------------------|
-| darwin (macOS)   | amd64    | 0.5.0   | 2020-12-05 | [cw](https://sfcw.ovh/downloads/darwin/amd64/cw) (3.3mo)          | 80b4011567c71aef7a13e9bbdad9acacee124acb330222fa2b2abf172ce2879e |
-| Linux            | amd64    | 0.5.0   | 2020-12-05 | [cw](https://sfcw.ovh/downloads/linux/amd64/cw) (3.3mo)           | 7203e4facfd82f54501ff17b569055daf7856164ed71a66b3fbfbe8dd9633293 |
-| Windows          | amd64    | 0.5.0   | 2020-12-05 | [cw.exe](https://sfcw.ovh/downloads/windows/amd64/cw.exe) (3.4mo) | 2278d95d28011cbd2b97aed08e5e73274f08d245092cab58ac7f9d5c772e6892 |
+| Operating System     | Platform   | version | date       | file                                                              | SHA checksum                                                     |
+|----------------------|------------|---------|------------|-------------------------------------------------------------------|------------------------------------------------------------------|
+| darwin (macOS Intel) | amd64      | 0.5.0   | 2022-05-12 | [cw](https://sfcw.ovh/downloads/darwin/amd64/cw) (3.3mo)          | 80b4011567c71aef7a13e9bbdad9acacee124acb330222fa2b2abf172ce2879e |
+| darwin (macOS M1)    | arm64      | 0.5.1   | 2022-05-12 | [cw](https://sfcw.ovh/downloads/darwin/arm64/cw) (2.8mo)          | 0ba1a666c15900601c0b55762ce839a60309cb81a302fdcb10c931f33a105e98 |
+| Linux                | amd64      | 0.5.0   | 2022-05-12 | [cw](https://sfcw.ovh/downloads/linux/amd64/cw) (3.3mo)           | 7203e4facfd82f54501ff17b569055daf7856164ed71a66b3fbfbe8dd9633293 |
+| Windows              | amd64      | 0.5.0   | 2022-05-12 | [cw.exe](https://sfcw.ovh/downloads/windows/amd64/cw.exe) (3.4mo) | 2278d95d28011cbd2b97aed08e5e73274f08d245092cab58ac7f9d5c772e6892 |
 
 When downloaded, you can check that the executable isn't compromised by comparing
 the SHA checksum you get by running the following command and the value displayed
@@ -66,7 +67,7 @@ and doesn't have external dependencies.
 ## Running the watcher ⚡
 
 Now that you have built or downloaded the program, let's try it. If you run it without
-arguments, it will display the help message. If you are at the root of your Symfony
+arguments, it displays the help message. If you are at the root of your Symfony
 application, you can start to watch your project files with the following command:
 
 ```
@@ -77,14 +78,14 @@ You should have the following output:
 
 ```
 ——————————————————————————————————————————————————————————————————————
-  CacheWatcher version v0.5.0 by COil - https://www.strangebuzz.com 🐝
+  CacheWatcher version v0.5.1 by COil - https://www.strangebuzz.com 🐝
 ——————————————————————————————————————————————————————————————————————
 CacheWatcher watches your files (.env, YAML, Twig) and automatically refreshes your application cache.
 ——————————————————————————————————————————————————————————————————————
  > Project directory: /Users/coil/Sites/strangebuzz.com
  > Symfony console path: bin/console
- > Symfony env: Symfony 5.4.0 (env: dev, debug: true)
- > 321 file(s) watched in /Users/coil/Sites/strangebuzz.com in 12 millisecond(s).
+ > Symfony env: Symfony 5.4.8 (env: dev, debug: true)
+ > 400 file(s) watched in /Users/coil/Sites/strangebuzz.com in 6 millisecond(s).
  > CTRL+C to stop watching or run kill -9 7817.
 ```
 
@@ -170,7 +171,7 @@ but you probably want to find the best value for your system (with top or htop).
 ## Todo 📋
 
 - [ ] [Add CI with GitHub actions](https://github.com/strangebuzz/cache-watcher/issues/3)
-- [ ] [Add an option to display the watched file](https://github.com/strangebuzz/cache-watcher/issues/2)
+- [ ] [Add an option to display the watched files](https://github.com/strangebuzz/cache-watcher/issues/2)
 - [ ] [Allow having an additional whitelist of custom files to watch](https://github.com/strangebuzz/cache-watcher/issues/4)
 - [ ] Feel free to [create an issue](https://github.com/strangebuzz/cache-watcher/issues/new) ➕.
 
@@ -203,6 +204,10 @@ This software is published under the [MIT License](LICENSE).
 * [Jonathan Scheiber](https://github.com/jmsche) for his many documentation and blog posts proofreadings.
 
 ## Changelog 📒
+
+### V0.5.1
+
+* Added Darwin arm64 executable (For Apple M1 family)
 
 ### V0.5.0
 

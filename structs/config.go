@@ -3,6 +3,7 @@ package structs
 import "time"
 
 // Symfony parameters, these are the best defaults for Symfony 5/Flex.
+
 const EnvDefault = "dev"
 const ConsolePath = "bin/console"
 const DebugDefault = true
@@ -14,14 +15,13 @@ const TemplatesExtension = "twig"
 const YamlExtension = "yaml"
 const PhpExtension = "php"
 
-// Watcher process parameters
+// SleepTime Watcher process parameters
 const SleepTime = 30
 
-/*
- * Main application structure that contains all the parameters we weed. The YAML
- * meta data are the keys of the Symfony custom config file that will be used to
- * override the config default data.
- */
+// Main application structure that contains all the parameters we weed. The YAML
+// meta data are the keys of the Symfony custom config file that will be used to
+// override the config default data.
+
 type Config struct {
 	SymfonyProjectDir      string        `yaml:"project_dir"`         // The main Symfony project directory
 	SymfonyConsolePath     string        `yaml:"console_path"`        // Relative path to the Symfony console

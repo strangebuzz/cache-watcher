@@ -48,13 +48,13 @@ These are dev notes. For the full documentation check-out README.md
 @V2
 ————————————————————————————————————————————————————————————————————————————————
 
-* Rewrite with https://github.com/fsnotify/fsnotify?
+* Refactor with https://github.com/fsnotify/fsnotify?
 
 
 @Ideas/Decision to take
 ————————————————————————————————————————————————————————————————————————————————
 
-* Create a parameter for the nesting level to apply? Make it generic ?
+* Create a parameter for the nesting level to apply? Make it generic?
 * Only display the raw go errors with the verbose mode?
 * Handling of XML files? ini files?
 
@@ -68,6 +68,7 @@ These are dev notes. For the full documentation check-out README.md
 @Resources
 ————————————————————————————————————————————————————————————————————————————————
 
+* https://dev.to/tidalmigrations/how-to-cross-compile-go-app-for-apple-silicon-m1-27l6
 * https://github.com/golang-standards/project-layout
 * https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
 * https://guides.github.com/features/mastering-markdown/

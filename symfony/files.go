@@ -13,9 +13,7 @@ import (
 
 const customConfigFilename = ".cw.yaml"
 
-/**
- * Get and load the custom config if it exists.
- */
+// CheckCustomConfig Get and load the custom config if it exists.
 func CheckCustomConfig(config structs.Config) (structs.Config, error) {
 	customConfigFilepath := config.SymfonyProjectDir + "/" + customConfigFilename
 	_, err := os.Stat(customConfigFilepath)
@@ -43,11 +41,8 @@ func CheckCustomConfig(config structs.Config) (structs.Config, error) {
 	return config, nil
 }
 
-/**
- * Get all the files of the Symfony application which have to be watched.
- *
- * @todo handle nesting level? Add a parameter for that?
- */
+// GetFilesToWatch Get all the files of the Symfony application which have to be watched.
+// @todo handle nesting level? Add a parameter for that?
 func GetFilesToWatch(config structs.Config) ([]string, error) {
 	var filesToWatch []string
 
@@ -75,10 +70,8 @@ func GetFilesToWatch(config structs.Config) ([]string, error) {
 	return filesToWatch, nil
 }
 
-/**
- * Get all files corresponding to a glob pattern. To simplify the code we don't
- * return an error. The process will stop if an error is encountered.
- */
+// getFilesFromPath Get all files corresponding to a glob pattern. To simplify the code we don't
+// return an error. The process will stop if an error is encountered.
 func getFilesFromPath(config structs.Config, glob string) []string {
 	files, err := filepath.Glob(fmt.Sprintf("%s/%s", config.SymfonyProjectDir, glob))
 	if err != nil {
@@ -89,11 +82,8 @@ func getFilesFromPath(config structs.Config, glob string) []string {
 	return files
 }
 
-/**
- * Get the watched files as a simple map: "path" => "datetime"
- *
- * @example "/Users/coil/Sites/strangebuzz.com/config/services.yaml": "2020-04-28 16:33:44.73756727 +0200 CEST"
- */
+// GetWatchMap Get the watched files as a simple map: "path" => "datetime"
+// @example "/Users/coil/Sites/strangebuzz.com/config/services.yaml": "2020-04-28 16:33:44.73756727 +0200 CEST"
 func GetWatchMap(config structs.Config) (map[string]string, error) {
 	watchMap := map[string]string{}
 	filesTowatch, _ := GetFilesToWatch(config)

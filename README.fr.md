@@ -1,7 +1,7 @@
 # CacheWatcher
 
-CacheWatcher est un petit programme Go qui observe vos fichiers Symfony et rafraichit
-votre cache si besoin afin que vous n'ayez pas à attendre lors du rafraichissement
+CacheWatcher est un petit programme Go qui observe vos fichiers Symfony et met à
+jour votre cache si besoin afin que vous n'ayez pas à attendre lors du rafraichissement
 du navigateur.
 
 Son but est d'améliorer [l'expérience Développeur](https://symfony.com/blog/making-the-symfony-experience-exceptional) avec Symfony (DX).
@@ -19,7 +19,7 @@ des fichiers sur votre machine par lui-même.
 
 Vous pouvez compiler le programme manuellement (ça implique que vous ayez un environnement
 de travail Go fonctionnel) ou vous pouvez [télécharger un exécutable](#downloading-the-executable-).
-Ce programme a été développé avec **go1.14.2**.
+Ce programme a été développé avec **go1.17.2**.
 
 ### Compilation du programme ⚙️
 
@@ -35,11 +35,12 @@ Cela va construire l'exécutable `cw` or `cw.exe` selon votre système d'exploit
 
 Voici les exécutables des principaux systèmes d'exploitation :
 
-| Système d'exploitation | Plateforme | version | date       | fichier                                                           | Contrôle d'intégrité SHA                                         |
-|------------------------|------------|---------|------------|-------------------------------------------------------------------|------------------------------------------------------------------|
-| darwin (macOS)         | amd64      | 0.5.0   | 2020-12-05 | [cw](https://sfcw.ovh/downloads/darwin/amd64/cw) (3.3mo)          | 80b4011567c71aef7a13e9bbdad9acacee124acb330222fa2b2abf172ce2879e |
-| Linux                  | amd64      | 0.5.0   | 2020-12-05 | [cw](https://sfcw.ovh/downloads/linux/amd64/cw) (3.3mo)           | 7203e4facfd82f54501ff17b569055daf7856164ed71a66b3fbfbe8dd9633293 |
-| Windows                | amd64      | 0.5.0   | 2020-12-05 | [cw.exe](https://sfcw.ovh/downloads/windows/amd64/cw.exe) (3.4mo) | 2278d95d28011cbd2b97aed08e5e73274f08d245092cab58ac7f9d5c772e6892 |
+| Système d'exploitation  | Plateforme | version | date       | fichier                                                           | Contrôle d'intégrité SHA                                         |
+|-------------------------|------------|---------|------------|-------------------------------------------------------------------|------------------------------------------------------------------|
+| darwin (macOS)          | amd64      | 0.5.0   | 2020-12-05 | [cw](https://sfcw.ovh/downloads/darwin/amd64/cw) (3.3mo)          | 80b4011567c71aef7a13e9bbdad9acacee124acb330222fa2b2abf172ce2879e |
+| darwin (macOS M1)       | arm64      | 0.5.1   | 2022-05-12 | [cw](https://sfcw.ovh/downloads/darwin/arm64/cw) (2.8mo)          | 0ba1a666c15900601c0b55762ce839a60309cb81a302fdcb10c931f33a105e98 |
+| Linux                   | amd64      | 0.5.0   | 2020-12-05 | [cw](https://sfcw.ovh/downloads/linux/amd64/cw) (3.3mo)           | 7203e4facfd82f54501ff17b569055daf7856164ed71a66b3fbfbe8dd9633293 |
+| Windows                 | amd64      | 0.5.0   | 2020-12-05 | [cw.exe](https://sfcw.ovh/downloads/windows/amd64/cw.exe) (3.4mo) | 2278d95d28011cbd2b97aed08e5e73274f08d245092cab58ac7f9d5c772e6892 |
 
 Une fois téléchargé, vous pouvez vérifier que le fichier n'est pas compromis. Comparez
 d'une part, le code de contrôle d'intégrité SHA en exécutant la commande suivante
@@ -80,14 +81,14 @@ Vous devriez avoir la sortie suivante :
 
 ```
 ——————————————————————————————————————————————————————————————————————
-  CacheWatcher version v0.5.0 by COil - https://www.strangebuzz.com 🐝
+  CacheWatcher version v0.5.1 by COil - https://www.strangebuzz.com 🐝
 ——————————————————————————————————————————————————————————————————————
 CacheWatcher watches your files (.env, YAML, Twig) and automatically refreshes your application cache.
 ——————————————————————————————————————————————————————————————————————
  > Project directory: /Users/coil/Sites/strangebuzz.com
  > Symfony console path: bin/console
  > Symfony env: Symfony 5.4.0 (env: dev, debug: true)
- > 321 file(s) watched in /Users/coil/Sites/strangebuzz.com in 12 millisecond(s).
+ > 400 file(s) watched in /Users/coil/Sites/strangebuzz.com in 12 millisecond(s).
  > CTRL+C to stop watching or run kill -9 7817.
 ```
 
@@ -210,6 +211,10 @@ Ce logiciel est publié sous la [licence MIT](LICENSE).
   de la documentation et des articles du blog.
 
 ## Changelog 📒
+
+### V0.5.1
+
+* Ajout de l'executable pour Mac M1
 
 ### V0.5.0
 

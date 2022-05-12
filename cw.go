@@ -1,6 +1,4 @@
-/**
- * The following Golang code must stay simple, readable and straightforward. No 🏭.
- */
+// The following Golang code must stay simple, readable and straightforward. No 🏭.
 package main
 
 import (
@@ -18,7 +16,7 @@ import (
 
 const accronym = "CacheWatcher"
 const binary = "cw"
-const version = "0.5.0"
+const version = "0.5.1"
 const separator = "——————————————————————————————————————————————————————————————————————"
 const repository = "https://github.com/strangebuzz/cache-watcher"
 

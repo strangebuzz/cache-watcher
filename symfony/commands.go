@@ -20,9 +20,7 @@ func CheckSymfonyConsole(config structs.Config) error {
 	return nil
 }
 
-/**
- * Run a Symfony command with a given argument or option.
- */
+// RunCommand Run a Symfony command with a given argument or option.
 func RunCommand(config structs.Config, mainArgumentOrOption string) (string, error) {
 	var out []byte
 	var err error
@@ -45,12 +43,12 @@ func RunCommand(config structs.Config, mainArgumentOrOption string) (string, err
 	return fmt.Sprintf("%s", out), nil
 }
 
-/* ./bin/console --version --env=dev */
+// Version ./bin/console --version --env=dev
 func Version(config structs.Config) (string, error) {
 	return RunCommand(config, versionOption)
 }
 
-/* ./bin/console cache:warmup --env=dev */
+// CacheWarmup ./bin/console cache:warmup --env=dev
 func CacheWarmup(config structs.Config) (string, error) {
 	return RunCommand(config, cacheWarmupArgument)
 }

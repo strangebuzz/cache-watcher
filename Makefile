@@ -11,8 +11,12 @@ build: ## Build the cw executable for the current platform
 	go build cw.go
 	shasum -a 256 cw
 
-build-darwin: ## Build for Darwin OS
+build-darwin-amd64: ## Build for Darwin OS (macOS Intel)
 	GOOS=darwin GOARCH=amd64 go build cw.go
+	shasum -a 256 cw
+
+build-darwin-arm64: ## Build for Darwin OS (macOS M1)
+	GOOS=darwin GOARCH=arm64 go build cw.go
 	shasum -a 256 cw
 
 build-linux: ## Build for Linux OS
@@ -27,11 +31,11 @@ exec: ## Exec cw on a Symfony 5 project
 	$(eval path ?= ../strangebuzz.com)
 	./cw $(path)
 
-clean: cw ## Clean the current executable
-	rm ./cw
+clean: ## Clean the current executable
+	rm -f ./cw
 
-clean-all: cw cw.exe ## Clean all executable
-	rm ./cw ./cw.exe
+clean-all: ## Clean all executable
+	rm -f ./cw ./cw.exe
 
 deps: clean ## Clean deps
 	go get -d -v ./...
